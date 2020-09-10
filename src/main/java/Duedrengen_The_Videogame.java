@@ -22,8 +22,8 @@ public class Duedrengen_The_Videogame extends PApplet {
         super.setup();
         imgLoad.loadTheImages();
 
-        //  Titelfont =createFont("Arial",84);
-        //  Lilletitelfont = createFont("Arial",34);
+        Titelfont =createFont("Arial",84);
+        Lilletitelfont = createFont("Arial",34);
         p= new Player[100];
         frameRate(1000);
 
@@ -34,7 +34,7 @@ public class Duedrengen_The_Videogame extends PApplet {
 
 
         for(int i = 0;i<100;i++)
-            p[i] = new Player((int)random(0,1920), (int)random(0,1080), DIAMETER, hastighed,imgLoad,Level);
+            p[i] = new Player((int)random(0,1920), (int)random(0,1080), DIAMETER, hastighed,imgLoad,Level,this,Titelfont,Lilletitelfont);
 
     }
     public void settings() {
