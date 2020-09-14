@@ -53,6 +53,8 @@ public class Duedrengen_The_Videogame extends PApplet {
     public void draw() {
         //background(0,255,0);
         background(53,101,77);
+        uncleroger.tegn();
+
         for(int i = 0;i<dueAmount;i++){
 
             p[i].move();
@@ -60,7 +62,6 @@ public class Duedrengen_The_Videogame extends PApplet {
 
             backgrounds.simulate();
         }
-        uncleroger.tegn();
         //text(frameRate,500,500);
         for(int i = 0;i<enemyAmount;i++){
             //e[i].display();
