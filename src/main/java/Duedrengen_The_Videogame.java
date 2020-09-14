@@ -12,7 +12,7 @@ public class Duedrengen_The_Videogame extends PApplet {
     ImageLoader imgLoad = new ImageLoader(this);
     int dueAmount =2;
     UncleRoger uncleroger = new UncleRoger(this,imgLoad,500,500,Level);
-    Backgrounds backgrounds = new Backgrounds(Level, this, Lilletitelfont, Titelfont);
+    Backgrounds backgrounds = new Backgrounds(Level, this, Lilletitelfont, Titelfont,imgLoad);
     int enemyAmount = 1;
 
     public static void main(String[] args ) {

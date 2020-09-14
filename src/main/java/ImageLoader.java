@@ -19,5 +19,6 @@ void loadTheImages(){
 
     startup.resize(1920,1080);
     uncleRoger = p.loadImage("Uncle Roger.png");
+    uncleRoger.resize(64,64);
         }
 }

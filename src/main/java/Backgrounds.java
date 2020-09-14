@@ -8,8 +8,13 @@ public class Backgrounds {
     PFont Titelfont;
     PFont Lilletitelfont;
 
-    Backgrounds(int Level,PApplet p,PFont Titelfont,PFont Lilletitelfont) {
 
+
+    Backgrounds(int Level,PApplet p,PFont Titelfont,PFont Lilletitelfont,ImageLoader iL) {
+    this.iL=iL;
+    this.Titelfont = Titelfont;
+    this.Lilletitelfont = Lilletitelfont;
+    this.Level=Level;
 
     }
 
