@@ -1,30 +1,38 @@
-import processing.core.PApplet;
+public class Knap {
 
-public class Knap
-{
-    PApplet p;
-    float positionx;
-    float positiony;
-    float stoerrelsex;
-    float stoerrelsey;
-    Knap(PApplet p,float a, float b, float c, float d)
-    {
-        positionx = a ;
-        positiony = b ;
-        stoerrelsex = c ;
-        stoerrelsey = d ;
-        this.p =p;
-    }
-    void Tegnknap()
-    {
-        p.rect(positionx,positiony,stoerrelsex,stoerrelsey);
+    String tekst;
+    String detteErMaster;
+    String detteErNedarvingsOpgave222;
+    float xPosition = 10, yPosition  = 5;
+    float hojdeKnap = 25, breddeKnap = 250;
 
+    boolean klikket;
 
+    Knap(float x, float y){
+        this.xPosition = x;
+        this.yPosition = y;
     }
 
 
+    void tegn() {
+        fill(100, 0, 0);
+        if (klikket) {
+            fill(100, 100, 0);
+        }
+        rect(xPosition, yPosition, breddeKnap, hojdeKnap,10);
+        fill(255);
+        text(tekst, xPosition+10, yPosition+18);
+    }
 
+    void registrerKlik() {
+        if (mousePressed && p.mouseX < xPosition +breddeKnap && mouseX > xPosition && mouseY > yPosition && mouseY < yPosition + hojdeKnap) {
+            klikket = true;
+        } else {
+            klikket = false;
+        }
+    }
 
-
-
+    boolean erKlikket() {
+        return klikket;
+    }
 }
