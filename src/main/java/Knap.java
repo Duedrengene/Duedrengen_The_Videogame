@@ -1,3 +1,5 @@
+import processing.core.PApplet;
+
 public class Knap {
 
     String tekst;
@@ -5,17 +7,18 @@ public class Knap {
     String detteErNedarvingsOpgave222;
     float xPosition = 10, yPosition  = 5;
     float hojdeKnap = 25, breddeKnap = 250;
-
+    PApplet p;
     boolean klikket;
 
-    Knap(float x, float y){
+    Knap(PApplet p,float x, float y){
         this.xPosition = x;
         this.yPosition = y;
+        this.p =p;
     }
 
 
     void tegn() {
-        fill(100, 0, 0);
+        p.fill(100, 0, 0);
         if (klikket) {
             fill(100, 100, 0);
         }
