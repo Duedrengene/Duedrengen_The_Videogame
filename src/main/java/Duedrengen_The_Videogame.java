@@ -16,7 +16,7 @@ public class Duedrengen_The_Videogame extends PApplet {
     int  Level = 0;
     ImageLoader imgLoad = new ImageLoader(this);
     int dueAmount =2;
-
+    UncleRoger uncleroger = new UncleRoger(this,imgLoad,500,500,Level);
     @Override
     public void setup() {
         super.setup();
@@ -54,6 +54,7 @@ public class Duedrengen_The_Videogame extends PApplet {
             p[i].display();
             p[i].simulate();
         }
+        uncleroger.tegn();
         //text(frameRate,500,500);
     }
 
