@@ -7,18 +7,14 @@ public class Backgrounds {
     ImageLoader iL;
     PFont Titelfont;
     PFont Lilletitelfont;
-    float xPosition = 210, yPosition = 250;
-    float hojdetekst = 25, breddetekst = 250;
-    boolean klikket;
 
 
-    Backgrounds(int Level,PApplet p,PFont Titelfont,PFont Lilletitelfont,ImageLoader iL) {
-    this.iL=iL;
-    this.Titelfont = Titelfont;
-    this.Lilletitelfont = Lilletitelfont;
-    this.Level=Level;
-    float xPosition = this.xPosition;
-    float yPosition = this.yPosition;
+    Backgrounds(int Level, PApplet p, PFont Titelfont, PFont Lilletitelfont, ImageLoader iL) {
+        this.iL = iL;
+        this.Titelfont = Titelfont;
+        this.Lilletitelfont = Lilletitelfont;
+        this.Level = Level;
+
     }
 
     void simulate() {
@@ -43,17 +39,8 @@ public class Backgrounds {
             }
         }
     }
-
-    void registrerKlikket() {
-        if (p.mousePressed && p.mouseX < xPosition + breddetekst && p.mouseX > xPosition && p.mouseY < yPosition && p.mouseY < yPosition + hojdetekst) {
-            klikket = true;
-        } else {
-            klikket = false;
-
-        }
-    }
-
-    boolean erKlikket() {
-        return klikket;
-    }
 }
+
+
+
+
