@@ -5,8 +5,6 @@ import static processing.core.PApplet.constrain;
 import static processing.core.PConstants.*;
 
 public class Player {
-    PFont Titelfont;
-    PFont Lilletitelfont;
 
         boolean isLeft, isRight, isUp, isDown;
         int x, y;
@@ -16,7 +14,7 @@ public class Player {
         PApplet p;
 
 
-        Player(int xx, int yy, int dd, int vv,ImageLoader iL,int Level,PApplet p,PFont Titelfont,PFont lilletitelfont) {
+        Player(int xx, int yy, int dd, int vv,ImageLoader iL,int Level,PApplet p) {
             x = xx;
             y = yy;
             d = dd;
@@ -24,29 +22,8 @@ public class Player {
             this.iL=iL;
             this.Level=Level;
             this.p = p;
-            this.Titelfont = Titelfont;
-            this.Lilletitelfont = lilletitelfont;
         }
 
-
-
-
-        void simulate() {
-            if(Level ==0) {
-                p.image(iL.startup,0,0);
-
-                p.fill(220,20,60);
-                p.textAlign(p.CENTER);
-                p.textFont(Titelfont);
-                p.text("Velkommen tilbage Agent Duedreng!", 960, 85);
-                p.fill(0);
-                p.textFont(Lilletitelfont);
-                p.text("Tryk på hvilken som helst tast for at starte spillet",960,880);
-                if(p.keyPressed == true) {
-                    Level =1;
-                }
-            }
-        }
         void display() {
             //ellipse(x, y, d, d);
             if(Level ==1){
@@ -66,7 +43,7 @@ public class Player {
         }
         boolean setMove(int k, boolean b,int player) {
 
-            if(player ==0)
+            if(player == 0)
                 switch (k) {
 
                     case UP:
