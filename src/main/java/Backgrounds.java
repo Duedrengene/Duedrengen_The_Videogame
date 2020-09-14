@@ -5,28 +5,24 @@ public class Backgrounds {
     PApplet p;
     int Level;
     ImageLoader iL;
-    PFont Titelfont;
-    PFont Lilletitelfont;
+    FontLoader fL;
 
-
-    Backgrounds(int Level, PApplet p, PFont Titelfont, PFont Lilletitelfont, ImageLoader iL) {
+    Backgrounds(int Level, PApplet p,  ImageLoader iL,FontLoader fL) {
         this.iL = iL;
-        this.Titelfont = Titelfont;
-        this.Lilletitelfont = Lilletitelfont;
         this.Level = Level;
-
+        this.p = p;
+        this.fL = fL;
     }
 
     void simulate() {
         if (Level == 0) {
             p.image(iL.startup, 0, 0);
-
             p.fill(220, 20, 60);
             p.textAlign(p.CENTER);
-            p.textFont(Titelfont);
+            p.textFont(fL.Titelfont);
             p.text("Velkommen tilbage Agent Duedreng!", 960, 85);
             p.fill(0);
-            p.textFont(Lilletitelfont);
+            p.textFont(fL.Lilletitelfont);
             // p.text("Tryk på hvilken som helst tast for at starte spillet",960,880);
             p.textSize(56);
             p.fill(253, 106, 2);

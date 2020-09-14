@@ -10,9 +10,11 @@ public class Duedrengen_The_Videogame extends PApplet {
     Enemy[] e;
     int  Level = 0;
     ImageLoader imgLoad = new ImageLoader(this);
+    FontLoader fontLoad = new FontLoader(this);
     int dueAmount =2;
     UncleRoger uncleroger = new UncleRoger(this,imgLoad,500,500,Level);
-    Backgrounds backgrounds = new Backgrounds(Level, this, Lilletitelfont, Titelfont,imgLoad);
+    Backgrounds backgrounds = new Backgrounds(Level, this,imgLoad,fontLoad);
+
     int enemyAmount = 1;
 
     public static void main(String[] args ) {
@@ -23,9 +25,8 @@ public class Duedrengen_The_Videogame extends PApplet {
     public void setup() {
         super.setup();
         imgLoad.loadTheImages();
+        fontLoad.loadFonts();
 
-        Titelfont = createFont("Arial",84);
-        Lilletitelfont = createFont("Arial",34);
         p = new Player[100];
         e = new Enemy[100];
         frameRate(1000);
@@ -40,6 +41,7 @@ public class Duedrengen_The_Videogame extends PApplet {
             p[i] = new Player((int)random(0,1920), (int)random(0,1080), DIAMETER, hastighed,imgLoad,Level,this);
 
     }
+
     public void settings() {
         size(1920, 1080);
         smooth(8);
@@ -55,6 +57,7 @@ public class Duedrengen_The_Videogame extends PApplet {
 
             p[i].move();
             p[i].display();
+
             backgrounds.simulate();
         }
         uncleroger.tegn();
