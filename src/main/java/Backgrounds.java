@@ -44,7 +44,7 @@ public class Backgrounds {
         }
     }
 
-    void registrerKlikket() {♦
+    void registrerKlikket() {
         if (p.mousePressed && p.mouseX < xPosition + breddetekst && p.mouseX > xPosition && p.mouseY < yPosition && p.mouseY < yPosition + hojdetekst) {
             klikket = true;
         } else {
