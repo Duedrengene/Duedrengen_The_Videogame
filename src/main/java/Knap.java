@@ -16,16 +16,17 @@ public class Knap {
 
 
     void tegn() {
-        p.fill(100, 0, 0);
         if (klikket) {
-            p.fill(100, 100, 0);
+            p.text("Controls", 210, 225);
+            p.text("Resolution", 210, 400);
+            p.text("Back", 210, 575);
         }
         p.rect(xPosition, yPosition, bredde, hojde,10);
         p.fill(255);
 
     }
 
-    void registrerKlik() {
+    void registrerSettings() {
         if (p.mousePressed && p.mouseX < xPosition +bredde && p.mouseX > xPosition && p.mouseY > yPosition && p.mouseY < yPosition + hojde) {
             klikket = true;
         } else {
