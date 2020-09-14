@@ -33,7 +33,7 @@ public class Knap {
             klikket = false;
         }
     }
-
+ 
     boolean erKlikket() {
         return klikket;
     }
