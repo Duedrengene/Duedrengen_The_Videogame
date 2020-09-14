@@ -15,6 +15,7 @@ ImageLoader(PApplet p){
 void loadTheImages(){
     img = p.loadImage("duedreng.png");
     startup = p.loadImage("pigeon.png");
+
     startup.resize(1920,1080);
 
         }
