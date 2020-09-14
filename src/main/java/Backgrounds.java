@@ -11,16 +11,14 @@ public class Backgrounds {
     float hojdetekst = 25, breddetekst = 250;
     boolean klikket;
 
-    Backgrounds(int Level, PApplet p, PFont Titelfont, PFont Lilletitelfont) {
-        float xPosition = this.xPosition;
-        float yPosition = this.yPosition;
 
     Backgrounds(int Level,PApplet p,PFont Titelfont,PFont Lilletitelfont,ImageLoader iL) {
     this.iL=iL;
     this.Titelfont = Titelfont;
     this.Lilletitelfont = Lilletitelfont;
     this.Level=Level;
-
+    float xPosition = this.xPosition;
+    float yPosition = this.yPosition;
     }
 
     void simulate() {
