@@ -3,28 +3,31 @@ import processing.core.PFont;
 import processing.core.PImage;
 
 public class Duedrengen_The_Videogame extends PApplet {
-    public static void main(String[] args ) {
-        PApplet.main("Duedrengen_The_Videogame");
-    }
-
-
-
     int DIAMETER = 80, hastighed = 4;
     PFont Titelfont;
     PFont Lilletitelfont;
     Player[] p;
+    Enemy[] e;
     int  Level = 0;
     ImageLoader imgLoad = new ImageLoader(this);
     int dueAmount =2;
     UncleRoger uncleroger = new UncleRoger(this,imgLoad,500,500,Level);
+    Backgrounds backgrounds = new Backgrounds(Level, this, Lilletitelfont, Titelfont);
+    int enemyAmount = 1;
+
+    public static void main(String[] args ) {
+        PApplet.main("Duedrengen_The_Videogame");
+    }
+
     @Override
     public void setup() {
         super.setup();
         imgLoad.loadTheImages();
 
-        Titelfont =createFont("Arial",84);
+        Titelfont = createFont("Arial",84);
         Lilletitelfont = createFont("Arial",34);
-        p= new Player[100];
+        p = new Player[100];
+        e = new Enemy[100];
         frameRate(1000);
 
         ellipseMode(CENTER);
@@ -34,7 +37,7 @@ public class Duedrengen_The_Videogame extends PApplet {
 
 
         for(int i = 0;i<100;i++)
-            p[i] = new Player((int)random(0,1920), (int)random(0,1080), DIAMETER, hastighed,imgLoad,Level,this,Titelfont,Lilletitelfont);
+            p[i] = new Player((int)random(0,1920), (int)random(0,1080), DIAMETER, hastighed,imgLoad,Level,this);
 
     }
     public void settings() {
@@ -52,10 +55,13 @@ public class Duedrengen_The_Videogame extends PApplet {
 
             p[i].move();
             p[i].display();
-            p[i].simulate();
+            backgrounds.simulate();
         }
         uncleroger.tegn();
         //text(frameRate,500,500);
+        for(int i = 0;i<enemyAmount;i++){
+            //e[i].display();
+        }
     }
 
     public void keyPressed() {
