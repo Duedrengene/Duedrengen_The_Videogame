@@ -3,18 +3,27 @@ import processing.core.PFont;
 
 public class Duedrengen_The_Videogame extends PApplet {
     int DIAMETER = 80, hastighed = 4;
-    PFont Titelfont;
-    PFont Lilletitelfont;
+    int level = 0;
+    int dueAmount =2;
+    int enemyAmount = 1;
+
+    boolean mPressed = false;
+    boolean settings = false;
     Player[] p;
     Enemy[] e;
-    int level = 0;
+
     ImageLoader imgLoad = new ImageLoader(this);
     FontLoader fontLoad = new FontLoader(this);
-    int dueAmount =2;
+
     UncleRoger uncleroger = new UncleRoger(this,imgLoad,500,500, level);
     Backgrounds backgrounds = new Backgrounds(level, this,imgLoad,fontLoad);
- Knap knap = new Knap(this,210,390);
-    int enemyAmount = 1;
+
+
+    Button bStart = new Button(this,210,225-10,1,backgrounds);
+    Button bSettings = new Button(this,210,390,2,backgrounds);
+    Button bQuit = new Button(this,210,575-10,3,backgrounds);
+
+
 
     public static void main(String[] args ) {
         PApplet.main("Duedrengen_The_Videogame");
@@ -52,29 +61,41 @@ public class Duedrengen_The_Videogame extends PApplet {
     public void draw() {
         //background(0,255,0);
         background(53,101,77);
-
         backgrounds.simulate();
         uncleroger.draw(level);
         backgrounds.simulate();
-        knap.registrerSettings();
-        knap.draw(level);
 
 
+        textFont(fontLoad.Lilletitelfont);
+        textSize(56);
+        fill(253, 106, 2);
+        //Play
+        settings = bStart.registrerClick(mPressed,settings);
+        bStart.draw(level,settings);
+        //Settings
+        settings = bSettings.registrerClick(mPressed,settings);
+        bSettings.draw(level,settings);
+        //Quit
+        settings = bQuit.registrerClick(mPressed,settings);
+        bQuit.draw(level,settings);
+
+fill(0,0,0);
 
 
 
         for(int i = 0;i<dueAmount;i++){
 
             p[i].move();
-            p[i].display(backgrounds.Level);
+            p[i].display(backgrounds.level);
             uncleroger.detectPlayer(p[i]);
-            uncleroger.draw(backgrounds.Level);
+            uncleroger.draw(backgrounds.level);
 
         }
         //text(frameRate,500,500);
         for(int i = 0;i<enemyAmount;i++){
             //e[i].display();
         }
+        mPressed = false;
     }
 
     public void keyPressed() {
@@ -93,7 +114,9 @@ public class Duedrengen_The_Videogame extends PApplet {
 
 
 
-
+    public void mousePressed(){
+    mPressed = true;
+    }
 
 
 
