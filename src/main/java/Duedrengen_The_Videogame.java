@@ -8,10 +8,12 @@ public class Duedrengen_The_Videogame extends PApplet {
     Player[] p;
     Enemy[] e;
     int  Level = 0;
+    int width=1920;
+    int heigth=1080;
     ImageLoader imgLoad = new ImageLoader(this);
     FontLoader fontLoad = new FontLoader(this);
     int dueAmount =2;
-    UncleRoger uncleroger = new UncleRoger(this,imgLoad,500,500,Level);
+    UncleRoger uncleroger = new UncleRoger(this,imgLoad,width/2-32,500,Level);
     Backgrounds backgrounds = new Backgrounds(Level, this,imgLoad,fontLoad);
 
     int enemyAmount = 1;
@@ -57,10 +59,12 @@ public class Duedrengen_The_Videogame extends PApplet {
 
         for(int i = 0;i<dueAmount;i++){
 
-            p[i].move();
-            p[i].display(backgrounds.Level);
+
             uncleroger.detectPlayer(p[i]);
             uncleroger.draw(backgrounds.Level);
+            uncleroger.drawshop(p[i],i);
+            p[i].move();
+            p[i].display(backgrounds.Level);
 
         }
         //text(frameRate,500,500);
