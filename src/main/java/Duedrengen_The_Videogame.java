@@ -53,12 +53,12 @@ public class Duedrengen_The_Videogame extends PApplet {
         //background(0,255,0);
         background(53,101,77);
 
-
+        backgrounds.simulate();
         uncleroger.draw(level);
         backgrounds.simulate();
         knap.tegn();
 
-        backgrounds.simulate();
+
 
 
 
