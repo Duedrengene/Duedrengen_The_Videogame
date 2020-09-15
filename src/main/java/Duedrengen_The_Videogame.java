@@ -8,7 +8,7 @@ public class Duedrengen_The_Videogame extends PApplet {
     int enemyAmount = 1;
     int width=1920;
     int heigth=1080;
-	int dueAmount =2;
+
 	
     boolean mPressed = false;
     boolean settings = false;
@@ -93,10 +93,10 @@ fill(0,0,0);
 
 
             uncleroger.detectPlayer(p[i]);
-            uncleroger.draw(backgrounds.Level);
+            uncleroger.draw(backgrounds.level);
             uncleroger.drawshop(p[i],i);
             p[i].move();
-            p[i].display(backgrounds.Level);
+            p[i].display(backgrounds.level);
 
 
         }
