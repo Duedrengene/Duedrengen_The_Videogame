@@ -90,7 +90,7 @@ public class Player {
                         return interact=b;
                     default:
                         return b;
-                }else if(player == 0)
+                }else if(player == 1)
                 switch (k) {
 
                     case +'E':
