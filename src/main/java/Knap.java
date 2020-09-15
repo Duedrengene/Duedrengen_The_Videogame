@@ -3,8 +3,8 @@ import processing.core.PApplet;
 public class Knap {
 
 
-    float xPosition = 10, yPosition  = 5;
-    float hojde = 25, bredde = 225;
+    float xPosition = 210, yPosition  = 400;
+    float hojde = 60, bredde = 200;
     PApplet p;
     boolean klikket;
 
@@ -21,13 +21,14 @@ public class Knap {
             p.text("Resolution", 210, 400);
             p.text("Back", 210, 575);
         }
+       //p.rectMode(p.CENTER);
         p.rect(xPosition, yPosition, bredde, hojde,10);
         p.fill(255);
 
     }
 
     void registrerSettings() {
-        if (p.mousePressed && p.mouseX < xPosition +bredde && p.mouseX > xPosition && p.mouseY > yPosition && p.mouseY < yPosition + hojde) {
+        if (p.mousePressed && p.mouseX < xPosition + bredde/2 && p.mouseX > xPosition-bredde/2 && p.mouseY > yPosition-hojde/2 && p.mouseY < yPosition + hojde/2) {
             klikket = true;
         } else {
             klikket = false;
