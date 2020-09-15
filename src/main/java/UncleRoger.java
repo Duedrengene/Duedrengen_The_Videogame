@@ -16,6 +16,9 @@ UncleRoger(PApplet p,ImageLoader iL,int posX,int posY,int level){
     this.unclePic = iL;
     this.level = level;
 }
+
+
+
 void draw(int level){
     this.level=level;
     if(level == 1){
