@@ -22,11 +22,10 @@ public class Knap {
             p.text("Resolution", 210, 400);
             p.text("Back", 210, 575);
         }
-        p.rectMode(p.CENTER);
-        p.rect(xPosition, yPosition, bredde, hojde,10);
-        p.fill(255);
-
-    }}
+        //p.rectMode(p.CENTER);
+        //p.rect(xPosition, yPosition, bredde, hojde,10
+    }
+    }
 
     void registrerSettings() {
 
