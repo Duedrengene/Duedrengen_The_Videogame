@@ -7,6 +7,12 @@ public class ImageLoader  {
     PImage startup;
     PApplet p;
     PImage uncleRoger;
+    PImage friedrice;
+    PImage msg;
+    PImage majs;
+    PImage msgbull;
+    PImage Syringe;
+    PImage havregryn;
     float scaleW = 1;
     float scaleH = 1;
 ImageLoader(PApplet p){
