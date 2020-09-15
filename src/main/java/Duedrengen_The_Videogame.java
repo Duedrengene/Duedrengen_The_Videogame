@@ -18,7 +18,7 @@ public class Duedrengen_The_Videogame extends PApplet {
     ImageLoader imgLoad = new ImageLoader(this);
     FontLoader fontLoad = new FontLoader(this);
 
-    UncleRoger uncleroger = new UncleRoger(this,imgLoad,width/2-32,500, level);
+    UncleRoger uncleroger = new UncleRoger(this,imgLoad,width/2-32,height/2-32, level);
     Backgrounds backgrounds = new Backgrounds(level, this,imgLoad,fontLoad);
 
 
