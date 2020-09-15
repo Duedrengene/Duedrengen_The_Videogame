@@ -5,8 +5,8 @@ import processing.core.PImage;
 public class FontLoader{
 
 
-    PFont Titelfont;
-    PFont Lilletitelfont;
+    PFont titelFont;
+    PFont smallTitelFont;
         PImage img;
         PImage startup;
         PApplet p;
@@ -18,7 +18,7 @@ public class FontLoader{
 
 
         void loadFonts(){
-            Titelfont = p.createFont("Arial",84);
-            Lilletitelfont = p.createFont("Arial",34);
+            titelFont = p.createFont("Arial",84);
+            smallTitelFont = p.createFont("Arial",34);
 
 }}
