@@ -7,24 +7,28 @@ public class ImageLoader  {
     PImage startup;
     PApplet p;
     PImage uncleRoger;
-    PImage friedrice;
-    PImage msg;
-    PImage majs;
-    PImage msgbull;
-    PImage Syringe;
-    PImage havregryn;
+    float scaleW = 1;
+    float scaleH = 1;
 ImageLoader(PApplet p){
     this.p=p;
 }
 
 
 
-void loadTheImages(){
-img = p.loadImage("duedreng.png");
-    img.resize(64,64);
+void loadTheImages(int var,int w,int h){
+
+    scaleW = (float)w/1920;
+    scaleH = (float)h/1080;
+    img = p.loadImage("duedreng.png");
     startup = p.loadImage("pigeon.png");
-    startup.resize(1920,1080);
     uncleRoger = p.loadImage("Uncle Roger.png");
-    uncleRoger.resize(64,64);
+    startup.resize(w,h);
+    img.resize((int)(64*scaleW),(int)(64*scaleH));
+    uncleRoger.resize((int)(64*scaleW),(int)(64*scaleH));
         }
+
+
+
+
 }
+

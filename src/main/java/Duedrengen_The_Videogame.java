@@ -1,5 +1,7 @@
 import processing.core.PApplet;
 
+import java.awt.*;
+
 public class Duedrengen_The_Videogame extends PApplet {
     int diameter = 80, speed = 4;
     int level = 0;
@@ -14,17 +16,17 @@ public class Duedrengen_The_Videogame extends PApplet {
     Player[] p;
     Enemy[] e;
 
-
     ImageLoader imgLoad = new ImageLoader(this);
+    ImageResizer imgResize = new ImageResizer(this,width,height,imgLoad);
     FontLoader fontLoad = new FontLoader(this);
 
     UncleRoger uncleroger = new UncleRoger(this,imgLoad,width/2-32,height/2-32, level);
     Backgrounds backgrounds = new Backgrounds(level, this,imgLoad,fontLoad);
 
 
-    Button bStart = new Button(this,210,225-10,1,backgrounds);
-    Button bSettings = new Button(this,210,390,2,backgrounds);
-    Button bQuit = new Button(this,210,575-10,3,backgrounds);
+    Button bStart = new Button(this,210,225-10,1,backgrounds,imgResize);
+    Button bSettings = new Button(this,210,390,2,backgrounds,imgResize);
+    Button bQuit = new Button(this,210,575-10,3,backgrounds,imgResize);
 
 
 
@@ -36,7 +38,7 @@ public class Duedrengen_The_Videogame extends PApplet {
     @Override
     public void setup() {
         super.setup();
-        imgLoad.loadTheImages();
+        imgLoad.loadTheImages(1,width,height);
         fontLoad.loadFonts();
 
         p = new Player[100];
@@ -55,14 +57,23 @@ public class Duedrengen_The_Videogame extends PApplet {
     }
 
     public void settings() {
+
+
         size(1920, 1080);
+
         smooth(8);
 
     }
 
 
 
+
+
+
     public void draw() {
+
+
+
         //background(0,255,0);
         background(53,101,77);
         backgrounds.simulate();
