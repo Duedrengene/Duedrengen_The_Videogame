@@ -1,5 +1,4 @@
 import processing.core.PApplet;
-import processing.core.PFont;
 
 public class Backgrounds {
     PApplet p;
@@ -19,7 +18,7 @@ public class Backgrounds {
             p.image(iL.startup, 0, 0);
             p.fill(220, 20, 60);
             p.textAlign(p.CENTER);
-            p.textFont(fL.Titelfont);
+            p.textFont(fL.titelFont);
             p.text("Velkommen tilbage Agent Duedreng!", 960, 85);
             p.fill(0);
 

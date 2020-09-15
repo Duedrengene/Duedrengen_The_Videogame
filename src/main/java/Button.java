@@ -4,12 +4,12 @@ public class Button {
 
 
     float xPosition, yPosition;
-    float hojde = 60, bredde = 200;
-    PApplet p;
-    boolean klikket;
+    float height = 60, width = 200;
     int buttonType;
+    PApplet p;
     FontLoader fL;
     Backgrounds backgrounds;
+
     Button(PApplet p, float x, float y,int buttonType,Backgrounds backgrounds){
         this.xPosition = x;
         this.yPosition = y;
@@ -40,9 +40,9 @@ public class Button {
 
     }}
 
-    boolean registrerClick(boolean mPressed,boolean settings) {
+    boolean registerClick(boolean mPressed, boolean settings) {
 
-        if (mPressed && p.mouseX < xPosition + bredde/2 && p.mouseX > xPosition-bredde/2 && p.mouseY > yPosition-hojde/2 && p.mouseY < yPosition + hojde/2) {
+        if (mPressed && p.mouseX < xPosition + width /2 && p.mouseX > xPosition- width /2 && p.mouseY > yPosition- height /2 && p.mouseY < yPosition + height /2) {
             switch(buttonType){
 
                 case 1: {
@@ -77,7 +77,5 @@ public class Button {
         return settings;
     }
  
-    boolean erKlikket() {
-        return klikket;
-    }
+
 }

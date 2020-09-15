@@ -1,13 +1,12 @@
 import processing.core.PApplet;
-import processing.core.PFont;
 
 public class Duedrengen_The_Videogame extends PApplet {
-    int DIAMETER = 80, hastighed = 4;
+    int diameter = 80, speed = 4;
     int level = 0;
     int dueAmount =2;
     int enemyAmount = 1;
     int width=1920;
-    int heigth=1080;
+    int height =1080;
 
 	
     boolean mPressed = false;
@@ -51,7 +50,7 @@ public class Duedrengen_The_Videogame extends PApplet {
 
 
         for(int i = 0;i<100;i++)
-            p[i] = new Player((int)random(0,1920), (int)random(0,1080), DIAMETER, hastighed,imgLoad, level,this);
+            p[i] = new Player((int)random(0,1920), (int)random(0,1080), diameter, speed,imgLoad, level,this);
 
     }
 
@@ -71,17 +70,17 @@ public class Duedrengen_The_Videogame extends PApplet {
         backgrounds.simulate();
 
 
-        textFont(fontLoad.Lilletitelfont);
+        textFont(fontLoad.smallTitelFont);
         textSize(56);
         fill(253, 106, 2);
         //Play
-        settings = bStart.registrerClick(mPressed,settings);
+        settings = bStart.registerClick(mPressed,settings);
         bStart.draw(level,settings);
         //Settings
-        settings = bSettings.registrerClick(mPressed,settings);
+        settings = bSettings.registerClick(mPressed,settings);
         bSettings.draw(level,settings);
         //Quit
-        settings = bQuit.registrerClick(mPressed,settings);
+        settings = bQuit.registerClick(mPressed,settings);
         bQuit.draw(level,settings);
 
 fill(0,0,0);
@@ -94,7 +93,7 @@ fill(0,0,0);
 
             uncleroger.detectPlayer(p[i]);
             uncleroger.draw(backgrounds.level);
-            uncleroger.drawshop(p[i],i);
+            uncleroger.drawShop(p[i],i);
             p[i].move();
             p[i].display(backgrounds.level);
 
