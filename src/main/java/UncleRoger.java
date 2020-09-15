@@ -24,7 +24,7 @@ void draw(int level){
     if(level == 1){
     p.image(unclePic.uncleRoger,position.x,position.y);
     if(someoneIsClose==true){
-        p.text("Want some MSG?",position.x-20,position.y-20);
+        p.text("Want some MSG? (Interact with me)",position.x-20,position.y-20);
     }
 }
 
@@ -38,4 +38,12 @@ void detectPlayer(Player player){
     }
 }
 
+void drawshop(Player player,int i) {
+  //  if (level == 1 && i==0 && interact==true) {
+    //    p.rect(100, 200, (p.width - 400)/2, p.height - 400);
+    //}
+    //if (level == 1  && i==1&&interact==true) {
+      //  p.rect(p.width/2+100, 200, (p.width - 400)/2, p.height - 400);
+    //}
+}
 }

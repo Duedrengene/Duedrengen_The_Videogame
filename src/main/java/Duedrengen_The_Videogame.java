@@ -6,22 +6,27 @@ public class Duedrengen_The_Videogame extends PApplet {
     int level = 0;
     int dueAmount =2;
     int enemyAmount = 1;
-
+    int width=1920;
+    int heigth=1080;
+	int dueAmount =2;
+	
     boolean mPressed = false;
     boolean settings = false;
     Player[] p;
     Enemy[] e;
 
+
     ImageLoader imgLoad = new ImageLoader(this);
     FontLoader fontLoad = new FontLoader(this);
 
-    UncleRoger uncleroger = new UncleRoger(this,imgLoad,500,500, level);
+    UncleRoger uncleroger = new UncleRoger(this,imgLoad,width/2-32,500, level);
     Backgrounds backgrounds = new Backgrounds(level, this,imgLoad,fontLoad);
 
 
     Button bStart = new Button(this,210,225-10,1,backgrounds);
     Button bSettings = new Button(this,210,390,2,backgrounds);
     Button bQuit = new Button(this,210,575-10,3,backgrounds);
+
 
 
 
@@ -85,10 +90,14 @@ fill(0,0,0);
 
         for(int i = 0;i<dueAmount;i++){
 
-            p[i].move();
-            p[i].display(backgrounds.level);
+
+
             uncleroger.detectPlayer(p[i]);
-            uncleroger.draw(backgrounds.level);
+            uncleroger.draw(backgrounds.Level);
+            uncleroger.drawshop(p[i],i);
+            p[i].move();
+            p[i].display(backgrounds.Level);
+
 
         }
         //text(frameRate,500,500);
@@ -101,6 +110,8 @@ fill(0,0,0);
     public void keyPressed() {
         for(int i = 0;i<dueAmount;i++){
             p[i].setMove(keyCode, true,i);
+            p[i].interact(i,true,keyCode);
+            println(p[i].interact);
         }
 
     }
@@ -108,6 +119,7 @@ fill(0,0,0);
     public void keyReleased() {
         for(int i = 0;i<dueAmount;i++){
             p[i].setMove(keyCode, false,i);
+            p[i].interact(i,false,keyCode);
         }
 
     }
