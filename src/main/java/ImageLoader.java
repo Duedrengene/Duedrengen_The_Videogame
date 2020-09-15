@@ -7,6 +7,12 @@ public class ImageLoader  {
     PImage startup;
     PApplet p;
     PImage uncleRoger;
+    PImage friedrice;
+    PImage msg;
+    PImage majs;
+    PImage msgbull;
+    PImage Syringe;
+    PImage havregryn;
 ImageLoader(PApplet p){
     this.p=p;
 }
@@ -14,7 +20,7 @@ ImageLoader(PApplet p){
 
 
 void loadTheImages(){
-    img = p.loadImage("duedreng.png");
+img = p.loadImage("duedreng.png");
     img.resize(64,64);
     startup = p.loadImage("pigeon.png");
     startup.resize(1920,1080);
