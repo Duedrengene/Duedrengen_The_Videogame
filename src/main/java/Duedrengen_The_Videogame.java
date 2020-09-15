@@ -93,7 +93,7 @@ fill(0,0,0);
 
             uncleroger.detectPlayer(p[i]);
             uncleroger.draw(backgrounds.level);
-            uncleroger.drawShop(p[i],i);
+            uncleroger.drawshop(p[i],i);
             p[i].move();
             p[i].display(backgrounds.level);
 

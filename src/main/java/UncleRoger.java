@@ -39,10 +39,11 @@ void detectPlayer(Player player){
 }
 
 void drawshop(Player player,int i) {
-    if (level == 1 && i==0 && player.interact==true) {
+    p.rectMode(p.CORNER);
+    if (level == 1 && i==0 && player.interact==true && someoneIsClose) {
         p.rect(100, 200, (p.width - 400)/2, p.height - 400);
     }
-    if (level == 1  && i==1 && player.interact==true) {
+    if (level == 1  && i==1 && player.interact==true && someoneIsClose) {
         p.rect(p.width/2+100, 200, (p.width - 400)/2, p.height - 400);
     }
 }
