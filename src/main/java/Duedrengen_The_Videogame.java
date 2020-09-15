@@ -13,7 +13,7 @@ public class Duedrengen_The_Videogame extends PApplet {
     int dueAmount =2;
     UncleRoger uncleroger = new UncleRoger(this,imgLoad,500,500, level);
     Backgrounds backgrounds = new Backgrounds(level, this,imgLoad,fontLoad);
- Knap knap = new Knap(this,210,400);
+ Knap knap = new Knap(this,210,390);
     int enemyAmount = 1;
 
     public static void main(String[] args ) {
@@ -56,7 +56,8 @@ public class Duedrengen_The_Videogame extends PApplet {
         backgrounds.simulate();
         uncleroger.draw(level);
         backgrounds.simulate();
-        knap.tegn();
+        knap.registrerSettings();
+        knap.draw(level);
 
 
 
