@@ -1,6 +1,5 @@
 import processing.core.PApplet;
 import processing.core.PFont;
-import processing.core.PImage;
 
 public class Duedrengen_The_Videogame extends PApplet {
     int DIAMETER = 80, hastighed = 4;
@@ -54,13 +53,14 @@ public class Duedrengen_The_Videogame extends PApplet {
         //background(0,255,0);
         background(53,101,77);
         backgrounds.simulate();
-        uncleroger.tegn();
+
 
         for(int i = 0;i<dueAmount;i++){
 
             p[i].move();
             p[i].display(backgrounds.Level);
-
+            uncleroger.detectPlayer(p[i]);
+            uncleroger.draw(backgrounds.Level);
 
         }
         //text(frameRate,500,500);
