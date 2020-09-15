@@ -32,6 +32,9 @@ public class Backgrounds {
 
             if (p.keyPressed == true) {
                 Level = 1;
+           if(Level==1){
+             //  p.image();
+               }
             }
         }
     }
