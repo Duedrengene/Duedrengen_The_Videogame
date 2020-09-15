@@ -7,6 +7,7 @@ import static processing.core.PConstants.*;
 public class Player {
 
         boolean isLeft, isRight, isUp, isDown;
+        boolean interact;
         int x, y;
         int d, v;
         int Level;
@@ -80,6 +81,23 @@ public class Player {
                         return b;
                 }else return b;
 
+        }
+        boolean interact(int player,boolean b,int k){
+            if(player == 0)
+                switch (k) {
+
+                    case +'M':
+                        return interact=b;
+                    default:
+                        return b;
+                }else if(player == 0)
+                switch (k) {
+
+                    case +'E':
+                        return interact=b;
+                    default:
+                        return b;
+                }else return b;
         }
     }
 

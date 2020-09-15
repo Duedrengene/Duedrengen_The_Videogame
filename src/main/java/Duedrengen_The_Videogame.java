@@ -85,6 +85,7 @@ public class Duedrengen_The_Videogame extends PApplet {
     public void keyPressed() {
         for(int i = 0;i<dueAmount;i++){
             p[i].setMove(keyCode, true,i);
+            p[i].interact(i,true,keyCode);
         }
 
     }
@@ -92,6 +93,7 @@ public class Duedrengen_The_Videogame extends PApplet {
     public void keyReleased() {
         for(int i = 0;i<dueAmount;i++){
             p[i].setMove(keyCode, false,i);
+            p[i].interact(i,true,keyCode);
         }
 
     }

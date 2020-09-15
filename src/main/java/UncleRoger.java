@@ -37,12 +37,13 @@ void detectPlayer(Player player){
         someoneIsClose=false;
     }
 }
+
 void drawshop(Player player,int i) {
-    if (level == 1 && someoneIsClose && i==0) {
-        p.rect(100, 200, (p.width - 400)/2, p.height - 400);
-    }
-    if (level == 1 && someoneIsClose && i==1) {
-        p.rect(p.width/2+100, 200, (p.width - 400)/2, p.height - 400);
-    }
+  //  if (level == 1 && i==0 && interact==true) {
+    //    p.rect(100, 200, (p.width - 400)/2, p.height - 400);
+    //}
+    //if (level == 1  && i==1&&interact==true) {
+      //  p.rect(p.width/2+100, 200, (p.width - 400)/2, p.height - 400);
+    //}
 }
 }
