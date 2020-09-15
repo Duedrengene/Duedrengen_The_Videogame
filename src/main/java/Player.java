@@ -15,8 +15,8 @@ public class Player {
 
 
         Player(int xx, int yy, int dd, int vv,ImageLoader iL,int Level,PApplet p) {
-            x = xx;
-            y = yy;
+            x = xx-40;
+            y = yy-40;
             d = dd;
             v = vv;
             this.iL=iL;
@@ -29,7 +29,7 @@ public class Player {
             this.Level = level;
             if(this.Level ==1){
 
-                p.image(iL.img,x-40,y-40,d,d);
+                p.image(iL.img,x,y,d,d);
             }
         }
 
