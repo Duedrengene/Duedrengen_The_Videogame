@@ -20,7 +20,7 @@ public class Duedrengen_The_Videogame extends PApplet {
     ImageResizer imgResize = new ImageResizer(this,width,height,imgLoad);
     FontLoader fontLoad = new FontLoader(this);
 
-    UncleRoger uncleroger = new UncleRoger(this,imgLoad,width/2-32,500, level);
+    UncleRoger uncleroger = new UncleRoger(this,imgLoad,width/2-32,height/2-32, level);
     Backgrounds backgrounds = new Backgrounds(level, this,imgLoad,fontLoad);
 
 
@@ -104,7 +104,7 @@ fill(0,0,0);
 
             uncleroger.detectPlayer(p[i]);
             uncleroger.draw(backgrounds.level);
-            uncleroger.drawShop(p[i],i);
+            uncleroger.drawshop(p[i],i);
             p[i].move();
             p[i].display(backgrounds.level);
 
