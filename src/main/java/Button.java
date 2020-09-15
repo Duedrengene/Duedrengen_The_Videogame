@@ -33,9 +33,7 @@ public class Button {
             p.text("Quit", 210, 575);
 
         }
-        p.rectMode(p.CENTER);
-            p.fill(255);
-       // p.rect(xPosition, yPosition, bredde, hojde,10);
+
 
 
     }}
