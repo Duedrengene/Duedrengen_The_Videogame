@@ -24,9 +24,10 @@ public class Player {
             this.p = p;
         }
 
-        void display() {
+        void display(int level) {
             //ellipse(x, y, d, d);
-            if(Level ==1){
+            this.Level = level;
+            if(this.Level ==1){
 
                 p.image(iL.img,x-40,y-40,d,d);
             }
