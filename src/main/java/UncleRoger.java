@@ -75,14 +75,29 @@ void drawshop(Player player,int i) {
     }
     if ((level == 1  && i==1 && player.interact==true && someoneIsClose)||p2shopOpen == true) {
         p.fill(255,108,0);
-        p.rect(p.width/2+100, 200, (p.width - 400)/2, p.height - 400);
+        p.rect(p.width/2+100, 200, (p.width - 900)/2, p.height - 400);
+
+
         p.fill(108,255,0);
         p.rect(p.width/2+140,340,64,64);
+        p.image(unclePic.havregryn,p.width/2+140,340);
         p.rect(p.width/2+490,340,64,64);
-        p.rect(p.width/2+140,540,64,64);
+        p.image(unclePic.friedrice,p.width/2+490,350 );
         p.rect(p.width/2+490,540,64,64);
+        p.image(unclePic.msgbull,p.width/2+490,540);
         p.rect(p.width/2+140,740,64,64);
+        p.image(unclePic.Syringe,p.width/2+140,740);
         p.rect(p.width/2+490,740,64,64);
+        p.rect(p.width/2+267,245,20,20);
+        p.fill(0);
+        p.textSize(18);
+        p.text("Uncommen item: ",p.width/2+200,260);
+        //Ability Player 1
+        p.text("Ability:",p.width/2+480,260);
+        p.fill(63,72,204);
+        p.rect(p.width/2+507,245,20,20);
+        p.rect(p.width/2+140,540,64,64);
+        p.image(unclePic.majs,p.width/2+140,540);
         p2shopOpen = true;
     }
 }
