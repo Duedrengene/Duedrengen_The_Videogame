@@ -36,7 +36,7 @@ public class Button {
         }
     }
         if(player.hp <= 0){
-            
+
         }
     }
 

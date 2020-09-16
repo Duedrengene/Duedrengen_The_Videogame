@@ -13,7 +13,7 @@ public class Player {
         int Level;
         ImageLoader iL;
         PApplet p;
-        int hp;
+        int hp = 2;
 
 
         Player(int xx, int yy, int dd, int vv,ImageLoader iL,int Level,PApplet p) {
