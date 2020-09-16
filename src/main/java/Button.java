@@ -22,7 +22,7 @@ public class Button {
     }
 
 
-    void draw(int level,boolean settings,Player player) {
+    void draw(int level,boolean settings) {
         if(backgrounds.level==0){
             float  xNPosition=xPosition*iR.scaleW;
             float  yNPosition=yPosition*iR.scaleH;
@@ -46,9 +46,7 @@ public class Button {
 
         }
     }
-        if(player.hp <= 0){
 
-        }
     }
 
     boolean registerClick(boolean mPressed, boolean settings) {
