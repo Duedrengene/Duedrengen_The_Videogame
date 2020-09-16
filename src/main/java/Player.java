@@ -30,7 +30,7 @@ public class Player {
             this.Level = level;
             if(this.Level ==1){
 
-                p.image(iL.img,x,y,d,d);
+                p.image(iL.img,x,y);
             }
         }
 

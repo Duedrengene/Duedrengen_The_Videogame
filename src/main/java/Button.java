@@ -8,11 +8,13 @@ public class Button {
     int buttonType;
     PApplet p;
     FontLoader fL;
+    ImageResizer iR;
     Backgrounds backgrounds;
-
-    Button(PApplet p, float x, float y,int buttonType,Backgrounds backgrounds){
+    int currentSize = 1;
+    Button(PApplet p, float x, float y,int buttonType,Backgrounds backgrounds,ImageResizer iR){
         this.xPosition = x;
         this.yPosition = y;
+        this.iR = iR;
         this.p =p;
         this.buttonType=buttonType;
     this.backgrounds = backgrounds;
@@ -56,7 +58,15 @@ public class Button {
 
 
                     }
-                    else ;
+                    else{
+                        currentSize++;
+                        if (currentSize >=4)
+                        currentSize =1;
+                       iR.resize(currentSize);
+
+
+
+                    }
                     break;
                 }
                 case 3: {
@@ -65,7 +75,6 @@ public class Button {
                     else {
                         p.exit();
                     }
-                    System.out.println(buttonType   );
                     break;
                 }
                 default:

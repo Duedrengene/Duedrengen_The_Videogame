@@ -7,18 +7,51 @@ public class ImageLoader  {
     PImage startup;
     PApplet p;
     PImage uncleRoger;
+    PImage friedrice;
+    PImage msg;
+    PImage majs;
+    PImage msgbull;
+    PImage Syringe;
+    PImage havregryn;
+    float scaleW = 1;
+    float scaleH = 1;
 ImageLoader(PApplet p){
     this.p=p;
 }
 
 
 
-void loadTheImages(){
+void loadTheImages(int var,int w,int h){
+
+    scaleW = (float)w/1920;
+    scaleH = (float)h/1080;
+
     img = p.loadImage("duedreng.png");
-    img.resize(64,64);
     startup = p.loadImage("pigeon.png");
-    startup.resize(1920,1080);
     uncleRoger = p.loadImage("Uncle Roger.png");
-    uncleRoger.resize(64,64);
+    //items.
+    msgbull = p.loadImage("msgbull.png");
+    msg = p.loadImage("MSG salt on crack.png");
+    majs = p.loadImage("majs.png");
+    friedrice = p.loadImage("Fried rice (ikke jamie edition).png");
+    Syringe = p.loadImage("Syringe stor.png");
+    havregryn = p.loadImage("havregryn.png");
+// Resolution resize.
+
+    msg.resize((int)(64*scaleW),(int)(64*scaleH));
+    msgbull.resize((int)(64*scaleW),(int)(64*scaleH));
+    havregryn.resize((int)(64*scaleW),(int)(64*scaleH));
+    friedrice.resize((int)(64*scaleW),(int)(64*scaleH));
+    Syringe.resize((int)(64*scaleW),(int)(64*scaleH));
+    majs.resize((int)(64*scaleW),(int)(64*scaleH));
+    img.resize((int)(64*scaleW),(int)(64*scaleH));
+    startup.resize(w,h);
+    img.resize((int)(64*scaleW),(int)(64*scaleH));
+    uncleRoger.resize((int)(64*scaleW),(int)(64*scaleH));
         }
+
+
+
+
 }
+
