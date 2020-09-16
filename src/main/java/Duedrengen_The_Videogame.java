@@ -1,4 +1,4 @@
-//My name is Ichigo Kurosaki, and I am retarded. This is my Bankai, it is also retarted
+
 import processing.core.PApplet;
 
 import java.awt.*;
@@ -20,6 +20,7 @@ public class Duedrengen_The_Videogame extends PApplet {
 
     ImageLoader imgLoad = new ImageLoader(this);
     ImageResizer imgResize = new ImageResizer(this,width,height,imgLoad);
+    SoundLoader soundLoad = new SoundLoader(this,midgame,boss);
     FontLoader fontLoad = new FontLoader(this);
 
 
@@ -44,6 +45,7 @@ public class Duedrengen_The_Videogame extends PApplet {
         super.setup();
         imgLoad.loadTheImages(1,width,height);
         fontLoad.loadFonts();
+        soundLoad.loadtheSounds();
 
         p=new Player[dueAmount];
         frameRate(144);

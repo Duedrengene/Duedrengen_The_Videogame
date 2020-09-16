@@ -59,7 +59,5 @@ void loadTheImages(int var,int w,int h){
         }
 
 
-
-
 }
 
