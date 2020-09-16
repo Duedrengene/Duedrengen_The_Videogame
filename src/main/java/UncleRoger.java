@@ -47,7 +47,7 @@ void drawshop(Player player,int i) {
     if ((level == 1 && i==0 && player.interact==true && someoneIsClose)||p1shopOpen == true) {
         p.fill(255,108,0);
         p.rect(100, 200, (p.width - 900)/2, p.height - 400);
-        //Uncommon Item
+        //Uncommon Item for player 1
         p.fill(108,255,0);
         p.rect(140,340,64,64);
         p.image(unclePic.havregryn,140,340);
@@ -77,7 +77,7 @@ void drawshop(Player player,int i) {
         p.fill(255,108,0);
         p.rect(p.width/2+100, 200, (p.width - 900)/2, p.height - 400);
 
-
+// Uncommon items for player 2
         p.fill(108,255,0);
         p.rect(p.width/2+140,340,64,64);
         p.image(unclePic.havregryn,p.width/2+140,340);
@@ -92,7 +92,7 @@ void drawshop(Player player,int i) {
         p.fill(0);
         p.textSize(18);
         p.text("Uncommen item: ",p.width/2+200,260);
-        //Ability Player 1
+        //Ability Player 2
         p.text("Ability:",p.width/2+480,260);
         p.fill(63,72,204);
         p.rect(p.width/2+507,245,20,20);
