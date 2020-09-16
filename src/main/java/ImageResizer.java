@@ -6,12 +6,16 @@ PApplet p;
 int width;
 int height;
 ImageLoader iL;
+float scaleW =1;
+float scaleH =1;
+
 
     ImageResizer(PApplet p,int width,int height,ImageLoader iL) {
         this.width=width;
         this.height = height;
         this.p=p;
         this.iL = iL;
+
 }
 
 void resize(int var){
@@ -39,6 +43,10 @@ void resize(int var){
                 break;
         }
 
+
+
+    scaleW = (float)width/1920;
+        scaleH = (float)height/1080;
         iL.loadTheImages(var,width,height);
         p.getSurface().setSize(width,height);
 }

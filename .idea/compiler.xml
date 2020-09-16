@@ -6,8 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Duedrengen_The_Videogame" />
         <module name="Duedrengen The Videogame" />
+        <module name="Duedrengen_The_Videogame" />
       </profile>
     </annotationProcessing>
   </component>
