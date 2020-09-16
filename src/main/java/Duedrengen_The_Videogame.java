@@ -3,23 +3,23 @@ import processing.core.PApplet;
 public class Duedrengen_The_Videogame extends PApplet {
     int diameter = 80, speed = 4;
     int level = 0;
-    int dueAmount =2;
+    int dueAmount = 2;
     int enemyAmount = 1;
-    int width=1920;
-    int height =1080;
+    int width = 1920;
+    int height = 1080;
 
 	
     boolean mPressed = false;
     boolean settings = false;
     Player[] p;
-    Enemy[] e;
 
 
     ImageLoader imgLoad = new ImageLoader(this);
     FontLoader fontLoad = new FontLoader(this);
 
     UncleRoger uncleroger = new UncleRoger(this,imgLoad,width/2-32,500, level);
-    Backgrounds backgrounds = new Backgrounds(level, this,imgLoad,fontLoad);
+    Backgrounds backgrounds = new Backgrounds(level, this, imgLoad, fontLoad);
+    Enemy enemy = new Enemy(width/2, height/2, speed, imgLoad, level,this);
 
 
     Button bStart = new Button(this,210,225-10,1,backgrounds);
@@ -40,7 +40,6 @@ public class Duedrengen_The_Videogame extends PApplet {
         fontLoad.loadFonts();
 
         p = new Player[100];
-        e = new Enemy[100];
         frameRate(1000);
 
         ellipseMode(CENTER);
@@ -49,7 +48,7 @@ public class Duedrengen_The_Videogame extends PApplet {
 
 
 
-        for(int i = 0;i<100;i++)
+        for(int i = 0;i < 100; i++)
             p[i] = new Player((int)random(0,1920), (int)random(0,1080), diameter, speed,imgLoad, level,this);
 
     }
@@ -87,9 +86,7 @@ fill(0,0,0);
 
 
 
-        for(int i = 0;i<dueAmount;i++){
-
-
+        for(int i = 0; i < dueAmount; i++){
 
             uncleroger.detectPlayer(p[i]);
             uncleroger.draw(backgrounds.level);
@@ -97,12 +94,12 @@ fill(0,0,0);
             p[i].move();
             p[i].display(backgrounds.level);
 
-
+        }
+        for(int i = 0; i < enemyAmount; i++){
+            enemy.display(backgrounds.level);
+            enemy.move();
         }
         //text(frameRate,500,500);
-        for(int i = 0;i<enemyAmount;i++){
-            //e[i].display();
-        }
         mPressed = false;
     }
 
