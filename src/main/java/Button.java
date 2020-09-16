@@ -10,6 +10,7 @@ public class Button {
     FontLoader fL;
     ImageResizer iR;
     Backgrounds backgrounds;
+
     int currentSize = 1;
     Button(PApplet p, float x, float y,int buttonType,Backgrounds backgrounds,ImageResizer iR){
         this.xPosition = x;
@@ -23,16 +24,23 @@ public class Button {
 
     void draw(int level,boolean settings) {
         if(backgrounds.level==0){
+            float  xNPosition=xPosition*iR.scaleW;
+            float  yNPosition=yPosition*iR.scaleH;
         if (settings) {
-            p.text("Controls", 210, 225);
-            p.text("Resolution", 210, 400);
-            p.text("Back", 210, 575);
+            if(buttonType==1)
+            p.text("Controls", xNPosition, yNPosition);
+            if(buttonType==2)
+            p.text("Resolution", xNPosition, yNPosition);
+            if(buttonType==3)
+            p.text("Back", xNPosition, yNPosition);
         }
         else{
-
-            p.text("Play", 210, 225);
-            p.text("Settings", 210, 400);
-            p.text("Quit", 210, 575);
+            if(buttonType==1)
+            p.text("Play", xNPosition, yNPosition);
+            if(buttonType==2)
+            p.text("Settings", xNPosition, yNPosition);
+            if(buttonType==3)
+            p.text("Quit", xNPosition, yNPosition);
 
         }
 
@@ -41,14 +49,18 @@ public class Button {
     }}
 
     boolean registerClick(boolean mPressed, boolean settings) {
-
-        if (mPressed && p.mouseX < xPosition + width /2 && p.mouseX > xPosition- width /2 && p.mouseY > yPosition- height /2 && p.mouseY < yPosition + height /2) {
+        float  xNPosition=xPosition*iR.scaleW;
+        float  yNPosition=yPosition*iR.scaleH;
+       // p.rect((xNPosition-(width*(iR.scaleW)/2)),(yNPosition - ((height*iR.scaleH) /2)),width,height);
+        if (mPressed && p.mouseX < xNPosition + ((width*iR.scaleW) /2) && p.mouseX > xNPosition- ((width*iR.scaleW) /2) && p.mouseY > yNPosition- ((height*iR.scaleH) /2) && p.mouseY < yNPosition + ((height*iR.scaleH) /2)) {
             switch(buttonType){
 
                 case 1: {
                     if (settings){
                 }
-                    else{backgrounds.level= 1;}
+                    else{
+                        backgrounds.level=1;
+                    }
                     break;
                 }
                 case 2: {

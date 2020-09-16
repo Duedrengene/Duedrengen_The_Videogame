@@ -1,6 +1,8 @@
+//My name is Ichigo Kurosaki, and I am retarded. This is my Bankai, it is also retarted
 import processing.core.PApplet;
 
 import java.awt.*;
+import java.util.ArrayList;
 
 public class Duedrengen_The_Videogame extends PApplet {
     int diameter = 80, speed = 4;
@@ -13,6 +15,7 @@ public class Duedrengen_The_Videogame extends PApplet {
 	
     boolean mPressed = false;
     boolean settings = false;
+
     Player[] p;
     Enemy[] e;
 
@@ -20,9 +23,8 @@ public class Duedrengen_The_Videogame extends PApplet {
     ImageResizer imgResize = new ImageResizer(this,width,height,imgLoad);
     FontLoader fontLoad = new FontLoader(this);
 
-    UncleRoger uncleroger = new UncleRoger(this,imgLoad,width/2-32,height/2-32, level);
-    Backgrounds backgrounds = new Backgrounds(level, this,imgLoad,fontLoad);
-
+    UncleRoger uncleroger;
+    Backgrounds backgrounds = new Backgrounds(level, this,imgLoad,fontLoad,imgResize);
 
     Button bStart = new Button(this,210,225-10,1,backgrounds,imgResize);
     Button bSettings = new Button(this,210,390,2,backgrounds,imgResize);
@@ -41,18 +43,15 @@ public class Duedrengen_The_Videogame extends PApplet {
         imgLoad.loadTheImages(1,width,height);
         fontLoad.loadFonts();
 
-        p = new Player[100];
+        p=new Player[dueAmount];
         e = new Enemy[100];
-        frameRate(1000);
+        frameRate(144);
 
         ellipseMode(CENTER);
         //imgLoad.loadPImage();
 
 
 
-
-        for(int i = 0;i<100;i++)
-            p[i] = new Player((int)random(0,1920), (int)random(0,1080), diameter, speed,imgLoad, level,this);
 
     }
 
@@ -76,13 +75,24 @@ public class Duedrengen_The_Videogame extends PApplet {
 
         //background(0,255,0);
         background(53,101,77);
-        backgrounds.simulate();
+        fill(220, 20, 60);
+        textAlign(CENTER);
+        textFont(fontLoad.titelFont);
+        textSize(84*imgResize.scaleW);
+        if(backgrounds.simulate()){
+            for(int i = 0;i < dueAmount; i++) {
+                p[i] = new Player((int) random(0, 1920), (int) random(0, 1080), speed, imgLoad, level, this, imgResize);
+            }
+            uncleroger = new UncleRoger(this,imgLoad,width/2-32,height/2-32, level,imgResize);
+        }
+        if(uncleroger != null)
         uncleroger.draw(level);
         backgrounds.simulate();
 
 
         textFont(fontLoad.smallTitelFont);
-        textSize(56);
+
+        textSize(56*imgResize.scaleW);
         fill(253, 106, 2);
         //Play
         settings = bStart.registerClick(mPressed,settings);
@@ -96,8 +106,7 @@ public class Duedrengen_The_Videogame extends PApplet {
 
 fill(0,0,0);
 
-
-
+if( p[0] != null)
         for(int i = 0;i<dueAmount;i++){
 
 

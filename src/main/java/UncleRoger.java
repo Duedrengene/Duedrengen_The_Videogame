@@ -10,12 +10,16 @@ public class UncleRoger {
     ImageLoader unclePic;
     int level;
     boolean someoneIsClose;
-UncleRoger(PApplet p,ImageLoader iL,int posX,int posY,int level){
+    ImageResizer iR;
+
+UncleRoger(PApplet p,ImageLoader iL,int posX,int posY,int level,ImageResizer iR){
     this.p = p;
-    this.position.x = posX;
-    this.position.y = posY;
+    this.iR = iR;
+    this.position.x = posX*iR.scaleW;
+    this.position.y = posY*iR.scaleH;
     this.unclePic = iL;
     this.level = level;
+
 }
 
 void draw(int level){
