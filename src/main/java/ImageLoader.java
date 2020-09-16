@@ -14,6 +14,7 @@ public class ImageLoader  {
     PImage Syringe;
     PImage havregryn;
     PImage deathscreen;
+    PImage fjer;
     float scaleW = 1;
     float scaleH = 1;
 ImageLoader(PApplet p){
@@ -38,6 +39,8 @@ void loadTheImages(int var,int w,int h){
     friedrice = p.loadImage("Fried rice (ikke jamie edition).png");
     Syringe = p.loadImage("Syringe stor.png");
     havregryn = p.loadImage("havregryn.png");
+    fjer = p.loadImage("fjer.png");
+
 // Resolution resize.
 
 
@@ -47,14 +50,13 @@ void loadTheImages(int var,int w,int h){
     friedrice.resize((int)(64*scaleW),(int)(64*scaleH));
     Syringe.resize((int)(64*scaleW),(int)(64*scaleH));
     majs.resize((int)(64*scaleW),(int)(64*scaleH));
+    fjer.resize((int)(64*scaleW),(int)(64*scaleH));
     img.resize((int)(64*scaleW),(int)(64*scaleH));
     startup.resize(w,h);
     deathscreen.resize(w,h);
     img.resize((int)(64*scaleW),(int)(64*scaleH));
     uncleRoger.resize((int)(64*scaleW),(int)(64*scaleH));
         }
-
-
 
 
 }

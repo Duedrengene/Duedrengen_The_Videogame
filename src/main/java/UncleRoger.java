@@ -15,6 +15,7 @@ public class UncleRoger {
     boolean someoneIsClose;
     ImageResizer iR;
 
+
 UncleRoger(PApplet p,ImageLoader iL,int posX,int posY,int level,ImageResizer iR){
     this.p = p;
     this.iR = iR;
@@ -28,11 +29,13 @@ UncleRoger(PApplet p,ImageLoader iL,int posX,int posY,int level,ImageResizer iR)
 void draw(int level){
     this.level=level;
     if(level == 1){
+
     p.image(unclePic.uncleRoger,position.x,position.y);
     p.image(unclePic.msg,1780,10);
     p.text(monetos,1855,60);
     if(someoneIsClose==true){
         p.fill(0);
+        p.textSize(18);
         p.text("Want some MSG? (Interact with me)",position.x-20,position.y-20);
     }
 }
@@ -45,13 +48,23 @@ void detectPlayer(Player player){
         someoneIsClose=false;
     }
 }
-
+void lukShop(Player player,int i){
+    if (player.goBackp1 == true && p1shopOpen == true) {
+        p1shopOpen=false;
+    }
+    if (player.goBackp2 == true && p2shopOpen == true) {
+        p2shopOpen=false;
+    }
+    }
 void drawshop(Player player,int i) {
     p.rectMode(p.CORNER);
+
+
     if ((level == 1 && i==0 && player.interact==true && someoneIsClose)||p1shopOpen == true) {
+
         p.fill(255,108,0);
         p.rect(100, 200, (p.width - 900)/2, p.height - 400);
-        //Uncommon Item
+        //Uncommon Item for player 1
         p.fill(108,255,0);
         p.rect(140,340,64,64);
         p.image(unclePic.havregryn,140,340);
@@ -71,17 +84,22 @@ void drawshop(Player player,int i) {
         p.fill(63,72,204);
         p.rect(507,245,20,20);
         p.rect(140,540,64,64);
-        p.image(unclePic.majs,140,540);
+        p.image(unclePic.fjer,134,534);
 
 
 
-        p1shopOpen = true;
+
+
+
+
+
+
     }
     if ((level == 1  && i==1 && player.interact==true && someoneIsClose)||p2shopOpen == true) {
         p.fill(255,108,0);
         p.rect(p.width/2+100, 200, (p.width - 900)/2, p.height - 400);
 
-
+// Uncommon items for player 2
         p.fill(108,255,0);
         p.rect(p.width/2+140,340,64,64);
         p.image(unclePic.havregryn,p.width/2+140,340);
@@ -97,6 +115,8 @@ void drawshop(Player player,int i) {
         p.textSize(18);
         p.text("Uncommon item: ",p.width/2+200,260);
         //Ability Player 1
+        p.text("Uncommen item: ",p.width/2+200,260);
+        //Ability Player 2
         p.text("Ability:",p.width/2+480,260);
         p.fill(63,72,204);
         p.rect(p.width/2+507,245,20,20);
