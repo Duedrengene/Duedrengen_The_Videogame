@@ -22,7 +22,7 @@ public class Button {
     }
 
 
-    void draw(int level,boolean settings) {
+    void draw(int level,boolean settings,Player player) {
         if(backgrounds.level==0){
             float  xNPosition=xPosition*iR.scaleW;
             float  yNPosition=yPosition*iR.scaleH;
@@ -35,6 +35,7 @@ public class Button {
             p.text("Back", xNPosition, yNPosition);
         }
         else{
+
             if(buttonType==1)
             p.text("Play", xNPosition, yNPosition);
             if(buttonType==2)
@@ -42,11 +43,13 @@ public class Button {
             if(buttonType==3)
             p.text("Quit", xNPosition, yNPosition);
 
+
         }
+    }
+        if(player.hp <= 0){
 
-
-
-    }}
+        }
+    }
 
     boolean registerClick(boolean mPressed, boolean settings) {
         float  xNPosition=xPosition*iR.scaleW;

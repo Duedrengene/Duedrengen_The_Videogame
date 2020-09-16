@@ -14,6 +14,7 @@ public class Player {
         float x, y;
         float v;
         int Level;
+		int hp = 2;
         ImageLoader iL;
         PApplet p;
         ImageResizer iR;

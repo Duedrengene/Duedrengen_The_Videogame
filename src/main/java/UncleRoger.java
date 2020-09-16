@@ -2,6 +2,8 @@ import processing.core.PApplet;
 import processing.core.PImage;
 import processing.core.PVector;
 
+import javax.swing.*;
+
 public class UncleRoger {
     PApplet p;
     PVector position = new PVector();
@@ -9,6 +11,7 @@ public class UncleRoger {
     boolean p2shopOpen;
     ImageLoader unclePic;
     int level;
+    int monetos;
     boolean someoneIsClose;
     ImageResizer iR;
 
@@ -26,6 +29,8 @@ void draw(int level){
     this.level=level;
     if(level == 1){
     p.image(unclePic.uncleRoger,position.x,position.y);
+    p.image(unclePic.msg,1780,10);
+    p.text(monetos,1855,60);
     if(someoneIsClose==true){
         p.fill(0);
         p.text("Want some MSG? (Interact with me)",position.x-20,position.y-20);
@@ -45,26 +50,58 @@ void drawshop(Player player,int i) {
     p.rectMode(p.CORNER);
     if ((level == 1 && i==0 && player.interact==true && someoneIsClose)||p1shopOpen == true) {
         p.fill(255,108,0);
-        p.rect(100, 200, (p.width - 400)/2, p.height - 400);
+        p.rect(100, 200, (p.width - 900)/2, p.height - 400);
+        //Uncommon Item
         p.fill(108,255,0);
         p.rect(140,340,64,64);
+        p.image(unclePic.havregryn,140,340);
         p.rect(490,340,64,64);
-        p.rect(140,540,64,64);
+        p.image(unclePic.friedrice,490,350 );
         p.rect(490,540,64,64);
+        p.image(unclePic.msgbull,490,540);
         p.rect(140,740,64,64);
+        p.image(unclePic.Syringe,140,740);
         p.rect(490,740,64,64);
+        p.rect(267,245,20,20);
+        p.fill(0);
+        p.textSize(18);
+        p.text("Uncommen item: ",200,260);
+        //Ability Player 1
+        p.text("Ability:",480,260);
+        p.fill(63,72,204);
+        p.rect(507,245,20,20);
+        p.rect(140,540,64,64);
+        p.image(unclePic.majs,140,540);
+
+
+
         p1shopOpen = true;
     }
     if ((level == 1  && i==1 && player.interact==true && someoneIsClose)||p2shopOpen == true) {
         p.fill(255,108,0);
-        p.rect(p.width/2+100, 200, (p.width - 400)/2, p.height - 400);
+        p.rect(p.width/2+100, 200, (p.width - 900)/2, p.height - 400);
+
+
         p.fill(108,255,0);
         p.rect(p.width/2+140,340,64,64);
+        p.image(unclePic.havregryn,p.width/2+140,340);
         p.rect(p.width/2+490,340,64,64);
-        p.rect(p.width/2+140,540,64,64);
+        p.image(unclePic.friedrice,p.width/2+490,350 );
         p.rect(p.width/2+490,540,64,64);
+        p.image(unclePic.msgbull,p.width/2+490,540);
         p.rect(p.width/2+140,740,64,64);
+        p.image(unclePic.Syringe,p.width/2+140,740);
         p.rect(p.width/2+490,740,64,64);
+        p.rect(p.width/2+267,245,20,20);
+        p.fill(0);
+        p.textSize(18);
+        p.text("Uncommen item: ",p.width/2+200,260);
+        //Ability Player 1
+        p.text("Ability:",p.width/2+480,260);
+        p.fill(63,72,204);
+        p.rect(p.width/2+507,245,20,20);
+        p.rect(p.width/2+140,540,64,64);
+        p.image(unclePic.majs,p.width/2+140,540);
         p2shopOpen = true;
     }
 }

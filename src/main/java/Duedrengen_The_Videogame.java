@@ -7,24 +7,26 @@ import java.util.ArrayList;
 public class Duedrengen_The_Videogame extends PApplet {
     int diameter = 80, speed = 4;
     int level = 0;
-    int dueAmount =2;
+    int dueAmount = 2;
     int enemyAmount = 1;
-    int width=1920;
-    int height =1080;
+    int width = 1920;
+    int height = 1080;
 
 	
     boolean mPressed = false;
     boolean settings = false;
 
     Player[] p;
-    Enemy[] e;
 
     ImageLoader imgLoad = new ImageLoader(this);
     ImageResizer imgResize = new ImageResizer(this,width,height,imgLoad);
     FontLoader fontLoad = new FontLoader(this);
 
+
     UncleRoger uncleroger;
     Backgrounds backgrounds = new Backgrounds(level, this,imgLoad,fontLoad,imgResize);
+    Enemy enemy = new Enemy(width/2, height/2, speed, imgLoad, level,this);
+
 
     Button bStart = new Button(this,210,225-10,1,backgrounds,imgResize);
     Button bSettings = new Button(this,210,390,2,backgrounds,imgResize);
@@ -44,11 +46,12 @@ public class Duedrengen_The_Videogame extends PApplet {
         fontLoad.loadFonts();
 
         p=new Player[dueAmount];
-        e = new Enemy[100];
         frameRate(144);
+
 
         ellipseMode(CENTER);
         //imgLoad.loadPImage();
+
 
 
 
@@ -86,29 +89,34 @@ public class Duedrengen_The_Videogame extends PApplet {
             uncleroger = new UncleRoger(this,imgLoad,width/2-32,height/2-32, level,imgResize);
         }
         if(uncleroger != null)
+if(p[0]!=null)
+        for(int i = 0;i<dueAmount;i++) {
+            backgrounds.simulate(p[i]);
+        }
+
         uncleroger.draw(level);
-        backgrounds.simulate();
 
 
+        for(int i = 0;i<dueAmount;i++){
         textFont(fontLoad.smallTitelFont);
 
         textSize(56*imgResize.scaleW);
         fill(253, 106, 2);
         //Play
         settings = bStart.registerClick(mPressed,settings);
-        bStart.draw(level,settings);
+        bStart.draw(level,settings,p[i]);
         //Settings
         settings = bSettings.registerClick(mPressed,settings);
-        bSettings.draw(level,settings);
+        bSettings.draw(level,settings,p[i]);
         //Quit
         settings = bQuit.registerClick(mPressed,settings);
-        bQuit.draw(level,settings);
+        bQuit.draw(level,settings,p[i]);
 
 fill(0,0,0);
 
+
 if( p[0] != null)
         for(int i = 0;i<dueAmount;i++){
-
 
 
             uncleroger.detectPlayer(p[i]);
@@ -117,12 +125,12 @@ if( p[0] != null)
             p[i].move();
             p[i].display(backgrounds.level);
 
-
+        }
+        for(int i = 0; i < enemyAmount; i++){
+            enemy.display(backgrounds.level);
+            enemy.move();
         }
         //text(frameRate,500,500);
-        for(int i = 0;i<enemyAmount;i++){
-            //e[i].display();
-        }
         mPressed = false;
     }
 
