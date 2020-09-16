@@ -31,8 +31,7 @@ public class Backgrounds {
             p.textAlign(p.CENTER);
             p.textFont(fL.titelFont);
             p.text("You died >:(", 960, 85);
-
-
+            p.fill(0);
         }
         }
 
