@@ -71,7 +71,7 @@ void drawshop(Player player,int i) {
         p.fill(63,72,204);
         p.rect(507,245,20,20);
         p.rect(140,540,64,64);
-        p.image(unclePic.majs,140,540);
+        p.image(unclePic.fjer,134,534);
 
 
 
