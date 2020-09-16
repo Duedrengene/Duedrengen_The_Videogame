@@ -13,6 +13,7 @@ public class ImageLoader  {
     PImage msgbull;
     PImage Syringe;
     PImage havregryn;
+    PImage deathscreen;
     float scaleW = 1;
     float scaleH = 1;
 ImageLoader(PApplet p){
@@ -28,6 +29,7 @@ void loadTheImages(int var,int w,int h){
 
     img = p.loadImage("duedreng.png");
     startup = p.loadImage("pigeon.png");
+    deathscreen = p.loadImage("skuffet due.jpg");
     uncleRoger = p.loadImage("Uncle Roger.png");
     //items.
     msgbull = p.loadImage("msgbull.png");
@@ -38,6 +40,7 @@ void loadTheImages(int var,int w,int h){
     havregryn = p.loadImage("havregryn.png");
 // Resolution resize.
 
+
     msg.resize((int)(64*scaleW),(int)(64*scaleH));
     msgbull.resize((int)(64*scaleW),(int)(64*scaleH));
     havregryn.resize((int)(64*scaleW),(int)(64*scaleH));
@@ -46,6 +49,7 @@ void loadTheImages(int var,int w,int h){
     majs.resize((int)(64*scaleW),(int)(64*scaleH));
     img.resize((int)(64*scaleW),(int)(64*scaleH));
     startup.resize(w,h);
+    deathscreen.resize(w,h);
     img.resize((int)(64*scaleW),(int)(64*scaleH));
     uncleRoger.resize((int)(64*scaleW),(int)(64*scaleH));
         }

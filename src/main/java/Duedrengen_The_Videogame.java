@@ -76,29 +76,31 @@ public class Duedrengen_The_Videogame extends PApplet {
 
         //background(0,255,0);
         background(53,101,77);
-        backgrounds.simulate();
+        for(int i = 0;i<dueAmount;i++) {
+            backgrounds.simulate(p[i]);
+        }
         uncleroger.draw(level);
-        backgrounds.simulate();
 
 
+        for(int i = 0;i<dueAmount;i++){
         textFont(fontLoad.smallTitelFont);
         textSize(56);
         fill(253, 106, 2);
         //Play
         settings = bStart.registerClick(mPressed,settings);
-        bStart.draw(level,settings);
+        bStart.draw(level,settings,p[i]);
         //Settings
         settings = bSettings.registerClick(mPressed,settings);
-        bSettings.draw(level,settings);
+        bSettings.draw(level,settings,p[i]);
         //Quit
         settings = bQuit.registerClick(mPressed,settings);
-        bQuit.draw(level,settings);
+        bQuit.draw(level,settings,p[i]);
 
 fill(0,0,0);
 
 
 
-        for(int i = 0;i<dueAmount;i++){
+
 
 
 
