@@ -22,10 +22,11 @@ public class Button {
     }
 
 
-    void draw(int level,boolean settings) {
+    void draw(int level,boolean settings,boolean gamemOver) {
+        float  xNPosition=xPosition*iR.scaleW;
+        float  yNPosition=yPosition*iR.scaleH;
         if(backgrounds.level==0){
-            float  xNPosition=xPosition*iR.scaleW;
-            float  yNPosition=yPosition*iR.scaleH;
+
         if (settings) {
             if(buttonType==1)
             p.text("Controls", xNPosition, yNPosition);
@@ -45,11 +46,21 @@ public class Button {
 
 
         }
-    }
+    }else if(gamemOver){
+
+            if(buttonType==1)
+                p.text("Play Again", xNPosition, yNPosition);
+            if(buttonType==2)
+                p.text("Main Menu", xNPosition, yNPosition);
+            if(buttonType==3)
+                p.text("Quit", xNPosition, yNPosition);
+
+
+        }
 
     }
 
-    boolean registerClick(boolean mPressed, boolean settings) {
+    boolean registerClick(boolean mPressed, boolean settings,boolean gameOver) {
         float  xNPosition=xPosition*iR.scaleW;
         float  yNPosition=yPosition*iR.scaleH;
        // p.rect((xNPosition-(width*(iR.scaleW)/2)),(yNPosition - ((height*iR.scaleH) /2)),width,height);
@@ -57,21 +68,23 @@ public class Button {
             switch(buttonType){
 
                 case 1: {
-                    if (settings){
+                    if (settings &&backgrounds.level ==0){
                 }
-                    else{
+                    else if(backgrounds.level ==0){
                         backgrounds.level=1;
+                    }else if(gameOver){
+
                     }
                     break;
                 }
                 case 2: {
 
-                    if (settings == false) {
+                    if (settings == false &&backgrounds.level ==0) {
                         settings = true;
 
 
                     }
-                    else{
+                    else if(backgrounds.level == 0){
                         currentSize++;
                         if (currentSize >=4)
                         currentSize =1;
@@ -80,10 +93,15 @@ public class Button {
 
 
                     }
+                    else if(gameOver){
+                        backgrounds.level=0;
+gameOver = false;
+
+                    }
                     break;
                 }
                 case 3: {
-                    if (settings)
+                    if (settings&&backgrounds.level ==0)
                         settings = false;
                     else {
                         p.exit();

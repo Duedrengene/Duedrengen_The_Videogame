@@ -1,18 +1,15 @@
 //My name is Ichigo Kurosaki, and I am retarded. This is my Bankai, it is also retarted
 import processing.core.PApplet;
 
-import java.awt.*;
-import java.util.ArrayList;
-
 public class Duedrengen_The_Videogame extends PApplet {
-    int diameter = 80, speed = 4;
+    int speed = 4;
     int level = 0;
     int dueAmount = 2;
     int enemyAmount = 1;
     int width = 1920;
     int height = 1080;
 
-	
+    boolean gameOver = false;
     boolean mPressed = false;
     boolean settings = false;
 
@@ -90,8 +87,9 @@ public class Duedrengen_The_Videogame extends PApplet {
 
             if (p[0] != null)
                 for (int i = 0; i < dueAmount; i++) {
-                    backgrounds.gameover(p[i]);
+                    gameOver =backgrounds.gameover(p[i]);
                 }
+            if(!gameOver)
         if (uncleroger != null)
         uncleroger.draw(level);
 
@@ -102,18 +100,18 @@ public class Duedrengen_The_Videogame extends PApplet {
             textSize(56 * imgResize.scaleW);
             fill(253, 106, 2);
             //Play
-            settings = bStart.registerClick(mPressed, settings);
-            bStart.draw(level, settings);
+            settings = bStart.registerClick(mPressed, settings,gameOver);
+            bStart.draw(level, settings, gameOver);
             //Settings
-            settings = bSettings.registerClick(mPressed, settings);
-            bSettings.draw(level, settings);
+            settings = bSettings.registerClick(mPressed, settings,gameOver);
+            bSettings.draw(level, settings, gameOver);
             //Quit
-            settings = bQuit.registerClick(mPressed, settings);
-            bQuit.draw(level, settings);
+            settings = bQuit.registerClick(mPressed, settings,gameOver);
+            bQuit.draw(level, settings, gameOver);
 
             fill(0, 0, 0);
 
-
+            if(!gameOver)
             if (p[0] != null)
                 for (int i = 0; i < dueAmount; i++) {
 
@@ -125,6 +123,7 @@ public class Duedrengen_The_Videogame extends PApplet {
                     p[i].display(backgrounds.level);
 
                 }
+        if(!gameOver)
             for (int i = 0; i < enemyAmount; i++) {
                 enemy.display(backgrounds.level);
                 enemy.move();

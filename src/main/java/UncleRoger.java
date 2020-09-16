@@ -65,7 +65,7 @@ void drawshop(Player player,int i) {
         p.rect(267,245,20,20);
         p.fill(0);
         p.textSize(18);
-        p.text("Uncommen item: ",200,260);
+        p.text("Uncommon item: ",200,260);
         //Ability Player 1
         p.text("Ability:",480,260);
         p.fill(63,72,204);
@@ -95,7 +95,7 @@ void drawshop(Player player,int i) {
         p.rect(p.width/2+267,245,20,20);
         p.fill(0);
         p.textSize(18);
-        p.text("Uncommen item: ",p.width/2+200,260);
+        p.text("Uncommon item: ",p.width/2+200,260);
         //Ability Player 1
         p.text("Ability:",p.width/2+480,260);
         p.fill(63,72,204);

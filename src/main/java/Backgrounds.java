@@ -31,18 +31,19 @@ public class Backgrounds {
         return result;
     }
 
-void gameover(Player player){
+boolean gameover(Player player){
     if(player.hp <= 0){
         p.image(iL.deathscreen, 0, 0);
         p.fill(220, 20, 60);
         p.textAlign(p.CENTER);
         p.textFont(fL.titelFont);
-        p.text("You died >:(", 960, 85);
+        p.text("You died <:)", 960, 85);
         p.fill(0);
+        return true;
     }
 
 
-
+return false;
 }
 
 
