@@ -9,6 +9,7 @@ public class UncleRoger {
     boolean p2shopOpen;
     ImageLoader unclePic;
     int level;
+    int monetos;
     boolean someoneIsClose;
 UncleRoger(PApplet p,ImageLoader iL,int posX,int posY,int level){
     this.p = p;
@@ -22,6 +23,8 @@ void draw(int level){
     this.level=level;
     if(level == 1){
     p.image(unclePic.uncleRoger,position.x,position.y);
+    p.image(unclePic.msg,1780,10);
+    p.text(monetos,1855,60);
     if(someoneIsClose==true){
         p.fill(0);
         p.text("Want some MSG? (Interact with me)",position.x-20,position.y-20);

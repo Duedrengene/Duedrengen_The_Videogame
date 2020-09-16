@@ -21,8 +21,8 @@ public class Player {
             y = yy-40;
             d = dd;
             v = vv;
-            this.iL=iL;
-            this.Level=Level;
+            this.iL = iL;
+            this.Level = Level;
             this.p = p;
         }
 
