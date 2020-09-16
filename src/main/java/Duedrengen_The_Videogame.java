@@ -122,6 +122,7 @@ public class Duedrengen_The_Videogame extends PApplet {
 
                     uncleroger.detectPlayer(p[i]);
                     uncleroger.draw(backgrounds.level);
+                    uncleroger.lukShop(p[i],i);
                     uncleroger.drawshop(p[i], i);
                     p[i].move();
                     p[i].display(backgrounds.level);
@@ -139,6 +140,7 @@ public class Duedrengen_The_Videogame extends PApplet {
         for(int i = 0;i<dueAmount;i++){
             p[i].setMove(keyCode, true,i);
             p[i].interact(i,true,keyCode);
+            p[i].goBack(i,true,keyCode);
             println(p[i].interact);
         }
 
@@ -147,6 +149,7 @@ public class Duedrengen_The_Videogame extends PApplet {
     public void keyReleased() {
         for(int i = 0;i<dueAmount;i++){
             p[i].setMove(keyCode, false,i);
+            p[i].goBack(i,false,keyCode);
             p[i].interact(i,false,keyCode);
         }
 

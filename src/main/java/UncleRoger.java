@@ -35,6 +35,7 @@ void draw(int level){
     p.text(monetos,1855,60);
     if(someoneIsClose==true){
         p.fill(0);
+        p.textSize(18);
         p.text("Want some MSG? (Interact with me)",position.x-20,position.y-20);
     }
 }
@@ -47,7 +48,14 @@ void detectPlayer(Player player){
         someoneIsClose=false;
     }
 }
-
+void lukShop(Player player,int i){
+    if (player.goBackp1 == true && p1shopOpen == true) {
+        p1shopOpen=false;
+    }
+    if (player.goBackp2 == true && p2shopOpen == true) {
+        p2shopOpen=false;
+    }
+    }
 void drawshop(Player player,int i) {
     p.rectMode(p.CORNER);
 

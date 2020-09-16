@@ -11,6 +11,7 @@ public class Player {
 
         boolean isLeft, isRight, isUp, isDown;
         boolean interact;
+        boolean goBackp1, goBackp2;
         float x, y;
         float v;
         int Level;
@@ -91,6 +92,7 @@ public class Player {
                 }else return b;
 
         }
+
         boolean interact(int player,boolean b,int k){
             if(player == 0)
                 switch (k) {
@@ -104,6 +106,24 @@ public class Player {
 
                     case +'E':
                         return interact=b;
+                    default:
+                        return b;
+                }else return b;
+        }
+
+        boolean goBack(int player,boolean b,int k){
+            if(player == 0)
+                switch (k) {
+
+                    case +',':
+                        return goBackp1=b;
+                    default:
+                        return b;
+                }else if(player == 1)
+                switch (k) {
+
+                    case +'Q':
+                        return goBackp2=b;
                     default:
                         return b;
                 }else return b;
