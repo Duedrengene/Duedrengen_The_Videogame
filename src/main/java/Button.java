@@ -21,7 +21,7 @@ public class Button {
     }
 
 
-    void draw(int level,boolean settings) {
+    void draw(int level,boolean settings,Player player) {
         if(backgrounds.level==0){
         if (settings) {
             p.text("Controls", 210, 225);
@@ -33,12 +33,12 @@ public class Button {
             p.text("Play", 210, 225);
             p.text("Settings", 210, 400);
             p.text("Quit", 210, 575);
-
         }
-
-
-
-    }}
+    }
+        if(player.hp <= 0){
+            
+        }
+    }
 
     boolean registerClick(boolean mPressed, boolean settings) {
 
