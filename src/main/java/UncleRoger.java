@@ -44,10 +44,15 @@ void drawshop(Player player,int i) {
         p.rect(100, 200, (p.width - 400)/2, p.height - 400);
         p.fill(108,255,0);
         p.rect(140,340,64,64);
+        p.image(unclePic.havregryn,140,340);
         p.rect(490,340,64,64);
+        p.image(unclePic.friedrice,490,350 );
         p.rect(140,540,64,64);
+        p.image(unclePic.majs,140,540);
         p.rect(490,540,64,64);
+        p.image(unclePic.msgbull,490,540);
         p.rect(140,740,64,64);
+        p.image(unclePic.Syringe,140,740);
         p.rect(490,740,64,64);
         p1shopOpen = true;
     }

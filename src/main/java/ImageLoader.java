@@ -37,7 +37,7 @@ void loadTheImages(int var,int w,int h){
     Syringe = p.loadImage("Syringe stor.png");
     havregryn = p.loadImage("havregryn.png");
 // Resolution resize.
-    
+
     msg.resize((int)(64*scaleW),(int)(64*scaleH));
     msgbull.resize((int)(64*scaleW),(int)(64*scaleH));
     havregryn.resize((int)(64*scaleW),(int)(64*scaleH));
