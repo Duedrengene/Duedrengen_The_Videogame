@@ -18,15 +18,16 @@ public class Character {
         float v;
         int Level;
 		int hp = 2;
+		int playerNumber;
 		boolean iShootNow;
         ImageLoader iL;
         PApplet p;
         ImageResizer iR;
 
-        Character(int xx, int yy, int vv, ImageLoader iL, int Level, PApplet p, ImageResizer iR) {
+        Character(int xx, int yy, int vv, ImageLoader iL, int Level, PApplet p, ImageResizer iR,int playerNumber) {
 
 
-
+            this.playerNumber = playerNumber;
             this.iL=iL;
             this.Level=Level;
             this.p = p;
@@ -41,8 +42,10 @@ public class Character {
             //ellipse(x, y, d, d);
             this.Level = level;
             if(this.Level ==1){
-
-                p.image(iL.img,x,y);
+if(playerNumber == 0)
+                p.image(iL.duedreng,x,y);
+else
+                p.image(iL.bulletdue,x,y);
             }
         }
 
