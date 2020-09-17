@@ -114,18 +114,19 @@ public class Duedrengen_The_Videogame extends PApplet {
             fill(0, 0, 0);
 
             if(!gameOver)
-            if (p[0] != null)
+            if (p[0] != null){
                 for (int i = 0; i < dueAmount; i++) {
-
-
                     uncleroger.detectPlayer(p[i]);
                     uncleroger.draw(backgrounds.level);
                     uncleroger.lukShop(p[i]);
-                    uncleroger.drawshop(p[i], i);
+                    uncleroger.drawshop(p[i], i);}
+
+                for (int i = 0; i < dueAmount; i++) {
+
                     p[i].move();
                     p[i].display(backgrounds.level);
 
-                }
+                }}
         if(!gameOver)
             for (int i = 0; i < enemyAmount; i++) {
                 enemy.display(backgrounds.level);
