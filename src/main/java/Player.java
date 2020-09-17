@@ -148,7 +148,7 @@ public class Player {
 
     }
         void colission(Enemy enemy){
-            if (x <= enemy.x + 64*iR.scaleW && x >= enemy.x && y <= enemy.y + 64*iR.scaleH && y >= enemy.y) {
+            if (x*iR.scaleW <= enemy.x*iR.scaleW + 64*iR.scaleW && x*iR.scaleW >= enemy.x*iR.scaleW && y*iR.scaleH <= enemy.y*iR.scaleH + 64*iR.scaleH && y*iR.scaleH >= enemy.y*iR.scaleH) {
                 hp -= 1;
             }
 
