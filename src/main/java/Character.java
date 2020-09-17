@@ -14,6 +14,7 @@ public class Character {
         boolean interact;
         boolean goBackp1, goBackp2;
         boolean shoot;
+        boolean iHaveShot;
         float x, y;
         float v;
         int Level;
@@ -39,13 +40,14 @@ public class Character {
         }
 
         void display(int level) {
-            //ellipse(x, y, d, d);
             this.Level = level;
             if(this.Level ==1){
+
 if(playerNumber == 0)
                 p.image(iL.duedreng,x,y);
 else
                 p.image(iL.bulletdue,x,y);
+
             }
         }
 
