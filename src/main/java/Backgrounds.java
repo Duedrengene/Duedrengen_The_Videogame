@@ -38,8 +38,9 @@ public class Backgrounds {
     }
 
 
-boolean gameover(Player player){
-    if(player.hp <= 0){
+boolean gameover(Character character){
+    if(character.hp <= 0){
+
         p.image(iL.deathscreen, 0, 0);
         p.fill(220, 20, 60);
         p.textAlign(p.CENTER);

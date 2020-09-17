@@ -1,7 +1,6 @@
 
+import javazoom.jl.player.Player;
 import processing.core.PApplet;
-
-import java.util.ArrayList;
 
 public class Duedrengen_The_Videogame extends PApplet {
     int speed = 4;
@@ -10,22 +9,22 @@ public class Duedrengen_The_Videogame extends PApplet {
     int enemyAmount = 1;
     int width = 1920;
     int height = 1080;
-    ArrayList<SpecialMove> specialList = new ArrayList<>();
+
     boolean gameOver = false;
     boolean mPressed = false;
     boolean settings = false;
 
-    Player[] p;
+    Character[] p;
 
     ImageLoader imgLoad = new ImageLoader(this);
     ImageResizer imgResize = new ImageResizer(this,width,height,imgLoad);
-   // SoundLoader soundLoad = new SoundLoader(this,midgame,boss);
+   SoundLoader soundLoad = new SoundLoader(this);
     FontLoader fontLoad = new FontLoader(this);
 
 
     UncleRoger uncleroger;
     Backgrounds backgrounds = new Backgrounds(level, this,imgLoad,fontLoad,imgResize);
-    ArrayList<Enemy> enemyList = new ArrayList<>();
+    Enemy enemy = new Enemy(width/2, height/2, speed, imgLoad, level,this);
 
 
     Button bStart = new Button(this,210,225-10,1,backgrounds,imgResize);
@@ -44,9 +43,9 @@ public class Duedrengen_The_Videogame extends PApplet {
         super.setup();
         imgLoad.loadTheImages(1,width,height);
         fontLoad.loadFonts();
-     //   soundLoad.loadtheSounds();
 
-        p=new Player[dueAmount];
+
+        p=new Character[dueAmount];
         frameRate(144);
 
 
@@ -54,7 +53,7 @@ public class Duedrengen_The_Videogame extends PApplet {
         //imgLoad.loadPImage();
 
 
-    enemyList.add(new Enemy(200,200,-2,imgLoad,this,1));
+
 
 
     }
@@ -75,17 +74,17 @@ public class Duedrengen_The_Videogame extends PApplet {
 
     public void draw() {
 
-
-
+       // soundLoad.playSounds();
+        soundLoad.loadtheSounds();
+        //background(0,255,0);
         background(53, 101, 77);
-
         fill(220, 20, 60);
         textAlign(CENTER);
         textFont(fontLoad.titelFont);
         textSize(84 * imgResize.scaleW);
         if (backgrounds.simulate()) {
             for (int i = 0; i < dueAmount; i++) {
-                p[i] = new Player((int) random(0, 1920), (int) random(0, 1080), speed, imgLoad, level, this, imgResize);
+                p[i] = new Character((int) random(0, 1920), (int) random(0, 1080), speed, imgLoad, level, this, imgResize);
             }
             uncleroger = new UncleRoger(this, imgLoad, width / 2 - 32, height / 2 - 32, level, imgResize);
         }
@@ -131,13 +130,10 @@ public class Duedrengen_The_Videogame extends PApplet {
 
                 }}
         if(!gameOver)
-            for (int i = 0; i < enemyList.size(); i++) {
-                enemyList.get(i).shoot();
-                if(enemyList.get(i).iShootNow==true){}
-                enemyList.get(i).display(backgrounds.level);
-                enemyList.get(i).move();
+            for (int i = 0; i < enemyAmount; i++) {
+                enemy.display(backgrounds.level);
+                enemy.move();
             }
-
             //text(frameRate,500,500);
             mPressed = false;
         }
@@ -154,9 +150,10 @@ public class Duedrengen_The_Videogame extends PApplet {
 
     public void keyReleased() {
         for(int i = 0;i<dueAmount;i++){
+            if(p[0]!=null){
             p[i].setMove(keyCode, false,i);
             p[i].goBack(i,false,keyCode);
-            p[i].interact(i,false,keyCode);
+            p[i].interact(i,false,keyCode);}
         }
 
     }
