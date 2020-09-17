@@ -17,7 +17,7 @@ public class Duedrengen_The_Videogame extends PApplet {
 
     ImageLoader imgLoad = new ImageLoader(this);
     ImageResizer imgResize = new ImageResizer(this,width,height,imgLoad);
-    SoundLoader soundLoad = new SoundLoader(this,midgame,boss);
+   // SoundLoader soundLoad = new SoundLoader(this,midgame,boss);
     FontLoader fontLoad = new FontLoader(this);
 
 
@@ -42,7 +42,7 @@ public class Duedrengen_The_Videogame extends PApplet {
         super.setup();
         imgLoad.loadTheImages(1,width,height);
         fontLoad.loadFonts();
-        soundLoad.loadtheSounds();
+     //   soundLoad.loadtheSounds();
 
         p=new Player[dueAmount];
         frameRate(144);
@@ -120,7 +120,7 @@ public class Duedrengen_The_Videogame extends PApplet {
 
                     uncleroger.detectPlayer(p[i]);
                     uncleroger.draw(backgrounds.level);
-                    uncleroger.lukShop(p[i],i);
+                    uncleroger.lukShop(p[i]);
                     uncleroger.drawshop(p[i], i);
                     p[i].move();
                     p[i].display(backgrounds.level);

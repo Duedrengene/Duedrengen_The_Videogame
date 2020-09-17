@@ -48,7 +48,7 @@ void detectPlayer(Player player){
         someoneIsClose=false;
     }
 }
-void lukShop(Player player,int i){
+void lukShop(Player player){
     if (player.goBackp1 == true && p1shopOpen == true) {
         p1shopOpen=false;
     }
@@ -85,14 +85,7 @@ void drawshop(Player player,int i) {
         p.rect(507,245,20,20);
         p.rect(140,540,64,64);
         p.image(unclePic.fjer,134,534);
-
-
-
-
-
-
-
-
+        p1shopOpen = true;
 
     }
     if ((level == 1  && i==1 && player.interact==true && someoneIsClose)||p2shopOpen == true) {
