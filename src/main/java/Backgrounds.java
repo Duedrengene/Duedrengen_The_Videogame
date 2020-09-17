@@ -27,6 +27,9 @@ public class Backgrounds {
             }else if(playerCreate == false){
             result = true;
             playerCreate = true;
+
+
+
         }
         return result;
 

@@ -4,7 +4,7 @@ import processing.core.PImage;
 public class ImageLoader  {
 
     //Baggrunde
-    PImage city;
+    PImage by;
     PImage startup;
     PImage uncleBaggrund;
 
@@ -37,8 +37,8 @@ void loadTheImages(int var,int w,int h){
     scaleH = (float)h/1080;
 
     img = p.loadImage("duedreng.png");
-    city = p.loadImage("Fatcity.png");
     uncleBaggrund = p.loadImage("UncleBaggrund.png");
+    by = p.loadImage("by.png");
 
     startup = p.loadImage("pigeon.png");
     deathscreen = p.loadImage("skuffet due.jpg");
@@ -70,8 +70,8 @@ void loadTheImages(int var,int w,int h){
     img.resize((int)(64*scaleW),(int)(64*scaleH));
     uncleRoger.resize((int)(64*scaleW),(int)(64*scaleH));
     james.resize((int)(64*scaleW),(int)(64*scaleH));
-    uncleBaggrund.resize((int)(64*scaleW),(int)(64*scaleH));
-    city.resize((int)(64*scaleW),(int)(64*scaleH));
+    uncleBaggrund.resize(w,h);
+    by.resize(w,h);
         }
 
 

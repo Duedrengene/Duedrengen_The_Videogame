@@ -29,7 +29,8 @@ UncleRoger(PApplet p,ImageLoader iL,int posX,int posY,int level,ImageResizer iR)
 void draw(int level){
     this.level=level;
     if(level == 1){
-   // p.image(unclePic.uncleBaggrund,0,0);
+    p.image(unclePic.uncleBaggrund,0,0);
+
     p.image(unclePic.uncleRoger,position.x,position.y);
     p.image(unclePic.msg,1780,10);
     p.text(monetos,1855,60);
@@ -39,6 +40,7 @@ void draw(int level){
         p.text("Want some MSG? (Interact with me)",position.x-20,position.y-20);
     }
 }
+    
 }
 
 void detectPlayer(Player player){

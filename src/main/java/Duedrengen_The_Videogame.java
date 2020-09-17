@@ -76,7 +76,7 @@ public class Duedrengen_The_Videogame extends PApplet {
     public void draw() {
 
 
-        //background(0,255,0);
+
         background(53, 101, 77);
 
         fill(220, 20, 60);
