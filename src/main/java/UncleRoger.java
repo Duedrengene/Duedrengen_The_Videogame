@@ -63,58 +63,58 @@ void drawshop(Player player,int i) {
     if ((level == 1 && i==0 && player.interact==true && someoneIsClose)||p1shopOpen == true) {
 
         p.fill(255,108,0);
-        p.rect(100, 200, (p.width - 900)/2, p.height - 400);
+        p.rect(100*iR.scaleW, 200*iR.scaleH, (1020)/2*iR.scaleW, 680*iR.scaleH);
         //Uncommon Item for player 1
         p.fill(108,255,0);
-        p.rect(140,340,64,64);
-        p.image(unclePic.havregryn,140,340);
-        p.rect(490,340,64,64);
-        p.image(unclePic.friedrice,490,350 );
-        p.rect(490,540,64,64);
-        p.image(unclePic.msgbull,490,540);
-        p.rect(140,740,64,64);
-        p.image(unclePic.Syringe,140,740);
-        p.rect(490,740,64,64);
-        p.rect(267,245,20,20);
+      p.rect(140*iR.scaleW,340*iR.scaleH,64*iR.scaleW,64*iR.scaleH);
+        p.image(unclePic.havregryn,140*iR.scaleW,340*iR.scaleH);
+       p.rect(490*iR.scaleW,340*iR.scaleH,64*iR.scaleW,64*iR.scaleH);
+        p.image(unclePic.friedrice,490*iR.scaleW,350*iR.scaleH );
+        p.rect(490*iR.scaleW,540*iR.scaleH,64*iR.scaleW,64*iR.scaleH);
+        p.image(unclePic.msgbull,490*iR.scaleW,540*iR.scaleH);
+        p.rect(140*iR.scaleW,740*iR.scaleH,64*iR.scaleW,64*iR.scaleH);
+        p.image(unclePic.Syringe,140*iR.scaleW,740*iR.scaleH);
+        p.rect(490*iR.scaleW,740*iR.scaleH,64*iR.scaleW,64*iR.scaleH);
+        p.rect(267*iR.scaleW,245*iR.scaleH,20*iR.scaleW,20*iR.scaleH);
         p.fill(0);
-        p.textSize(18);
-        p.text("Uncommon item: ",200,260);
+        p.textSize(18*iR.scaleW);
+        p.text("Uncommon item: ",200*iR.scaleW,260*iR.scaleH);
         //Ability Player 1
-        p.text("Ability:",480,260);
+        p.text("Ability:",480*iR.scaleW,260*iR.scaleH);
         p.fill(63,72,204);
-        p.rect(507,245,20,20);
-        p.rect(140,540,64,64);
-        p.image(unclePic.fjer,134,534);
+        p.rect(507*iR.scaleW,245*iR.scaleH,20*iR.scaleW,20*iR.scaleH);
+        p.rect(140*iR.scaleW,540*iR.scaleH,64*iR.scaleW,64*iR.scaleH);
+        p.image(unclePic.fjer,134*iR.scaleW,534*iR.scaleH);
         p1shopOpen = true;
 
     }
     if ((level == 1  && i==1 && player.interact==true && someoneIsClose)||p2shopOpen == true) {
         p.fill(255,108,0);
-        p.rect(p.width/2+100, 200, (p.width - 900)/2, p.height - 400);
+        p.rect((1920/2+100)*iR.scaleW, 200*iR.scaleH, ((1920- 900)/2)*iR.scaleW, (1080 - 400)*iR.scaleH);
 
 // Uncommon items for player 2
         p.fill(108,255,0);
-        p.rect(p.width/2+140,340,64,64);
-        p.image(unclePic.havregryn,p.width/2+140,340);
-        p.rect(p.width/2+490,340,64,64);
-        p.image(unclePic.friedrice,p.width/2+490,350 );
-        p.rect(p.width/2+490,540,64,64);
-        p.image(unclePic.msgbull,p.width/2+490,540);
-        p.rect(p.width/2+140,740,64,64);
-        p.image(unclePic.Syringe,p.width/2+140,740);
-        p.rect(p.width/2+490,740,64,64);
-        p.rect(p.width/2+267,245,20,20);
+        p.rect((1920/2+140)*iR.scaleW,340*iR.scaleH,64*iR.scaleW,64*iR.scaleH);
+        p.image(unclePic.havregryn,(1920/2+140)*iR.scaleW,340*iR.scaleH);
+        p.rect((1920/2+490)*iR.scaleW,340*iR.scaleH,64*iR.scaleW,64*iR.scaleH);
+        p.image(unclePic.friedrice,(1920/2+490)*iR.scaleW,350 *iR.scaleH);
+        p.rect((1920/2+490)*iR.scaleW,540*iR.scaleH,64*iR.scaleW,64*iR.scaleH);
+        p.image(unclePic.msgbull,(1920/2+490)*iR.scaleW,540*iR.scaleH);
+        p.rect((1920/2+140)*iR.scaleW,740*iR.scaleH,64*iR.scaleW,64*iR.scaleH);
+        p.image(unclePic.Syringe,(1920/2+140)* iR.scaleW,740* iR.scaleH);
+        p.rect((1920/2+490)*iR.scaleW,740*iR.scaleH,64*iR.scaleW,64*iR.scaleH);
+        p.rect((1920/2+267)* iR.scaleW,245*iR.scaleH,20* iR.scaleW,20* iR.scaleH);
         p.fill(0);
-        p.textSize(18);
-        p.text("Uncommon item: ",p.width/2+200,260);
+        p.textSize(18* iR.scaleW);
+        p.text("Uncommon item: ",(1920/2+200)*iR.scaleW,260*iR.scaleH);
         //Ability Player 1
-        p.text("Uncommen item: ",p.width/2+200,260);
+        p.text("Uncommon item: ",1920/2+200*iR.scaleW,260*iR.scaleH);
         //Ability Player 2
-        p.text("Ability:",p.width/2+480,260);
+        p.text("Ability:",(1920/2+480)*iR.scaleW,260* iR.scaleH);
         p.fill(63,72,204);
-        p.rect(p.width/2+507,245,20,20);
-        p.rect(p.width/2+140,540,64,64);
-        p.image(unclePic.majs,p.width/2+140,540);
+        p.rect((1920/2+507)*iR.scaleW,245*iR.scaleH,20*iR.scaleW,20* iR.scaleH);
+        p.rect((1920/2+140)*iR.scaleW,540*iR.scaleH,64*iR.scaleW,64*iR.scaleH);
+        p.image(unclePic.majs,(1920/2+140)*iR.scaleW,(540*iR.scaleH));
         p2shopOpen = true;
     }
 }
