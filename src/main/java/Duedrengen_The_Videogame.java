@@ -54,7 +54,7 @@ public class Duedrengen_The_Videogame extends PApplet {
         //imgLoad.loadPImage();
 
 
-
+    enemyList.add(new Enemy(200,200,-2,imgLoad,this,1));
 
 
     }
@@ -130,12 +130,13 @@ public class Duedrengen_The_Videogame extends PApplet {
 
                 }}
         if(!gameOver)
-            for (int i = 0; i < enemyAmount; i++) {
+            for (int i = 0; i < enemyList.size(); i++) {
                 enemyList.get(i).shoot();
-                if(enemyList.get(i).iShootNow==true)
-                    enemyList.get(i).display(backgrounds.level);
+                if(enemyList.get(i).iShootNow==true){}
+                enemyList.get(i).display(backgrounds.level);
                 enemyList.get(i).move();
             }
+
             //text(frameRate,500,500);
             mPressed = false;
         }
