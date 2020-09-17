@@ -7,7 +7,8 @@ public class Backgrounds {
     FontLoader fL;
     boolean CharacterCreate = false;
     ImageResizer iR;
-    Backgrounds(int Level, PApplet p,  ImageLoader iL,FontLoader fL,ImageResizer iR) {
+
+    Backgrounds(int Level, PApplet p, ImageLoader iL, FontLoader fL, ImageResizer iR) {
         this.iL = iL;
         this.level = Level;
         this.p = p;
@@ -21,40 +22,39 @@ public class Backgrounds {
 
         if (level == 0) {
             p.image(iL.startup, 0, 0);
-            p.text("Velkommen tilbage Agent Duedreng!", 960*iR.scaleW, 85*iR.scaleH);
+            p.text("Velkommen tilbage Agent Duedreng!", 960 * iR.scaleW, 85 * iR.scaleH);
             p.fill(0);
 
-            }else if(CharacterCreate == false){
+        } else if (CharacterCreate == false) {
             result = true;
             CharacterCreate = true;
-
 
 
         }
         return result;
 
 
-
     }
 
 
-boolean gameover(Character character){
-    if(character.hp <= 0){
-
-        p.image(iL.deathscreen, 0, 0);
-        p.fill(220, 20, 60);
-        p.textAlign(p.CENTER);
-        p.textFont(fL.titelFont);
-        p.text("You died <:)", 960, 85);
-        p.fill(0);
-        return true;
+    boolean gameover(Character character) {
+        if (character.hp <= 0) {
+            return true;
+        }
+        return false;
     }
 
+    void gameoverscreen(boolean gameoverscreen) {
+        if (gameoverscreen) {
+            p.image(iL.deathscreen, 0, 0);
+            p.fill(220, 20, 60);
+            p.textAlign(p.CENTER);
+            p.textFont(fL.titelFont);
+            p.text("You died <:)", 960, 85);
+            p.fill(0);
+        }
 
-return false;
-}
-
-
+    }
 }
 
 

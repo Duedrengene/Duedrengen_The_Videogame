@@ -92,7 +92,12 @@ public class Duedrengen_The_Videogame extends PApplet {
 
             if (p[0] != null)
                 for (int i = 0; i < dueAmount; i++) {
-                    gameOver = backgrounds.gameover(p[i]);
+                    if(!gameOver) {
+                        gameOver = backgrounds.gameover(p[i]);
+                    }
+                    if(gameOver){
+                        backgrounds.gameoverscreen(gameOver);
+                    }
                 }
             if(!gameOver)
         if (uncleroger != null)
@@ -144,7 +149,9 @@ public class Duedrengen_The_Videogame extends PApplet {
                         for(int j = 0;j<enemyList.size();j++){
                             p[i].colission(enemyList.get(j));
                         }
+                        println(p[i].hp);
                     }
+
             }
             //text(frameRate,500,500);
             mPressed = false;
