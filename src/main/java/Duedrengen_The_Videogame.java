@@ -115,7 +115,7 @@ public class Duedrengen_The_Videogame extends PApplet {
                 }
             if(!gameOver)
         if (uncleroger != null)
-        uncleroger.draw(level);
+       // uncleroger.draw(level);
 
 
 
@@ -148,7 +148,7 @@ public class Duedrengen_The_Videogame extends PApplet {
                     p[i].iHaveShot=false;
                     p[i].move();
                     if(p[i].shoot == true){
-                        oatList.add(new Oatmeal(this,p[i].x,p[i].y));
+                        oatList.add(new Oatmeal(this,p[i].x,p[i].y,imgLoad));
                         image(imgLoad.duedrenganimation,p[i].x,p[i].y);
                         p[i].iHaveShot = true;
                     }

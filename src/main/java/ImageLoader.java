@@ -22,6 +22,7 @@ public class ImageLoader  {
     PImage fjer;
     PImage james;
     PImage img;
+    PImage oatmeal;
     //Animation
     PImage bulletdue;
     PImage duedreng;
@@ -62,6 +63,7 @@ void loadTheImages(int var,int w,int h){
     bulletdue = p.loadImage("Bullet due.png");
     duedreng = p.loadImage("duedrengstandard.png");
     duedrenganimation = p.loadImage("duedrenganimation.png");
+    oatmeal = p.loadImage("Oatmeal.png");
 
 
 // Resolution resize.
@@ -84,6 +86,7 @@ void loadTheImages(int var,int w,int h){
     duedreng.resize((int)(64*scaleW),(int)(64*scaleH));
     duedrenganimation.resize((int)(64*scaleW),(int)(64*scaleH));
     uncleBaggrund.resize(w,h);
+    oatmeal.resize((int)(20*scaleW),(int)(16*scaleH));
     by.resize(w,h);
         }
 
