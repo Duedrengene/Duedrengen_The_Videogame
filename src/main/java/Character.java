@@ -8,11 +8,12 @@ import static processing.core.PApplet.constrain;
 import static processing.core.PApplet.round;
 import static processing.core.PConstants.*;
 
-public class Player {
+public class Character {
 
         boolean isLeft, isRight, isUp, isDown;
         boolean interact;
         boolean goBackp1, goBackp2;
+        boolean shootp1, shootp2;
         float x, y;
         float v;
         int Level;
@@ -21,7 +22,7 @@ public class Player {
         PApplet p;
         ImageResizer iR;
 
-        Player(int xx, int yy, int vv,ImageLoader iL,int Level,PApplet p,ImageResizer iR) {
+        Character(int xx, int yy, int vv, ImageLoader iL, int Level, PApplet p, ImageResizer iR) {
 
 
 
@@ -129,9 +130,26 @@ public class Player {
                         return b;
                 }else return b;
         }
-        
+    boolean shoot(int player,boolean b,int k){
+        if(player == 0)
+            switch (k) {
+
+                case + ' ':
+                    return shootp1=b;
+                default:
+                    return b;
+            }else if(player == 1)
+            switch (k) {
+
+                case +'F':
+                    return shootp2=b;
+                default:
+                    return b;
+            }else return b;
+
+    }
         void colission(Enemy enemy){
-            if (x <= enemy.x + 64*iR.scaleW && x >= enemy.x && y <= enemy.y + 64*iR.scaleH && y >= enemy.y) {
+            if (x*iR.scaleW <= enemy.x*iR.scaleW + 64*iR.scaleW && x*iR.scaleW >= enemy.x*iR.scaleW && y*iR.scaleH <= enemy.y*iR.scaleH + 64*iR.scaleH && y*iR.scaleH >= enemy.y*iR.scaleH) {
                 hp -= 1;
             }
 
