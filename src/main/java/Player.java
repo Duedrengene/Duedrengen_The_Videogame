@@ -12,6 +12,7 @@ public class Player {
         boolean isLeft, isRight, isUp, isDown;
         boolean interact;
         boolean goBackp1, goBackp2;
+        boolean shootp1, shootp2;
         float x, y;
         float v;
         int Level;
@@ -128,7 +129,24 @@ public class Player {
                         return b;
                 }else return b;
         }
-        
+    boolean shoot(int player,boolean b,int k){
+        if(player == 0)
+            switch (k) {
+
+                case + ' ':
+                    return shootp1=b;
+                default:
+                    return b;
+            }else if(player == 1)
+            switch (k) {
+
+                case +'F':
+                    return shootp2=b;
+                default:
+                    return b;
+            }else return b;
+
+    }
         void colission(Enemy enemy){
             if (x <= enemy.x + 64*iR.scaleW && x >= enemy.x && y <= enemy.y + 64*iR.scaleH && y >= enemy.y) {
                 hp -= 1;

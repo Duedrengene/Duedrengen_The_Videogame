@@ -155,7 +155,8 @@ public class Duedrengen_The_Videogame extends PApplet {
             p[i].setMove(keyCode, true,i);
             p[i].interact(i,true,keyCode);
             p[i].goBack(i,true,keyCode);
-            println(p[i].interact);
+            p[i].shoot(i,true,keyCode);
+           // println(p[i].interact);
         }
 
     }
@@ -165,6 +166,7 @@ public class Duedrengen_The_Videogame extends PApplet {
             p[i].setMove(keyCode, false,i);
             p[i].goBack(i,false,keyCode);
             p[i].interact(i,false,keyCode);
+            p[i].shoot(i,false,keyCode);
         }
 
     }
