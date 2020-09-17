@@ -3,8 +3,13 @@ import processing.core.PImage;
 
 public class ImageLoader  {
 
-    PImage img;
+    //Baggrunde
+    PImage city;
     PImage startup;
+    PImage uncleBaggrund;
+
+    //items og player modeller.
+
     PApplet p;
     PImage uncleRoger;
     PImage friedrice;
@@ -16,6 +21,8 @@ public class ImageLoader  {
     PImage deathscreen;
     PImage fjer;
     PImage james;
+    PImage img;
+
     float scaleW = 1;
     float scaleH = 1;
 ImageLoader(PApplet p){
@@ -30,6 +37,9 @@ void loadTheImages(int var,int w,int h){
     scaleH = (float)h/1080;
 
     img = p.loadImage("duedreng.png");
+    city = p.loadImage("Fatcity.png");
+    uncleBaggrund = p.loadImage("UncleBaggrund.png");
+
     startup = p.loadImage("pigeon.png");
     deathscreen = p.loadImage("skuffet due.jpg");
     uncleRoger = p.loadImage("Uncle Roger.png");
@@ -60,6 +70,8 @@ void loadTheImages(int var,int w,int h){
     img.resize((int)(64*scaleW),(int)(64*scaleH));
     uncleRoger.resize((int)(64*scaleW),(int)(64*scaleH));
     james.resize((int)(64*scaleW),(int)(64*scaleH));
+    uncleBaggrund.resize((int)(64*scaleW),(int)(64*scaleH));
+    city.resize((int)(64*scaleW),(int)(64*scaleH));
         }
 
 
