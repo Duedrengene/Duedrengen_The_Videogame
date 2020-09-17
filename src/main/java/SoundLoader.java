@@ -25,7 +25,7 @@ public class SoundLoader {
        }
 
     public void  loadtheSounds() {
-        java.io.File file = new java.io.File("C:\\Users\\Michael Bendtsen\\Documents\\GitHub\\New folder\\Duedrengen_The_Videogame\\src\\main\\resources\\midgamefil.mp3");
+        java.io.File file = new java.io.File("src\\main\\resources\\midgamefil.mp3");
 try{
     BufferedInputStream buffer = new BufferedInputStream(
             new FileInputStream(file));
@@ -39,7 +39,7 @@ catch (Exception e){
 public void playSounds(){
 
             try {
-                mp3.play();
+                mp3.play(1);
             } catch (JavaLayerException e) {
                 System.out.println(e);
             }

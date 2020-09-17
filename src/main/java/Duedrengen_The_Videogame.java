@@ -45,7 +45,7 @@ public class Duedrengen_The_Videogame extends PApplet {
         super.setup();
         imgLoad.loadTheImages(1,width,height);
         fontLoad.loadFonts();
-     //   soundLoad.loadtheSounds();
+     soundLoad.loadtheSounds();
 
         p=new Character[dueAmount];
         frameRate(144);
@@ -75,7 +75,7 @@ public class Duedrengen_The_Videogame extends PApplet {
 
 
     public void draw() {
-//soundLoad.playSounds();
+soundLoad.playSounds();
 
         //background(0,255,0);
         background(53, 101, 77);
@@ -164,6 +164,7 @@ public class Duedrengen_The_Videogame extends PApplet {
     }
 
     public void keyReleased() {
+        if(p[0]!= null)
         for(int i = 0;i<dueAmount;i++){
             p[i].setMove(keyCode, false,i);
             p[i].goBack(i,false,keyCode);
