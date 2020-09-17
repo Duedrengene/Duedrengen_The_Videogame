@@ -60,7 +60,7 @@ void loadTheImages(int var,int w,int h){
 
     //Animation
     bulletdue = p.loadImage("Bullet due.png");
-    duedreng = p.loadImage("duedreng.png");
+    duedreng = p.loadImage("duedrengstandard.png");
     duedrenganimation = p.loadImage("duedrenganimation.png");
 
 

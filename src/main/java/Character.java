@@ -38,7 +38,6 @@ public class Character {
         }
 
         void display(int level) {
-            //ellipse(x, y, d, d);
             this.Level = level;
             if(this.Level ==1){
 
