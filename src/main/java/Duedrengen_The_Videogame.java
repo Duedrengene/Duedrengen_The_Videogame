@@ -4,6 +4,14 @@ import processing.core.PApplet;
 import java.util.ArrayList;
 
 public class Duedrengen_The_Videogame extends PApplet {
+
+
+    public static void main(String[] args ) {
+        PApplet.main("Duedrengen_The_Videogame");
+        Thread thread = new Thread();
+        thread.start();
+    }
+
     int speed = 4;
     int level = 0;
     int dueAmount = 2;
@@ -11,6 +19,7 @@ public class Duedrengen_The_Videogame extends PApplet {
     int width = 1920;
     int height = 1080;
     ArrayList<SpecialMove> specialList = new ArrayList<>();
+    ArrayList<Oatmeal> oatList = new ArrayList<>();
     boolean gameOver = false;
     boolean mPressed = false;
     boolean settings = false;
@@ -35,17 +44,14 @@ public class Duedrengen_The_Videogame extends PApplet {
 
 
 
-    public static void main(String[] args ) {
-        PApplet.main("Duedrengen_The_Videogame");
-    }
 
     @Override
     public void setup() {
-        soundLoad.loadtheSounds();
         super.setup();
+        soundLoad.start();
         imgLoad.loadTheImages(1,width,height);
         fontLoad.loadFonts();
-     //   soundLoad.loadtheSounds();
+
 
         p=new Character[dueAmount];
         frameRate(144);
@@ -75,7 +81,15 @@ public class Duedrengen_The_Videogame extends PApplet {
 
 
     public void draw() {
+<<<<<<< HEAD
 //soundLoad.playSounds();
+=======
+
+
+
+        //background(0,255,0);
+        background(53, 101, 77);
+>>>>>>> b01adafae94b2e7d30a20e1da249648f1035e3e4
 
         fill(220, 20, 60);
         textAlign(CENTER);
@@ -132,9 +146,14 @@ public class Duedrengen_The_Videogame extends PApplet {
 
                     p[i].move();
                     p[i].display(backgrounds.level);
-
+                    if(p[i].shoot == true){
+                        oatList.add(new Oatmeal(this,p[i].x,p[i].y));
+                    }
                 }
-
+                for(int i = 0;i<oatList.size();i++){
+                    oatList.get(i).moveOatmeal();
+                    oatList.get(i).drawOatmeal();
+                }
                     for (int i = 0; i < enemyList.size(); i++) {
                         enemyList.get(i).shoot();
                         if (enemyList.get(i).iShootNow == true) {
@@ -153,6 +172,7 @@ public class Duedrengen_The_Videogame extends PApplet {
             }
             //text(frameRate,500,500);
             mPressed = false;
+
         }
 
     public void keyPressed() {
@@ -162,16 +182,19 @@ public class Duedrengen_The_Videogame extends PApplet {
             p[i].setMove(keyCode, true,i);
             p[i].interact(i,true,keyCode);
             p[i].goBack(i,true,keyCode);
+            p[i].shoot(i,true,keyCode);
             println(p[i].interact);
         }
 
     }
 
     public void keyReleased() {
+        if(p[0]!= null)
         for(int i = 0;i<dueAmount;i++){
             p[i].setMove(keyCode, false,i);
             p[i].goBack(i,false,keyCode);
             p[i].interact(i,false,keyCode);
+            p[i].shoot(i,false,keyCode);
         }
 
     }
@@ -181,8 +204,5 @@ public class Duedrengen_The_Videogame extends PApplet {
     public void mousePressed(){
     mPressed = true;
     }
-
-
-
 
 }
