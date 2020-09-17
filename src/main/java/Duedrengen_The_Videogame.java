@@ -81,15 +81,12 @@ public class Duedrengen_The_Videogame extends PApplet {
 
 
     public void draw() {
-<<<<<<< HEAD
+
 //soundLoad.playSounds();
-=======
-
-
 
         //background(0,255,0);
         background(53, 101, 77);
->>>>>>> b01adafae94b2e7d30a20e1da249648f1035e3e4
+
 
         fill(220, 20, 60);
         textAlign(CENTER);
@@ -148,6 +145,7 @@ public class Duedrengen_The_Videogame extends PApplet {
                     p[i].display(backgrounds.level);
                     if(p[i].shoot == true){
                         oatList.add(new Oatmeal(this,p[i].x,p[i].y));
+                        image(imgLoad.duedrenganimation,p[i].x,p[i].y);
                     }
                 }
                 for(int i = 0;i<oatList.size();i++){

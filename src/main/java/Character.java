@@ -42,7 +42,7 @@ public class Character {
             this.Level = level;
             if(this.Level ==1){
 
-                p.image(iL.img,x,y);
+                p.image(iL.duedreng,x,y);
             }
         }
 
