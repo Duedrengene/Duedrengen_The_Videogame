@@ -4,11 +4,14 @@ public class Enemy {
     int x, y;
     int d;
     int Level;
+    int specialMoveRNG;
     ImageLoader iL;
     PApplet p;
+    boolean iShootNow;
+    int type;
 
     // Fungere meget ligesom player, men uden diameter eller random spawn steder.
-    Enemy(int xx, int yy, int dd, ImageLoader iL, int Level, PApplet p) {
+    Enemy(int xx, int yy, int dd, ImageLoader iL, int Level, PApplet p,int type) {
         x = xx;
         x = p.width - 50;
         y = yy;
@@ -17,15 +20,16 @@ public class Enemy {
         this.iL = iL;
         this.Level = Level + 1;
         this.p = p;
+        this.type=type;
     }
 
     //Fremviser enemy sprite på level 2, hvis man ændre this.Level == . ;
     void display(int level) {
         this.Level = level;
         if (this.Level == 1) {
-                p.fill(255);
-                p.ellipse(x, y, d+200, d+200);
-                //Erstat med enemy sprite
+            p.fill(255);
+            p.ellipse(x, y, d + 200, d + 200);
+            //Erstat med enemy sprite
         }
     }
 
@@ -38,6 +42,15 @@ public class Enemy {
                 //y += d;
                 i = 0;
             }
+        }
+    }
+
+    void shoot() {
+        specialMoveRNG = (int) p.random(0, 69);
+        if (specialMoveRNG == 0 && iShootNow == false) {
+            iShootNow = true;
+        } else {
+            iShootNow = false;
         }
     }
 }

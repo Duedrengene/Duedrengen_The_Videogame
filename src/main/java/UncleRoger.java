@@ -118,5 +118,4 @@ void drawshop(Player player,int i) {
         p2shopOpen = true;
     }
 }
-    
 }

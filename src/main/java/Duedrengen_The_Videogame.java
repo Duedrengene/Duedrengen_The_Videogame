@@ -1,6 +1,8 @@
 
 import processing.core.PApplet;
 
+import java.util.ArrayList;
+
 public class Duedrengen_The_Videogame extends PApplet {
     int speed = 4;
     int level = 0;
@@ -8,7 +10,7 @@ public class Duedrengen_The_Videogame extends PApplet {
     int enemyAmount = 1;
     int width = 1920;
     int height = 1080;
-
+    ArrayList<SpecialMove> specialList = new ArrayList<>();
     boolean gameOver = false;
     boolean mPressed = false;
     boolean settings = false;
@@ -23,7 +25,7 @@ public class Duedrengen_The_Videogame extends PApplet {
 
     UncleRoger uncleroger;
     Backgrounds backgrounds = new Backgrounds(level, this,imgLoad,fontLoad,imgResize);
-    Enemy enemy = new Enemy(width/2, height/2, speed, imgLoad, level,this);
+    ArrayList<Enemy> enemyList = new ArrayList<>();
 
 
     Button bStart = new Button(this,210,225-10,1,backgrounds,imgResize);
@@ -129,8 +131,10 @@ public class Duedrengen_The_Videogame extends PApplet {
                 }}
         if(!gameOver)
             for (int i = 0; i < enemyAmount; i++) {
-                enemy.display(backgrounds.level);
-                enemy.move();
+                enemyList.get(i).shoot();
+                if(enemyList.get(i).iShootNow==true)
+                    enemyList.get(i).display(backgrounds.level);
+                enemyList.get(i).move();
             }
             //text(frameRate,500,500);
             mPressed = false;
