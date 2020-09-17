@@ -4,6 +4,14 @@ import processing.core.PApplet;
 import java.util.ArrayList;
 
 public class Duedrengen_The_Videogame extends PApplet {
+
+
+    public static void main(String[] args ) {
+        PApplet.main("Duedrengen_The_Videogame");
+        Thread thread = new Thread();
+        thread.start();
+    }
+
     int speed = 4;
     int level = 0;
     int dueAmount = 2;
@@ -36,17 +44,14 @@ public class Duedrengen_The_Videogame extends PApplet {
 
 
 
-    public static void main(String[] args ) {
-        PApplet.main("Duedrengen_The_Videogame");
-    }
 
     @Override
     public void setup() {
-        soundLoad.loadtheSounds();
         super.setup();
+        soundLoad.start();
         imgLoad.loadTheImages(1,width,height);
         fontLoad.loadFonts();
-     //   soundLoad.loadtheSounds();
+
 
         p=new Character[dueAmount];
         frameRate(144);
@@ -76,7 +81,8 @@ public class Duedrengen_The_Videogame extends PApplet {
 
 
     public void draw() {
-//soundLoad.playSounds();
+
+
 
         //background(0,255,0);
         background(53, 101, 77);
@@ -162,6 +168,7 @@ public class Duedrengen_The_Videogame extends PApplet {
             }
             //text(frameRate,500,500);
             mPressed = false;
+
         }
 
     public void keyPressed() {
@@ -178,6 +185,7 @@ public class Duedrengen_The_Videogame extends PApplet {
     }
 
     public void keyReleased() {
+        if(p[0]!= null)
         for(int i = 0;i<dueAmount;i++){
             p[i].setMove(keyCode, false,i);
             p[i].goBack(i,false,keyCode);
