@@ -145,13 +145,16 @@ public class Duedrengen_The_Videogame extends PApplet {
                 }
 
                 for (int i = 0; i < dueAmount; i++) {
-
+                    p[i].iHaveShot=false;
                     p[i].move();
-                    p[i].display(backgrounds.level);
                     if(p[i].shoot == true){
                         oatList.add(new Oatmeal(this,p[i].x,p[i].y));
                         image(imgLoad.duedrenganimation,p[i].x,p[i].y);
+                        p[i].iHaveShot = true;
                     }
+                    if(!p[i].iHaveShot)
+                    p[i].display(backgrounds.level);
+
                 }
                 for(int i = 0;i<oatList.size();i++){
                     oatList.get(i).moveOatmeal();

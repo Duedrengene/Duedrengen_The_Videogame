@@ -14,6 +14,7 @@ public class Character {
         boolean interact;
         boolean goBackp1, goBackp2;
         boolean shoot;
+        boolean iHaveShot;
         float x, y;
         float v;
         int Level;
