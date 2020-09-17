@@ -61,7 +61,7 @@ public class Duedrengen_The_Videogame extends PApplet {
         //imgLoad.loadPImage();
 
 
-    enemyList.add(new Enemy(200,200,-2,imgLoad,this,1));
+
 
 
     }
@@ -84,6 +84,10 @@ public class Duedrengen_The_Videogame extends PApplet {
 
 //soundLoad.playSounds();
 
+
+
+
+
         //background(0,255,0);
         background(53, 101, 77);
 
@@ -96,6 +100,7 @@ public class Duedrengen_The_Videogame extends PApplet {
             for (int i = 0; i < dueAmount; i++) {
                 p[i] = new Character((int) random(0, 1920), (int) random(0, 1080), speed, imgLoad, level, this, imgResize);
             }
+            enemyList.add(new Enemy(200*imgResize.scaleW,200*imgResize.scaleH,-2*imgResize.scaleW,imgLoad,this,1));
             uncleroger = new UncleRoger(this, imgLoad, width / 2 - 32, height / 2 - 32, level, imgResize);
         }
 
