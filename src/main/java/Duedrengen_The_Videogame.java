@@ -81,15 +81,15 @@ public class Duedrengen_The_Videogame extends PApplet {
 
 
     public void draw() {
-<<<<<<< HEAD
+
 //soundLoad.playSounds();
-=======
+
 
 
 
         //background(0,255,0);
         background(53, 101, 77);
->>>>>>> b01adafae94b2e7d30a20e1da249648f1035e3e4
+
 
         fill(220, 20, 60);
         textAlign(CENTER);
