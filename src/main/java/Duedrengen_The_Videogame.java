@@ -15,7 +15,7 @@ public class Duedrengen_The_Videogame extends PApplet {
     boolean mPressed = false;
     boolean settings = false;
 
-    Player[] p;
+    Character[] p;
 
     ImageLoader imgLoad = new ImageLoader(this);
     ImageResizer imgResize = new ImageResizer(this,width,height,imgLoad);
@@ -46,7 +46,7 @@ public class Duedrengen_The_Videogame extends PApplet {
         fontLoad.loadFonts();
      //   soundLoad.loadtheSounds();
 
-        p=new Player[dueAmount];
+        p=new Character[dueAmount];
         frameRate(144);
 
 
@@ -85,7 +85,7 @@ public class Duedrengen_The_Videogame extends PApplet {
         textSize(84 * imgResize.scaleW);
         if (backgrounds.simulate()) {
             for (int i = 0; i < dueAmount; i++) {
-                p[i] = new Player((int) random(0, 1920), (int) random(0, 1080), speed, imgLoad, level, this, imgResize);
+                p[i] = new Character((int) random(0, 1920), (int) random(0, 1080), speed, imgLoad, level, this, imgResize);
             }
             uncleroger = new UncleRoger(this, imgLoad, width / 2 - 32, height / 2 - 32, level, imgResize);
         }
@@ -119,7 +119,7 @@ public class Duedrengen_The_Videogame extends PApplet {
             if(!gameOver)
             if (p[0] != null) {
                 for (int i = 0; i < dueAmount; i++) {
-                    uncleroger.detectPlayer(p[i]);
+                    uncleroger.detectCharacter(p[i]);
                     uncleroger.draw(backgrounds.level);
                     uncleroger.lukShop(p[i]);
                     uncleroger.drawshop(p[i], i);

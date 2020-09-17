@@ -5,7 +5,7 @@ public class Backgrounds {
     int level;
     ImageLoader iL;
     FontLoader fL;
-    boolean playerCreate = false;
+    boolean CharacterCreate = false;
     ImageResizer iR;
     Backgrounds(int Level, PApplet p,  ImageLoader iL,FontLoader fL,ImageResizer iR) {
         this.iL = iL;
@@ -24,9 +24,9 @@ public class Backgrounds {
             p.text("Velkommen tilbage Agent Duedreng!", 960*iR.scaleW, 85*iR.scaleH);
             p.fill(0);
 
-            }else if(playerCreate == false){
+            }else if(CharacterCreate == false){
             result = true;
-            playerCreate = true;
+            CharacterCreate = true;
 
 
 

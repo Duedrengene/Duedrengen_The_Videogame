@@ -40,7 +40,7 @@ void draw(int level){
     
 }
 
-void detectPlayer(Character character){
+void detectCharacter(Character character){
     if(position.x-20<= character.x+64 && position.x+80> character.x&&position.y-20<= character.y+64 && position.y+80> character.y){
         someoneIsClose = true;
     }else{
