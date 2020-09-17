@@ -92,7 +92,7 @@ public class Duedrengen_The_Videogame extends PApplet {
 
             if (p[0] != null)
                 for (int i = 0; i < dueAmount; i++) {
-                    gameOver =backgrounds.gameover(p[i]);
+                    gameOver = backgrounds.gameover(p[i]);
                 }
             if(!gameOver)
         if (uncleroger != null)

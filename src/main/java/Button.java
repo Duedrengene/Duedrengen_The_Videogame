@@ -94,7 +94,8 @@ public class Button {
 
                     }
                     else if(gameOver){
-                        backgrounds.level=0;
+                        backgrounds.level = 0;
+
 gameOver = false;
 
                     }

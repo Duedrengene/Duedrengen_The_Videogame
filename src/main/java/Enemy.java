@@ -34,7 +34,6 @@ public class Enemy {
             if(type == 2){
 
             }
-            //Erstat med enemy sprite
         }
     }
 
