@@ -22,6 +22,10 @@ public class ImageLoader  {
     PImage fjer;
     PImage james;
     PImage img;
+    //Animation
+    PImage bulletdue;
+    PImage duedreng;
+    PImage duedrenganimation;
 
     float scaleW = 1;
     float scaleH = 1;
@@ -54,6 +58,12 @@ void loadTheImages(int var,int w,int h){
     //enemies.
     james = p.loadImage("spr_JamesOliver.png");
 
+    //Animation
+    bulletdue = p.loadImage("Bullet due.png");
+    duedreng = p.loadImage("duedreng.png");
+    duedrenganimation = p.loadImage("duedrenganimation.png");
+
+
 // Resolution resize.
 
 
@@ -70,6 +80,9 @@ void loadTheImages(int var,int w,int h){
     img.resize((int)(64*scaleW),(int)(64*scaleH));
     uncleRoger.resize((int)(64*scaleW),(int)(64*scaleH));
     james.resize((int)(64*scaleW),(int)(64*scaleH));
+    bulletdue.resize((int)(64*scaleW),(int)(64*scaleH));
+    duedreng.resize((int)(64*scaleW),(int)(64*scaleH));
+    duedrenganimation.resize((int)(64*scaleW),(int)(64*scaleH));
     uncleBaggrund.resize(w,h);
     by.resize(w,h);
         }

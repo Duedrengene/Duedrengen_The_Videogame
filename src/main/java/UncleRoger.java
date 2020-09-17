@@ -30,6 +30,7 @@ void draw(int level){
 
     p.image(unclePic.uncleRoger,position.x,position.y);
     p.image(unclePic.msg,1780,10);
+    p.textSize(18);
     p.text(monetos,1855,60);
     if(someoneIsClose==true){
         p.fill(0);

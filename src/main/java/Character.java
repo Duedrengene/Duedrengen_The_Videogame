@@ -13,11 +13,12 @@ public class Character {
         boolean isLeft, isRight, isUp, isDown;
         boolean interact;
         boolean goBackp1, goBackp2;
-        boolean shootp1, shootp2;
+        boolean shoot;
         float x, y;
         float v;
         int Level;
 		int hp = 2;
+		boolean iShootNow;
         ImageLoader iL;
         PApplet p;
         ImageResizer iR;
@@ -135,14 +136,14 @@ public class Character {
             switch (k) {
 
                 case + ' ':
-                    return shootp1=b;
+                    return shoot=b;
                 default:
                     return b;
             }else if(player == 1)
             switch (k) {
 
                 case +'F':
-                    return shootp2=b;
+                    return shoot=b;
                 default:
                     return b;
             }else return b;
@@ -155,6 +156,8 @@ public class Character {
 
 
         }
+
+
 
     }
 
