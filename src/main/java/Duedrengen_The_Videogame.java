@@ -76,7 +76,7 @@ public class Duedrengen_The_Videogame extends PApplet {
 
     public void draw() {
 //soundLoad.playSounds();
-        
+
         fill(220, 20, 60);
         textAlign(CENTER);
         textFont(fontLoad.titelFont);
