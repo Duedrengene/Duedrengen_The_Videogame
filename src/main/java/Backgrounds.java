@@ -50,7 +50,7 @@ public class Backgrounds {
             p.fill(220, 20, 60);
             p.textAlign(p.CENTER);
             p.textFont(fL.titelFont);
-            p.text("You died <:)", 960, 85);
+            p.text("You died <:)", 960*iR.scaleW, 85*iR.scaleH);
             p.fill(0);
         }
 

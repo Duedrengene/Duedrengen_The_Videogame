@@ -1,8 +1,8 @@
 import processing.core.PApplet;
 
 public class Enemy {
-    int x, y;
-    int speed;
+    float x, y;
+    float speed;
     int level;
     int specialMoveRNG;
     ImageLoader iL;
@@ -11,7 +11,7 @@ public class Enemy {
     int type;
 
     // Fungere meget ligesom player, men uden diameter eller random spawn steder.
-    Enemy(int xx, int yy, int dd, ImageLoader iL, PApplet p,int type) {
+    Enemy(float xx, float yy, float dd, ImageLoader iL, PApplet p,int type) {
         x = xx;
         x = p.width - 50;
         y = yy;
@@ -38,7 +38,7 @@ public class Enemy {
     }
 
     void move() { //Skal gøres langsomere og fås til at muligvis hoppe i intervaler.
-        int r = speed >> 1;
+        int r = (int)speed >> 1;
         if (level == 1) {
             for (int i = 0; i < 1; i++) {
                 x = p.constrain(x, r, p.width - r); //siden

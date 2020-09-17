@@ -41,7 +41,7 @@ public class Character {
             this.Level = level;
             if(this.Level ==1){
 
-                p.image(iL.img,x,y);
+                p.image(iL.duedreng,x,y);
             }
         }
 
@@ -149,7 +149,7 @@ public class Character {
 
     }
         void colission(Enemy enemy){
-            if (x*iR.scaleW <= enemy.x*iR.scaleW + 64*iR.scaleW && x*iR.scaleW >= enemy.x*iR.scaleW && y*iR.scaleH <= enemy.y*iR.scaleH + 64*iR.scaleH && y*iR.scaleH >= enemy.y*iR.scaleH) {
+            if (x <= enemy.x + 64 && x >= enemy.x && y <= enemy.y + 64 && y >= enemy.y) {
                 hp -= 1;
             }
 
