@@ -19,7 +19,7 @@ public class Duedrengen_The_Videogame extends PApplet {
 
     ImageLoader imgLoad = new ImageLoader(this);
     ImageResizer imgResize = new ImageResizer(this,width,height,imgLoad);
-   // SoundLoader soundLoad = new SoundLoader(this,midgame,boss);
+    SoundLoader soundLoad = new SoundLoader(this);
     FontLoader fontLoad = new FontLoader(this);
 
 
@@ -41,6 +41,7 @@ public class Duedrengen_The_Videogame extends PApplet {
 
     @Override
     public void setup() {
+        soundLoad.loadtheSounds();
         super.setup();
         imgLoad.loadTheImages(1,width,height);
         fontLoad.loadFonts();
@@ -74,7 +75,7 @@ public class Duedrengen_The_Videogame extends PApplet {
 
 
     public void draw() {
-
+//soundLoad.playSounds();
 
         //background(0,255,0);
         background(53, 101, 77);
@@ -151,7 +152,9 @@ public class Duedrengen_The_Videogame extends PApplet {
         }
 
     public void keyPressed() {
+        if(p[0]!= null)
         for(int i = 0;i<dueAmount;i++){
+
             p[i].setMove(keyCode, true,i);
             p[i].interact(i,true,keyCode);
             p[i].goBack(i,true,keyCode);
