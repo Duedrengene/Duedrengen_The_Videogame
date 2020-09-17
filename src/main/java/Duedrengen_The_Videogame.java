@@ -1,4 +1,5 @@
 
+import javazoom.jl.player.Player;
 import processing.core.PApplet;
 
 public class Duedrengen_The_Videogame extends PApplet {
@@ -13,11 +14,11 @@ public class Duedrengen_The_Videogame extends PApplet {
     boolean mPressed = false;
     boolean settings = false;
 
-    Player[] p;
+    Character[] p;
 
     ImageLoader imgLoad = new ImageLoader(this);
     ImageResizer imgResize = new ImageResizer(this,width,height,imgLoad);
-   // SoundLoader soundLoad = new SoundLoader(this,midgame,boss);
+   SoundLoader soundLoad = new SoundLoader(this);
     FontLoader fontLoad = new FontLoader(this);
 
 
@@ -42,9 +43,9 @@ public class Duedrengen_The_Videogame extends PApplet {
         super.setup();
         imgLoad.loadTheImages(1,width,height);
         fontLoad.loadFonts();
-     //   soundLoad.loadtheSounds();
 
-        p=new Player[dueAmount];
+
+        p=new Character[dueAmount];
         frameRate(144);
 
 
@@ -73,7 +74,8 @@ public class Duedrengen_The_Videogame extends PApplet {
 
     public void draw() {
 
-
+       // soundLoad.playSounds();
+        soundLoad.loadtheSounds();
         //background(0,255,0);
         background(53, 101, 77);
         fill(220, 20, 60);
@@ -82,7 +84,7 @@ public class Duedrengen_The_Videogame extends PApplet {
         textSize(84 * imgResize.scaleW);
         if (backgrounds.simulate()) {
             for (int i = 0; i < dueAmount; i++) {
-                p[i] = new Player((int) random(0, 1920), (int) random(0, 1080), speed, imgLoad, level, this, imgResize);
+                p[i] = new Character((int) random(0, 1920), (int) random(0, 1080), speed, imgLoad, level, this, imgResize);
             }
             uncleroger = new UncleRoger(this, imgLoad, width / 2 - 32, height / 2 - 32, level, imgResize);
         }
@@ -148,9 +150,10 @@ public class Duedrengen_The_Videogame extends PApplet {
 
     public void keyReleased() {
         for(int i = 0;i<dueAmount;i++){
+            if(p[0]!=null){
             p[i].setMove(keyCode, false,i);
             p[i].goBack(i,false,keyCode);
-            p[i].interact(i,false,keyCode);
+            p[i].interact(i,false,keyCode);}
         }
 
     }

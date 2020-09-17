@@ -1,8 +1,5 @@
 import processing.core.PApplet;
-import processing.core.PImage;
 import processing.core.PVector;
-
-import javax.swing.*;
 
 public class UncleRoger {
     PApplet p;
@@ -41,26 +38,26 @@ void draw(int level){
 }
 }
 
-void detectPlayer(Player player){
-    if(position.x-20<=player.x+64 && position.x+80>player.x&&position.y-20<=player.y+64 && position.y+80>player.y){
+void detectPlayer(Character character){
+    if(position.x-20<= character.x+64 && position.x+80> character.x&&position.y-20<= character.y+64 && position.y+80> character.y){
         someoneIsClose = true;
     }else{
         someoneIsClose=false;
     }
 }
-void lukShop(Player player){
-    if (player.goBackp1 == true && p1shopOpen == true) {
+void lukShop(Character character){
+    if (character.goBackp1 == true && p1shopOpen == true) {
         p1shopOpen=false;
     }
-    if (player.goBackp2 == true && p2shopOpen == true) {
+    if (character.goBackp2 == true && p2shopOpen == true) {
         p2shopOpen=false;
     }
     }
-void drawshop(Player player,int i) {
+void drawshop(Character character, int i) {
     p.rectMode(p.CORNER);
 
 
-    if ((level == 1 && i==0 && player.interact==true && someoneIsClose)||p1shopOpen == true) {
+    if ((level == 1 && i==0 && character.interact==true && someoneIsClose)||p1shopOpen == true) {
 
         p.fill(255,108,0);
         p.rect(100*iR.scaleW, 200*iR.scaleH, (1020)/2*iR.scaleW, 680*iR.scaleH);
@@ -88,7 +85,7 @@ void drawshop(Player player,int i) {
         p1shopOpen = true;
 
     }
-    if ((level == 1  && i==1 && player.interact==true && someoneIsClose)||p2shopOpen == true) {
+    if ((level == 1  && i==1 && character.interact==true && someoneIsClose)||p2shopOpen == true) {
         p.fill(255,108,0);
         p.rect((1920/2+100)*iR.scaleW, 200*iR.scaleH, ((1920- 900)/2)*iR.scaleW, (1080 - 400)*iR.scaleH);
 

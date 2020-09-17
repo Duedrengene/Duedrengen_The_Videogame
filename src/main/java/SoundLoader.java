@@ -1,23 +1,52 @@
+import javazoom.jl.player.Player;
 import processing.core.PApplet;
-import javax.sound.sampled.AudioFormat;
+
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
+
 
 public class SoundLoader {
-  //  PApplet p;
+    String filename = "midgamefil.mp3";
+    PApplet p;
+
+
+    Player mp3;
+
+
+    SoundLoader(PApplet p) {
+        this.p = p;
 
 
 
-    //SoundLoader(PApplet p,SoundLoader midgame, SoundLoader boss) {
-      //  this.p=p;
-     //this.boss=boss;
-     //this.midgame=midgame;
+       }
 
-
-       // }
-
-   // public void loadtheSounds() {
-    //midgame = new SoundLoader(this,"midgamefil.mp3");
-
-    //}
+    public void  loadtheSounds() {
+//File()
+try{
+    BufferedInputStream buffer = new BufferedInputStream(
+            new FileInputStream(filename));
+    mp3 = new Player(buffer);
+    mp3.play();
 }
+catch (Exception e){
+    System.out.println(e);
+}
+
+}
+
+
+
+public void playSounds(){
+
+
+    }
+
+    }
+
+
+
+
+
+
 
 

@@ -7,7 +7,7 @@ import static processing.core.PApplet.constrain;
 import static processing.core.PApplet.round;
 import static processing.core.PConstants.*;
 
-public class Player {
+public class Character {
 
         boolean isLeft, isRight, isUp, isDown;
         boolean interact;
@@ -20,7 +20,7 @@ public class Player {
         PApplet p;
         ImageResizer iR;
 
-        Player(int xx, int yy, int vv,ImageLoader iL,int Level,PApplet p,ImageResizer iR) {
+        Character(int xx, int yy, int vv, ImageLoader iL, int Level, PApplet p, ImageResizer iR) {
 
 
 
