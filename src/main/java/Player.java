@@ -97,7 +97,7 @@ public class Player {
             if(player == 0)
                 switch (k) {
 
-                    case +'M':
+                    case + 'M' :
                         return interact=b;
                     default:
                         return b;
@@ -127,6 +127,14 @@ public class Player {
                     default:
                         return b;
                 }else return b;
+        }
+        
+        void colission(Enemy enemy){
+            if (x <= enemy.x + 64*iR.scaleW && x >= enemy.x && y <= enemy.y + 64*iR.scaleH && y >= enemy.y) {
+                hp -= 1;
+            }
+
+
         }
     }
 
