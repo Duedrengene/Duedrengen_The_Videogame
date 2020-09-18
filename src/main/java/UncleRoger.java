@@ -68,6 +68,7 @@ void drawshop(Character character, int i) {
         p.rect(100*iR.scaleW, 200*iR.scaleH, (1020)/2*iR.scaleW, 680*iR.scaleH);
         //Uncommon Item for player 1
         p.fill(108,255,0);
+
       p.rect(140*iR.scaleW,340*iR.scaleH,64*iR.scaleW,64*iR.scaleH);//
         p.image(unclePic.havregryn,140*iR.scaleW,340*iR.scaleH);
        p.rect(490*iR.scaleW,340*iR.scaleH,64*iR.scaleW,64*iR.scaleH);//
@@ -102,7 +103,7 @@ void drawshop(Character character, int i) {
         p.rect((1920/2+140)*iR.scaleW,340*iR.scaleH,64*iR.scaleW,64*iR.scaleH);
         p.image(unclePic.havregryn,(1920/2+140)*iR.scaleW,340*iR.scaleH);
         p.rect((1920/2+490)*iR.scaleW,340*iR.scaleH,64*iR.scaleW,64*iR.scaleH);
-        p.image(unclePic.friedrice,(1920/2+490)*iR.scaleW,350 *iR.scaleH);
+        p.image(unclePic.friedrice,(1920/2+490)*iR.scaleW,340 *iR.scaleH);
         p.rect((1920/2+490)*iR.scaleW,540*iR.scaleH,64*iR.scaleW,64*iR.scaleH);
         p.image(unclePic.msgbull,(1920/2+490)*iR.scaleW,540*iR.scaleH);
         p.rect((1920/2+140)*iR.scaleW,740*iR.scaleH,64*iR.scaleW,64*iR.scaleH);
