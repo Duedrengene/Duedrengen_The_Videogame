@@ -1,5 +1,7 @@
 import processing.core.PApplet;
 
+import java.util.ArrayList;
+
 public class Enemy {
     float x, y;
     float speed;
@@ -56,6 +58,11 @@ public class Enemy {
             iShootNow = true;
         } else {
             iShootNow = false;
+        }
+    }
+    void imDead(ArrayList<Enemy> list,int i){
+        if(hp<=0){
+            list.remove(i);
         }
     }
 }
