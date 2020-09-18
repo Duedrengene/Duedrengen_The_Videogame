@@ -132,9 +132,9 @@ public class Duedrengen_The_Videogame extends PApplet {
                 for (int i = 0; i < dueAmount; i++) {
                     p[i].iHaveShot = false;
                     p[i].move();
-                    if (p[i].shoot == true && oatListp1.size() <= p[i].shotAmount) {
+                    if (p[i].shoot == true && oatListp1.size() <= p[i].shotAmount && i==0) {
 
-                        oatListp1.add(new Oatmeal(this, p[i].location.x, p[i].location.y, imgLoad, imgResize, backgrounds));
+                        oatListp1.add(new Oatmeal(this, p[i].location.x, p[i].location.y, imgLoad, imgResize, backgrounds,0));
                         if (i == 0)
                             image(imgLoad.duedrenganimation, p[i].location.x, p[i].location.y);
                         if (i == 1)
@@ -143,7 +143,7 @@ public class Duedrengen_The_Videogame extends PApplet {
                     }
                     if (p[i].shoot == true && oatListp2.size() <= p[i].shotAmount && i == 1) {
 
-                        oatListp2.add(new Oatmeal(this, p[i].location.x, p[i].location.y, imgLoad, imgResize, backgrounds));
+                        oatListp2.add(new Oatmeal(this, p[i].location.x, p[i].location.y, imgLoad, imgResize, backgrounds,1));
                         if (i == 0)
                             image(imgLoad.duedrenganimation, p[i].location.x, p[i].location.y);
                         if (i == 1)
@@ -163,7 +163,7 @@ public class Duedrengen_The_Videogame extends PApplet {
                         alreadyRemoved=true;}
                     for(int j = 0;j<enemyList.size();j++){
                         if(!alreadyRemoved)
-                            oatListp1.get(i).hit(oatListp1,enemyList.get(j),i,uncleroger);
+                            oatListp1.get(i).hit(oatListp1,enemyList.get(j),i);
 
                     
 
@@ -181,7 +181,7 @@ public class Duedrengen_The_Videogame extends PApplet {
                         alreadyRemoved=true;}
                     for(int j = 0;j<enemyList.size();j++){
                         if(!alreadyRemoved)
-                        oatListp2.get(i).hit(oatListp2,enemyList.get(j),i,uncleroger);
+                        oatListp2.get(i).hit(oatListp2,enemyList.get(j),i);
 
 
 
