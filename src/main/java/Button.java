@@ -56,7 +56,7 @@ public class Button {
         float xNPosition = xPosition * iR.scaleW;
         float yNPosition = yPosition * iR.scaleH;
         // p.rect((xNPosition-(width*(iR.scaleW)/2)),(yNPosition - ((height*iR.scaleH) /2)),width,height);
-      //  if()
+     if(backgrounds.level==0||gameOver==true)
         if (mPressed && p.mouseX < xNPosition + ((width * iR.scaleW) / 2) && p.mouseX > xNPosition - ((width * iR.scaleW) / 2) && p.mouseY > yNPosition - ((height * iR.scaleH) / 2) && p.mouseY < yNPosition + ((height * iR.scaleH) / 2)) {
             switch (buttonType) {
                 case 1: {
