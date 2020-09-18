@@ -28,7 +28,7 @@ public class SoundLoader extends Thread {
             mp3 = new Player(buffer);
             mp3.play();
         } catch (Exception e) {
-            System.out.println(e);
+            //System.out.println(e);
         }
     }
 
@@ -36,7 +36,7 @@ public class SoundLoader extends Thread {
         try {
             mp3.play(0);
         } catch (JavaLayerException e) {
-            System.out.println(e);
+            //System.out.println(e);
         }
 
     }
