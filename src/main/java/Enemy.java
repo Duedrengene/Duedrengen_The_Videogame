@@ -18,7 +18,6 @@ public class Enemy {
         x = xx;
         x = p.width - 50;
         y = yy;
-        y = p.height / 2;
         speed = dd;
         this.iL = iL;
 
