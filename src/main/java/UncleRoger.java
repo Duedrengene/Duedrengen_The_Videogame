@@ -10,7 +10,7 @@ public class UncleRoger {
     boolean p2shopOpen;
     ImageLoader unclePic;
     int level;
-    int monetos;
+
     boolean someoneIsClose;
     ImageResizer iR;
 
@@ -31,9 +31,9 @@ void draw(int level){
     if(level != 0){
     p.image(unclePic.uncleRoger,position.x,position.y);
 
-    p.image(unclePic.msg,1780*iR.scaleW,10*iR.scaleH);
+
     p.textSize(18);
-    p.text(monetos,1855*iR.scaleW,60*iR.scaleH);
+
     if(someoneIsClose==true){
         p.fill(0);
         p.textSize(18);
@@ -81,7 +81,7 @@ void drawshop(Character character, int i) {
 
         p.fill(0);
         p.textSize(30*iR.scaleW);
-        p.text("Uncel Rogers Shop",345*iR.scaleW,240*iR.scaleH);
+        p.text("Uncle Rogers Shop",345*iR.scaleW,240*iR.scaleH);
         p.textSize(18*iR.scaleW);
         p.text("Uncommon item: ",200*iR.scaleW,300*iR.scaleH);
         //Ability Player 1
@@ -111,7 +111,7 @@ void drawshop(Character character, int i) {
         p.rect((1920/2+267)* iR.scaleW,285*iR.scaleH,20* iR.scaleW,20* iR.scaleH);
         p.fill(0);
         p.textSize(30*iR.scaleW);
-        p.text("Uncel Rogers Shop",(1920/2+345)*iR.scaleW,240*iR.scaleH);
+        p.text("Uncle Rogers Shop",(1920/2+345)*iR.scaleW,240*iR.scaleH);
         p.textSize(18* iR.scaleW);
         p.text("Uncommon item: ",(1920/2+200)*iR.scaleW,300*iR.scaleH);
         //Ability Player 1

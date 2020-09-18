@@ -129,7 +129,7 @@ int var =p[0].levelTransition(pressed);
                     p[i].move();
                     if (p[i].shoot == true) {
 
-                        oatList.add(new Oatmeal(this, p[i].location.x, p[i].location.y, imgLoad,imgResize));
+                        oatList.add(new Oatmeal(this, p[i].location.x, p[i].location.y, imgLoad,imgResize,backgrounds));
                         if(i==0)
                         image(imgLoad.duedrenganimation, p[i].location.x, p[i].location.y);
                         if(i==1)
