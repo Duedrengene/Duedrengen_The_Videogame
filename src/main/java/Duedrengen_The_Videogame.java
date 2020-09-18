@@ -72,7 +72,7 @@ public class Duedrengen_The_Videogame extends PApplet {
                 p[i] = new Character((int) random(0, 1920), (int) random(0, 1080), speed, imgLoad, level, this, imgResize, i);
             }
             enemyList.add(new Enemy(200 * imgResize.scaleW, 200 * imgResize.scaleH, -2 * imgResize.scaleW, imgLoad, this, 1));
-            uncleroger = new UncleRoger(this, imgLoad, width / 2 - 32, height / 2 - 32, level, imgResize);
+            uncleroger = new UncleRoger(this, imgLoad, width / 2 - 32, height-325, level, imgResize);
         }
         if (p[0] != null)
             for (int i = 0; i < dueAmount; i++) {
@@ -118,8 +118,10 @@ public class Duedrengen_The_Videogame extends PApplet {
                     p[i].iHaveShot = false;
                     p[i].move();
                     if (p[i].shoot == true) {
-                        oatList.add(new Oatmeal(this, p[i].location.x, p[i].location.y, imgLoad));
+
+                        oatList.add(new Oatmeal(this, p[i].location.x, p[i].location.y, imgLoad,imgResize));
                         image(imgLoad.duedrenganimation, p[i].location.x, p[i].location.y);
+
                         p[i].iHaveShot = true;
                     }
                     if (!p[i].iHaveShot)
