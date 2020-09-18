@@ -138,7 +138,7 @@ void buyitem(Character character,int i,Backgrounds backgrounds){
             character.n2++;
         }
         if(character.location.x + 64 * iR.scaleW>490*iR.scaleW&&character.location.x <490*iR.scaleW + 64 * iR.scaleW && character.location.y+64*iR.scaleH>540*iR.scaleH  && character.location.y<540*iR.scaleH+64*iR.scaleH &&character.interact && backgrounds.monetos>=1+character.n3 && !i3b){
-           character.v += 0.3;
+           character.h += 0.3;
             backgrounds.monetos--;
             character.n3++;
         }
@@ -156,7 +156,7 @@ void buyitem(Character character,int i,Backgrounds backgrounds){
     }
     if (i == 1&&p2shopOpen){
         if(character.location.x + 64 * iR.scaleW>(1920/2+140)*iR.scaleW&&character.location.x <(1920/2+140)*iR.scaleW + 64 * iR.scaleW && character.location.y+64*iR.scaleH>340*iR.scaleH  && character.location.y<340*iR.scaleH+64*iR.scaleH &&character.interact && backgrounds.monetos>=1+character.n1 && !i6b){
-            p.println("hej");
+            character.shotAmount++;
             backgrounds.monetos--;
             character.n1++;
         }
