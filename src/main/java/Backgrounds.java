@@ -19,8 +19,16 @@ public class Backgrounds {
 
     boolean simulate() {
         boolean result = false;
+      if(level==3) {
+          p.image(iL.by,0,0);
+          
+
+      }
+       if(level==2) {
+           p.image(iL.uncleBaggrund,0,0);
+       }
         if(level==1) {
-            p.image(iL.uncleBaggrund, 0, 0);
+            p.image(iL.by, 0, 0);
         }
         if (level == 0) {
             p.image(iL.startup, 0, 0);

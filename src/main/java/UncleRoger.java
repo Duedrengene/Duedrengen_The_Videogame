@@ -4,6 +4,8 @@ import processing.core.PVector;
 public class UncleRoger {
     PApplet p;
     PVector position = new PVector();
+    //ArrayList<PVector> floorPoints = new ArrayList<PVector>();
+
     boolean p1shopOpen;
     boolean p2shopOpen;
     ImageLoader unclePic;
@@ -26,7 +28,8 @@ UncleRoger(PApplet p,ImageLoader iL,int posX,int posY,int level,ImageResizer iR)
 void draw(int level){
     this.level=level;
     if(level == 2){
-    p.image(unclePic.uncleRoger,position.x,position.y);
+
+        p.image(unclePic.uncleRoger,position.x,position.y);
     p.image(unclePic.msg,1780*iR.scaleW,10*iR.scaleH);
     p.textSize(18);
     p.text(monetos,1855*iR.scaleW,60*iR.scaleH);
