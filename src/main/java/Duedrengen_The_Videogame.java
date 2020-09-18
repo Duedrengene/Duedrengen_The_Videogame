@@ -14,7 +14,8 @@ boolean pressed = false;
     int width = 1920;
     int height = 1080;
     ArrayList<SpecialMove> specialList = new ArrayList<>();
-    ArrayList<Oatmeal> oatList = new ArrayList<>();
+    ArrayList<Oatmeal> oatListp1 = new ArrayList<>();
+    ArrayList<Oatmeal> oatListp2 = new ArrayList<>();
     boolean gameOver = false;
     boolean mPressed = false;
     boolean settings = false;
@@ -116,7 +117,7 @@ boolean pressed = false;
                     uncleroger.buyitem(p[i],i,backgrounds);
                 }
 
-int var =p[0].levelTransition(pressed,oatList);
+int var =p[0].levelTransition(pressed,oatListp1);
 
                     if(var !=0)
                     p[1].location.x=0;
@@ -128,24 +129,44 @@ int var =p[0].levelTransition(pressed,oatList);
                 for (int i = 0; i < dueAmount; i++) {
                     p[i].iHaveShot = false;
                     p[i].move();
-                    if (p[i].shoot == true && oatList.size()<=p[i].shotAmount) {
+                    if (p[i].shoot == true && oatListp1.size()<=p[i].shotAmount && i==0) {
 
-                        oatList.add(new Oatmeal(this, p[i].location.x, p[i].location.y,imgLoad,imgResize, backgrounds));
+                        oatListp1.add(new Oatmeal(this, p[i].location.x, p[i].location.y,imgLoad,imgResize, backgrounds));
                         if(i==0)
                         image(imgLoad.duedrenganimation, p[i].location.x, p[i].location.y);
                         if(i==1)
                          image(imgLoad.dueShitting, p[i].location.x, p[i].location.y);
                         p[i].iHaveShot = true;
                     }
+                    if (p[i].shoot == true && oatListp2.size()<=p[i].shotAmount && i==1) {
+
+                        oatListp2.add(new Oatmeal(this, p[i].location.x, p[i].location.y,imgLoad,imgResize, backgrounds));
+                        if(i==0)
+                            image(imgLoad.duedrenganimation, p[i].location.x, p[i].location.y);
+                        if(i==1)
+                            image(imgLoad.dueShitting, p[i].location.x, p[i].location.y);
+                        p[i].iHaveShot = true;
+                    }
                     if (!p[i].iHaveShot)
                         p[i].display(backgrounds.level);
                 }
-                for (int i = 0; i < oatList.size(); i++) {
-                    oatList.get(i).moveOatmeal();
-                    oatList.get(i).drawOatmeal();
-                    oatList.get(i).outOfBounds(oatList,i);
+                for (int i = 0; i < oatListp1.size(); i++) {
+                    oatListp1.get(i).moveOatmeal();
+                    oatListp1.get(i).drawOatmeal();
+                    oatListp1.get(i).outOfBounds(oatListp1,i);
                     for(int j = 0;j<enemyList.size();j++){
-                        oatList.get(i).hit(oatList,enemyList.get(j),i,uncleroger);
+                        oatListp1.get(i).hit(oatListp1,enemyList.get(j),i,uncleroger);
+
+
+                    }
+
+                }
+                for (int i = 0; i < oatListp2.size(); i++) {
+                    oatListp2.get(i).moveOatmeal();
+                    oatListp2.get(i).drawOatmeal();
+                    oatListp2.get(i).outOfBounds(oatListp2,i);
+                    for(int j = 0;j<enemyList.size();j++){
+                        oatListp2.get(i).hit(oatListp2,enemyList.get(j),i,uncleroger);
 
 
                     }
@@ -169,7 +190,7 @@ int var =p[0].levelTransition(pressed,oatList);
             }
         //text(frameRate,500,500);
         mPressed = false;
-            println(oatList.size());
+        //    println(oatListp1.size() + "  " + oatListp2.size());
     }
 
     public void keyPressed() {
