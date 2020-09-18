@@ -1,5 +1,6 @@
 
 import processing.core.PApplet;
+import processing.core.PVector;
 
 import java.util.ArrayList;
 
@@ -17,6 +18,8 @@ boolean pressed = false;
     boolean gameOver = false;
     boolean mPressed = false;
     boolean settings = false;
+
+    PVector gravity = new PVector(0,(float)0.20);
     Character[] p;
     ImageLoader imgLoad = new ImageLoader(this);
     ImageResizer imgResize = new ImageResizer(this, width, height, imgLoad);
@@ -72,7 +75,7 @@ boolean pressed = false;
             uncleroger = new UncleRoger(this, imgLoad, imgResize.width / 2 , imgResize.height/2, level, imgResize);
         if (backgrounds.simulate()) {
             for (int i = 0; i < dueAmount; i++) {
-                p[i] = new Character((int) random(0, 1920), (int) random(0, 1080), speed, imgLoad, level, this, imgResize, i,backgrounds,enemyList);
+                p[i] = new Character((int) random(0, 1920), (int) random(0, 1080), speed, imgLoad, level, this, imgResize, i,backgrounds,enemyList,gravity);
             }
             enemyList.add(new Enemy(200 * imgResize.scaleW, 200 * imgResize.scaleH, -2 * imgResize.scaleW, imgLoad, this, 1));
 

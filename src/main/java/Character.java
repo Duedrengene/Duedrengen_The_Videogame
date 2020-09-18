@@ -13,6 +13,7 @@ import static processing.core.PConstants.*;
 
 public class Character {
     PVector location = new PVector();
+    PVector gravity = new PVector();
     boolean isLeft, isRight, isUp, isDown;
     boolean interact;
     boolean goBackp1, goBackp2;
@@ -28,7 +29,7 @@ public class Character {
     PApplet p;
     ImageResizer iR;
 ArrayList<Enemy> eList;
-    Character(int xx, int yy, int vv, ImageLoader iL, int Level, PApplet p, ImageResizer iR, int playerNumber, Backgrounds background, ArrayList<Enemy> eList) {
+    Character(int xx, int yy, int vv, ImageLoader iL, int Level, PApplet p, ImageResizer iR, int playerNumber, Backgrounds background, ArrayList<Enemy> eList,PVector gravity) {
         this.playerNumber = playerNumber;
         this.iL = iL;
         this.Level = Level;
@@ -40,6 +41,9 @@ ArrayList<Enemy> eList;
         v = (round((float) vv * iR.scaleW));
         this.background = background;
 this.eList = eList;
+if(playerNumber ==0)
+    this.gravity.add(gravity);
+
     }
 
     public int levelTransition(boolean pressed){
@@ -75,13 +79,14 @@ return result;
     }
 
     void move() {
-        int r = (int) (64 * iR.scaleW) >> 1;
-        int isRightInt = isRight ? 1 : 0;
-        int isLeftInt = isLeft ? 1 : 0;
-        int isDownInt = isDown ? 1 : 0;
-        int isUpInt = isUp ? 1 : 0;
-        location.x = constrain(location.x + (v * iR.scaleW) * (isRightInt - isLeftInt), r, p.width - r); //siden
-        location.y = constrain(location.y + (v * iR.scaleW) * (isDownInt - isUpInt), r, p.height - r); //op,ned
+        int r = (int) ((64 * iR.scaleW)) >> 1;
+        int rY = (int) ((64 * iR.scaleH)) >> 1;
+        float isRightInt = isRight ? 1+gravity.y  : 0+gravity.y ;
+        float isLeftInt = isLeft ? 1+gravity.y  : 0+gravity.y ;
+        float isDownInt = isDown ? 1+gravity.y : 0+gravity.y ;
+        float isUpInt = isUp ? 1  : 0 ;
+        location.x = constrain(location.x + (v * iR.scaleW) * (isRightInt - isLeftInt), 0, iR.width -r*3); //siden
+        location.y = constrain(location.y + (v * iR.scaleH) * (isDownInt - isUpInt), 0, iR.height -rY*3); //op,ned
     }
 
     boolean setMove(int k, boolean b, int player) {
