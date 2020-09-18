@@ -29,10 +29,10 @@ public class Backgrounds {
 
 
       }
-       if(level==2) {
+       if(level %2 ==0) {
            p.image(iL.uncleBaggrund,0,0);
        }
-        if(level==1) {
+        if(level%2==1) {
             p.image(iL.by, 0, 0);
         lifetext -=0.55;
         if(text==true) {

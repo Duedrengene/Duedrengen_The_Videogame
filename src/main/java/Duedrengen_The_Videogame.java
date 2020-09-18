@@ -143,8 +143,8 @@ int var =p[0].levelTransition(pressed);
                     oatList.get(i).moveOatmeal();
                     oatList.get(i).drawOatmeal();
                     for(int j = 0;j<enemyList.size();j++){
-                    oatList.get(i).hit(oatList,enemyList.get(j),i,uncleroger);
                     oatList.get(i).outOfBounds(oatList,i);
+                        oatList.get(i).hit(oatList,enemyList.get(j),i,uncleroger);
                     }
                 }
                 for (int i = 0; i < enemyList.size(); i++) {

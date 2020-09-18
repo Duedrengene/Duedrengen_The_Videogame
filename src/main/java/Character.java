@@ -61,6 +61,7 @@ if(p.key == 'm'&& pressed){
     if(background.level%2==0)
         result = 2;
 background.level++;
+background.lifetext = 250;
     location.x =0;
 for(int i =eList.size();i>0;i--)
 eList.remove(i-1);
