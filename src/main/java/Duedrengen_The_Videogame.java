@@ -132,6 +132,7 @@ public class Duedrengen_The_Videogame extends PApplet {
                     oatList.get(i).drawOatmeal();
                     for(int j = 0;j<enemyList.size();j++){
                     oatList.get(i).hit(oatList,enemyList.get(j),i,false);
+                    oatList.get(i).outOfBounds(oatList,i);
                     }
                 }
                 for (int i = 0; i < enemyList.size(); i++) {
@@ -147,9 +148,9 @@ public class Duedrengen_The_Videogame extends PApplet {
                     for (int j = 0; j < enemyList.size(); j++) {
                         p[i].colission(enemyList.get(j));
                     }
-                    //println(p[i].hp);
-                }
 
+                }
+               // println(oatList.size());
             }
         //text(frameRate,500,500);
         mPressed = false;
