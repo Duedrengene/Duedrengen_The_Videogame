@@ -4,6 +4,8 @@ import processing.core.PVector;
 public class UncleRoger {
     PApplet p;
     PVector position = new PVector();
+    //ArrayList<PVector> floorPoints = new ArrayList<PVector>();
+
     boolean p1shopOpen;
     boolean p2shopOpen;
     ImageLoader unclePic;
