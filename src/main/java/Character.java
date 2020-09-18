@@ -14,6 +14,7 @@ import static processing.core.PConstants.*;
 public class Character {
     PVector location = new PVector();
     PVector gravity = new PVector();
+    PVector velocity = new PVector();
     boolean isLeft, isRight, isUp, isDown;
     boolean interact;
     boolean goBackp1, goBackp2;
@@ -42,7 +43,7 @@ ArrayList<Enemy> eList;
         this.background = background;
 this.eList = eList;
 if(playerNumber ==0)
-    this.gravity.add(gravity);
+    this.gravity.set(gravity.x,gravity.y*iR.scaleH);
 
     }
 
@@ -79,21 +80,34 @@ return result;
     }
 
     void move() {
+        if(velocity.y>1.5) {velocity.set(velocity.x,(float)1.5);}
         int r = (int) ((64 * iR.scaleW)) >> 1;
         int rY = (int) ((64 * iR.scaleH)) >> 1;
-        float isRightInt = isRight ? 1+gravity.y  : 0+gravity.y ;
-        float isLeftInt = isLeft ? 1+gravity.y  : 0+gravity.y ;
-        float isDownInt = isDown ? 1+gravity.y : 0+gravity.y ;
+        float isRightInt = isRight ? 1  : 0;
+        float isLeftInt = isLeft ? 1  : 0 ;
+        float isDownInt = isDown ? 1 : 0+gravity.y ;
         float isUpInt = isUp ? 1  : 0 ;
-        location.x = constrain(location.x + (v * iR.scaleW) * (isRightInt - isLeftInt), 0, iR.width -r*3); //siden
-        location.y = constrain(location.y + (v * iR.scaleH) * (isDownInt - isUpInt), 0, iR.height -rY*3); //op,ned
+        velocity.set(isRightInt-isLeftInt, velocity.y + isDownInt-isUpInt);
+System.out.println( velocity.y);
+if(playerNumber==1||background.level%2==0)
+    velocity.set(isRightInt-isLeftInt,  isDownInt-gravity.y-isUpInt);
+        location.x = constrain(location.x + (v * iR.scaleW) * (velocity.x), 0, iR.width -r*3); //siden
+        location.y = constrain(location.y + (v * iR.scaleH) * (velocity.y), 0, iR.height -rY*3); //op,ned
+       System.out.println(velocity.y);
     }
 
     boolean setMove(int k, boolean b, int player) {
         if (player == 0)
             switch (k) {
                 case UP:
-                    return isUp = b;
+                    if(background.level%2!=0){
+                    int rY = (int) ((64 * iR.scaleH)) >> 1;
+                    if(location.y ==iR.height -rY*3) {
+                        velocity.y = -3;
+                    }
+                        return isUp = false;
+                    }else
+return  isUp = b;
                 case DOWN:
                     return isDown = b;
                 case LEFT:
