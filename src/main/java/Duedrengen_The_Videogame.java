@@ -87,7 +87,7 @@ boolean pressed = false;
                     gameOver = backgrounds.gameover(p[i]);
                 }
                 if (gameOver) {
-                    backgrounds.gameoverscreen(gameOver);
+                    backgrounds.gameoverscreen(true);
                 }
             }
 
@@ -163,7 +163,6 @@ int var =p[0].levelTransition(pressed,oatList);
                     }
 
                 }
-               // println(oatList.size());
             }
         //text(frameRate,500,500);
         mPressed = false;
