@@ -47,6 +47,8 @@ public class Backgrounds {
         }
         if (level == 0) {
             p.image(iL.startup, 0, 0);
+            p.textFont(fL.titelFont);
+            p.fill(253,106,2);
             p.text("Velkommen tilbage Agent Duedreng!", 960 * iR.scaleW, 85 * iR.scaleH);
             p.fill(0);
 
@@ -56,11 +58,12 @@ public class Backgrounds {
 
 
         }
-        if(level!=0)
+        if(level!=0) {
             p.textFont(fL.smallTitelFont);
             p.fill(255);
-            p.text(monetos,1855*iR.scaleW,60*iR.scaleH);
-        p.image(iL.msg,1780*iR.scaleW,10*iR.scaleH);
+            p.text(monetos, 1855 * iR.scaleW, 60 * iR.scaleH);
+            p.image(iL.msg, 1780 * iR.scaleW, 10 * iR.scaleH);
+        }
         return result;
 
 
