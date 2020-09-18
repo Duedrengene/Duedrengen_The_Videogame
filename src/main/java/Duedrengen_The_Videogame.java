@@ -116,7 +116,7 @@ boolean pressed = false;
                     uncleroger.buyitem(p[i],i,backgrounds);
                 }
 
-int var =p[0].levelTransition(pressed);
+int var =p[0].levelTransition(pressed,oatList);
 
                     if(var !=0)
                     p[1].location.x=0;

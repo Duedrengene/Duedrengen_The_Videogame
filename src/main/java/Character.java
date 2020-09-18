@@ -48,7 +48,7 @@ if(playerNumber ==0)
 
     }
 
-    public int levelTransition(boolean pressed){
+    public int levelTransition(boolean pressed,ArrayList<Oatmeal> oat){
 
         int result = 0;
         if(playerNumber == 0)
@@ -64,6 +64,7 @@ if(p.key == 'm'&& pressed){
 background.level++;
 background.lifetext = 250;
     location.x =0;
+    oat.clear();
 for(int i =eList.size();i>0;i--)
 eList.remove(i-1);
 

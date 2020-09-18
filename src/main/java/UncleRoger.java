@@ -159,12 +159,12 @@ void buyitem(Character character,int i,Backgrounds backgrounds){
             backgrounds.monetos--;
             character.n1++;
         }
-        if(character.location.x + 64 * iR.scaleW>(1920/2+490)*iR.scaleW&&character.location.x <(1920/2+490)*iR.scaleW + 64 * iR.scaleW && character.location.y+64*iR.scaleH>340*iR.scaleH  && character.location.y<340*iR.scaleH+64*iR.scaleH &&character.interact && backgrounds.monetos>=1+character.n2 && !i7b){
+        if(character.location.x + 64 * iR.scaleW>(1920/2+490)*iR.scaleW&&character.location.x <(1920/2+490)*iR.scaleW + 64 * iR.scaleW && character.location.y+64*iR.scaleH>340*iR.scaleH  && character.location.y < 340 * iR.scaleH + 64 * iR.scaleH && character.interact && backgrounds.monetos >= 1 + character.n2 && !i7b){
             character.hp++;
             backgrounds.monetos--;
             character.n2++;
         }
-        if(character.location.x + 64 * iR.scaleW>(1920/2+490)*iR.scaleW&&character.location.x <(1920/2+490)*iR.scaleW + 64 * iR.scaleW && character.location.y+64*iR.scaleH>540*iR.scaleH  && character.location.y<540*iR.scaleH+64*iR.scaleH &&character.interact && backgrounds.monetos>=1+character.n3 && !i8b){
+        if(character.location.x + 64 * iR.scaleW>(1920/2+490)*iR.scaleW&&character.location.x <(1920/2+490)*iR.scaleW + 64 * iR.scaleW && character.location.y+64*iR.scaleH>540*iR.scaleH  && character.location.y < 540 * iR.scaleH + 64 * iR.scaleH && character.interact && backgrounds.monetos >= 1 + character.n3 && !i8b){
             character.h += 0.3;
             backgrounds.monetos--;
             character.n3++;
