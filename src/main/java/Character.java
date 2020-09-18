@@ -21,7 +21,7 @@ public class Character {
     boolean goBackp1, goBackp2;
     boolean shoot;
     boolean iHaveShot;
-    float v;
+    float v,h;
     int Level;
     int hp = 2;
     int playerNumber;
@@ -93,7 +93,7 @@ return result;
 System.out.println( velocity.y);
 if(playerNumber==1||background.level%2==0)
     velocity.set(isRightInt-isLeftInt,  isDownInt-gravity.y-isUpInt);
-        location.x = constrain(location.x + (v * iR.scaleW) * (velocity.x), 0, iR.width -r*3); //siden
+        location.x = constrain(location.x + (v+h * iR.scaleW) * (velocity.x), 0, iR.width -r*3); //siden
         location.y = constrain(location.y + (v * iR.scaleH) * (velocity.y), 0, iR.height -rY*3); //op,ned
        System.out.println(velocity.y);
     }
