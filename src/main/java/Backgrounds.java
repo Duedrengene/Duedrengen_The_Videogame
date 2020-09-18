@@ -3,10 +3,14 @@ import processing.core.PApplet;
 public class Backgrounds {
     PApplet p;
     int level;
+    float lifetext =255;
+    boolean text=true;
+
     ImageLoader iL;
     FontLoader fL;
     boolean CharacterCreate = false;
     ImageResizer iR;
+
 
     Backgrounds(int Level, PApplet p, ImageLoader iL, FontLoader fL, ImageResizer iR) {
         this.iL = iL;
@@ -21,7 +25,8 @@ public class Backgrounds {
         boolean result = false;
       if(level==3) {
           p.image(iL.by,0,0);
-          
+
+
 
       }
        if(level==2) {
@@ -29,6 +34,11 @@ public class Backgrounds {
        }
         if(level==1) {
             p.image(iL.by, 0, 0);
+        lifetext -=0.55;
+        if(text==true) {
+            p.fill(255, lifetext);
+            p.text("City Groove", iR.width / 2, iR.height / 2 - 350);
+        }
         }
         if (level == 0) {
             p.image(iL.startup, 0, 0);
