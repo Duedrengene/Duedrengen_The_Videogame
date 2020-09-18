@@ -165,7 +165,7 @@ void buyitem(Character character,int i,Backgrounds backgrounds){
             character.n2++;
         }
         if(character.location.x + 64 * iR.scaleW>(1920/2+490)*iR.scaleW&&character.location.x <(1920/2+490)*iR.scaleW + 64 * iR.scaleW && character.location.y+64*iR.scaleH>540*iR.scaleH  && character.location.y<540*iR.scaleH+64*iR.scaleH &&character.interact && backgrounds.monetos>=1+character.n3 && !i8b){
-            character.v += 0.3;
+            character.h += 0.3;
             backgrounds.monetos--;
             character.n3++;
         }
