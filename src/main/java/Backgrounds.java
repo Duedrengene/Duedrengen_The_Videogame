@@ -35,7 +35,7 @@ public class Backgrounds {
            lifetext-=0.55;
            if(text==true) {
                p.fill(255,lifetext);
-               p.text("Shopmaster",iR.width/2,iR.height/2 -400);
+               p.text("Shopmaster",960*iR.scaleW,85*iR.scaleH);
            }
        }
         if(level%2==1) {
@@ -43,7 +43,7 @@ public class Backgrounds {
         lifetext -=0.55;
         if(text==true) {
             p.fill(255, lifetext);
-            p.text("City Groove", iR.width / 2, iR.height / 2 - 400);
+            p.text("City Groove",960*iR.scaleW,85*iR.scaleH);
         }
         }
         if (level == 0) {
