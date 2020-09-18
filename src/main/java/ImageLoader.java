@@ -1,7 +1,7 @@
 import processing.core.PApplet;
 import processing.core.PImage;
 
-public class ImageLoader  {
+public class ImageLoader {
 
     //Baggrunde
     PImage by;
@@ -22,6 +22,7 @@ public class ImageLoader  {
     PImage fjer;
     PImage james;
     PImage img;
+    PImage oatmeal;
     //Animation
     PImage bulletdue;
     PImage duedreng;
@@ -29,64 +30,68 @@ public class ImageLoader  {
 
     float scaleW = 1;
     float scaleH = 1;
-ImageLoader(PApplet p){
-    this.p=p;
-}
+
+    ImageLoader(PApplet p) {
+        this.p = p;
+    }
 
 
+    void loadTheImages(int var, int w, int h) {
 
-void loadTheImages(int var,int w,int h){
+        scaleW = (float) w / 1920;
+        scaleH = (float) h / 1080;
+        //Characters
+        img = p.loadImage("duedreng.png");
+        uncleBaggrund = p.loadImage("UncleBaggrund.png");
+        by = p.loadImage("by.png");
+        //Screens
+        startup = p.loadImage("pigeon.png");
+        deathscreen = p.loadImage("skuffet due.jpg");
+        uncleRoger = p.loadImage("Uncle Roger.png");
+        //items.
+        msgbull = p.loadImage("msgbull.png");
+        msg = p.loadImage("MSG salt on crack.png");
+        majs = p.loadImage("majs.png");
+        friedrice = p.loadImage("Fried rice (ikke jamie edition).png");
+        Syringe = p.loadImage("Syringe stor.png");
+        havregryn = p.loadImage("havregryn.png");
+        fjer = p.loadImage("fjer.png");
+        //enemies.
+        james = p.loadImage("spr_JamesOliver.png");
 
-    scaleW = (float)w/1920;
-    scaleH = (float)h/1080;
-
-    img = p.loadImage("duedreng.png");
-    uncleBaggrund = p.loadImage("UncleBaggrund.png");
-    by = p.loadImage("by.png");
-
-    startup = p.loadImage("pigeon.png");
-    deathscreen = p.loadImage("skuffet due.jpg");
-    uncleRoger = p.loadImage("Uncle Roger.png");
-    //items.
-    msgbull = p.loadImage("msgbull.png");
-    msg = p.loadImage("MSG salt on crack.png");
-    majs = p.loadImage("majs.png");
-    friedrice = p.loadImage("Fried rice (ikke jamie edition).png");
-    Syringe = p.loadImage("Syringe stor.png");
-    havregryn = p.loadImage("havregryn.png");
-    fjer = p.loadImage("fjer.png");
-    //enemies.
-    james = p.loadImage("spr_JamesOliver.png");
-
-    //Animation
-    bulletdue = p.loadImage("Bullet due.png");
-    duedreng = p.loadImage("duedrengstandard.png");
-    duedrenganimation = p.loadImage("duedrenganimation.png");
-
+        //Animation
+        bulletdue = p.loadImage("Bullet due.png");
+        duedreng = p.loadImage("duedrengstandard.png");
+        duedrenganimation = p.loadImage("duedrenganimation.png");
+        oatmeal = p.loadImage("Oatmeal.png");
 
 // Resolution resize.
 
+        img.resize((int) (64 * scaleW), (int) (64 * scaleH));
+        img.resize((int) (64 * scaleW), (int) (64 * scaleH));
+        //Items
+        msg.resize((int) (64 * scaleW), (int) (64 * scaleH));
+        msgbull.resize((int) (64 * scaleW), (int) (64 * scaleH));
+        havregryn.resize((int) (64 * scaleW), (int) (64 * scaleH));
+        friedrice.resize((int) (64 * scaleW), (int) (64 * scaleH));
+        Syringe.resize((int) (64 * scaleW), (int) (64 * scaleH));
+        majs.resize((int) (64 * scaleW), (int) (64 * scaleH));
+        fjer.resize((int) (64 * scaleW), (int) (64 * scaleH));
+        //Screens
+        by.resize(w, h);
+        deathscreen.resize(w, h);
+        startup.resize(w, h);
+        //Characters
+        uncleRoger.resize((int) (64 * scaleW), (int) (64 * scaleH));
+        james.resize((int) (64 * scaleW), (int) (64 * scaleH));
+        duedreng.resize((int) (64 * scaleW), (int) (64 * scaleH));
 
-    msg.resize((int)(64*scaleW),(int)(64*scaleH));
-    msgbull.resize((int)(64*scaleW),(int)(64*scaleH));
-    havregryn.resize((int)(64*scaleW),(int)(64*scaleH));
-    friedrice.resize((int)(64*scaleW),(int)(64*scaleH));
-    Syringe.resize((int)(64*scaleW),(int)(64*scaleH));
-    majs.resize((int)(64*scaleW),(int)(64*scaleH));
-    fjer.resize((int)(64*scaleW),(int)(64*scaleH));
-    img.resize((int)(64*scaleW),(int)(64*scaleH));
-    startup.resize(w,h);
-    deathscreen.resize(w,h);
-    img.resize((int)(64*scaleW),(int)(64*scaleH));
-    uncleRoger.resize((int)(64*scaleW),(int)(64*scaleH));
-    james.resize((int)(64*scaleW),(int)(64*scaleH));
-    bulletdue.resize((int)(64*scaleW),(int)(64*scaleH));
-    duedreng.resize((int)(64*scaleW),(int)(64*scaleH));
-    duedrenganimation.resize((int)(64*scaleW),(int)(64*scaleH));
-    uncleBaggrund.resize(w,h);
-    by.resize(w,h);
-        }
-
-
+        //Backgrounds
+        uncleBaggrund.resize(w, h);
+        //Animation
+        bulletdue.resize((int) (64 * scaleW), (int) (64 * scaleH));
+        duedrenganimation.resize((int) (64 * scaleW), (int) (64 * scaleH));
+        oatmeal.resize((int) (20 * scaleW), (int) (16 * scaleH));
+    }
 }
 

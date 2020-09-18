@@ -19,7 +19,9 @@ public class Backgrounds {
 
     boolean simulate() {
         boolean result = false;
-
+        if(level==1) {
+            p.image(iL.uncleBaggrund, 0, 0);
+        }
         if (level == 0) {
             p.image(iL.startup, 0, 0);
             p.text("Velkommen tilbage Agent Duedreng!", 960 * iR.scaleW, 85 * iR.scaleH);
