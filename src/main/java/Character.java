@@ -63,10 +63,11 @@ else
         }
         boolean setMove(int k, boolean b,int player) {
 
-            if(player == 0)
+            if(player == 0) {
                 switch (k) {
 
                     case UP:
+                        y=y-15;
                         return isUp = b;
 
                     case DOWN:
@@ -80,7 +81,8 @@ else
 
                     default:
                         return b;
-                }else if(player ==1)
+                }
+            } else if(player ==1)
                 switch (k) {
 
                     case +'W':
