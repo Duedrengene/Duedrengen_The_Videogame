@@ -16,6 +16,7 @@ public class Character {
     PVector gravity = new PVector();
     PVector velocity = new PVector();
     boolean isLeft, isRight, isUp, isDown;
+    int n1,n2,n3,n4,n5;
     boolean interact;
     boolean goBackp1, goBackp2;
     boolean shoot;

@@ -112,7 +112,7 @@ boolean pressed = false;
                     uncleroger.draw(backgrounds.level);
                     uncleroger.lukShop(p[i]);
                     uncleroger.drawshop(p[i], i);
-                    uncleroger.buyitem(p[i],i);
+                    uncleroger.buyitem(p[i],i,backgrounds);
                 }
 
 int var =p[0].levelTransition(pressed);
