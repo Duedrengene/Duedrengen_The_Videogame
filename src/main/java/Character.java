@@ -42,16 +42,19 @@ ArrayList<Enemy> eList;
 this.eList = eList;
     }
 
-    public boolean levelTransition(){
-        boolean result = false;
+    public int levelTransition(boolean pressed){
+
+        int result = 0;
         if(playerNumber == 0)
         if(location.x>iR.width-100){
             p.textMode(p.CENTER);
-            p.text("Next Level (E) ",location.x,location.y-50);
+            p.text("Next Level (M) ",location.x,location.y-50);
 
 
-if(p.key == 'e'){
-    result = true;
+if(p.key == 'm'&& pressed){
+    result = 1;
+    if(background.level%2==0)
+        result = 2;
 background.level++;
     location.x =0;
 for(int i =eList.size();i>0;i--)

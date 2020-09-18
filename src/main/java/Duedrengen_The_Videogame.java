@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Duedrengen_The_Videogame extends PApplet {
 
-
+boolean pressed = false;
     int speed = 4;
     int level = 0;
     int dueAmount = 2;
@@ -67,12 +67,15 @@ public class Duedrengen_The_Videogame extends PApplet {
         textAlign(CENTER);
         textFont(fontLoad.titelFont);
         textSize(84 * imgResize.scaleW);
+
+        if(uncleroger ==null && backgrounds.level%2==0 &&backgrounds.level!= 0)
+            uncleroger = new UncleRoger(this, imgLoad, imgResize.width / 2 , imgResize.height/2, level, imgResize);
         if (backgrounds.simulate()) {
             for (int i = 0; i < dueAmount; i++) {
                 p[i] = new Character((int) random(0, 1920), (int) random(0, 1080), speed, imgLoad, level, this, imgResize, i,backgrounds,enemyList);
             }
             enemyList.add(new Enemy(200 * imgResize.scaleW, 200 * imgResize.scaleH, -2 * imgResize.scaleW, imgLoad, this, 1));
-            uncleroger = new UncleRoger(this, imgLoad, imgResize.width / 2 , imgResize.height/2, level, imgResize);
+
         }
         if (p[0] != null)
             for (int i = 0; i < dueAmount; i++) {
@@ -83,9 +86,7 @@ public class Duedrengen_The_Videogame extends PApplet {
                     backgrounds.gameoverscreen(gameOver);
                 }
             }
-        if (!gameOver)
-            if (uncleroger != null)
-                // uncleroger.draw(level);
+
                 textFont(fontLoad.smallTitelFont);
         textSize(56 * imgResize.scaleW);
         fill(253, 106, 2);
@@ -102,6 +103,7 @@ public class Duedrengen_The_Videogame extends PApplet {
 
         if (!gameOver)
             if (p[0] != null) {
+                if(uncleroger!= null)
                 for (int i = 0; i < dueAmount; i++) {
                     uncleroger.detectCharacter(p[i]);
                     uncleroger.draw(backgrounds.level);
@@ -109,9 +111,13 @@ public class Duedrengen_The_Videogame extends PApplet {
                     uncleroger.drawshop(p[i], i);
                 }
 
-
-                    if(p[0].levelTransition())
+int var =p[0].levelTransition(pressed);
+                System.out.println(var);
+                    if(var !=0)
                     p[1].location.x=0;
+                    if(var ==2)
+                        uncleroger= null;
+
 
 
                 for (int i = 0; i < dueAmount; i++) {
@@ -159,6 +165,7 @@ public class Duedrengen_The_Videogame extends PApplet {
     }
 
     public void keyPressed() {
+        pressed = true;
         if (p[0] != null)
             for (int i = 0; i < dueAmount; i++) {
                 p[i].setMove(keyCode, true, i);
@@ -170,6 +177,7 @@ public class Duedrengen_The_Videogame extends PApplet {
     }
 
     public void keyReleased() {
+        pressed = false;
         if (p[0] != null)
             for (int i = 0; i < dueAmount; i++) {
                 p[i].setMove(keyCode, false, i);
