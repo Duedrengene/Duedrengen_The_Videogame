@@ -14,7 +14,8 @@ public class Duedrengen_The_Videogame extends PApplet {
     int width = 1920;
     int height = 1080;
     ArrayList<SpecialMove> specialList = new ArrayList<>();
-    ArrayList<Oatmeal> oatList = new ArrayList<>();
+    ArrayList<Oatmeal> oatListp1 = new ArrayList<>();
+    ArrayList<Oatmeal> oatListp2 = new ArrayList<>();
     boolean gameOver = false;
     boolean mPressed = false;
     boolean settings = false;
@@ -136,6 +137,15 @@ public class Duedrengen_The_Videogame extends PApplet {
                         if (i == 0)
                             image(imgLoad.duedrenganimation, p[i].location.x, p[i].location.y);
                         if (i == 1)
+                            image(imgLoad.dueShitting, p[i].location.x, p[i].location.y);
+                        p[i].iHaveShot = true;
+                    }
+                    if (p[i].shoot == true && oatListp2.size()<=p[i].shotAmount && i==1) {
+
+                        oatListp2.add(new Oatmeal(this, p[i].location.x, p[i].location.y,imgLoad,imgResize, backgrounds));
+                        if(i==0)
+                            image(imgLoad.duedrenganimation, p[i].location.x, p[i].location.y);
+                        if(i==1)
                             image(imgLoad.dueShitting, p[i].location.x, p[i].location.y);
                         p[i].iHaveShot = true;
                     }
