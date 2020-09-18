@@ -120,8 +120,10 @@ public class Duedrengen_The_Videogame extends PApplet {
                     if (p[i].shoot == true) {
 
                         oatList.add(new Oatmeal(this, p[i].location.x, p[i].location.y, imgLoad,imgResize));
+                        if(i==0)
                         image(imgLoad.duedrenganimation, p[i].location.x, p[i].location.y);
-
+                        if(i==1)
+                         image(imgLoad.dueShitting, p[i].location.x, p[i].location.y);
                         p[i].iHaveShot = true;
                     }
                     if (!p[i].iHaveShot)
@@ -131,7 +133,7 @@ public class Duedrengen_The_Videogame extends PApplet {
                     oatList.get(i).moveOatmeal();
                     oatList.get(i).drawOatmeal();
                     for(int j = 0;j<enemyList.size();j++){
-                    oatList.get(i).hit(oatList,enemyList.get(j),i,false);
+                    oatList.get(i).hit(oatList,enemyList.get(j),i,uncleroger);
                     oatList.get(i).outOfBounds(oatList,i);
                     }
                 }
