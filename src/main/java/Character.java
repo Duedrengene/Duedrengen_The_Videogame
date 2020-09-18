@@ -5,6 +5,7 @@ import processing.core.PFont;
 import processing.core.PVector;
 
 import java.awt.*;
+import java.util.ArrayList;
 
 import static processing.core.PApplet.constrain;
 import static processing.core.PApplet.round;
@@ -22,11 +23,12 @@ public class Character {
     int hp = 2;
     int playerNumber;
     boolean iShootNow;
+    Backgrounds background;
     ImageLoader iL;
     PApplet p;
     ImageResizer iR;
-
-    Character(int xx, int yy, int vv, ImageLoader iL, int Level, PApplet p, ImageResizer iR, int playerNumber) {
+ArrayList<Enemy> eList;
+    Character(int xx, int yy, int vv, ImageLoader iL, int Level, PApplet p, ImageResizer iR, int playerNumber, Backgrounds background, ArrayList<Enemy> eList) {
         this.playerNumber = playerNumber;
         this.iL = iL;
         this.Level = Level;
@@ -36,22 +38,32 @@ public class Character {
       //  location.x = (xx - 40) * iR.scaleW;
         //location.y = (yy - 40) * iR.scaleH;
         v = (round((float) vv * iR.scaleW));
-
+        this.background = background;
+this.eList = eList;
     }
 
-    public void levelTransition(){
+    public boolean levelTransition(){
+        boolean result = false;
         if(playerNumber == 0)
         if(location.x>iR.width-100){
             p.textMode(p.CENTER);
             p.text("Next Level (E) ",location.x,location.y-50);
 
-        }
 
+if(p.key == 'e'){
+    result = true;
+background.level++;
+    location.x =0;
+for(int i =eList.size();i>0;i--)
+eList.remove(i-1);
+
+}}
+return result;
     }
 
     void display(int level) {
         this.Level = level;
-        if (this.Level == 1) {
+        if (this.Level != 0) {
             if (playerNumber == 0)
                 p.image(iL.duedreng, location.x, location.y);
             else

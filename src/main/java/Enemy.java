@@ -1,5 +1,7 @@
 import processing.core.PApplet;
 
+import java.util.ArrayList;
+
 public class Enemy {
     float x, y;
     float speed;
@@ -27,7 +29,7 @@ public class Enemy {
     //Fremviser enemy sprite på level 2, hvis man ændre this.Level == . ;
     void display(int level) {
         this.level = level;
-        if (this.level == 1) {
+        if (this.level != 0) {
             if (type == 1) {
 
                 p.image(iL.james, x, y);
@@ -40,7 +42,7 @@ public class Enemy {
 
     void move() { //Skal gøres langsomere og fås til at muligvis hoppe i intervaler.
         int r = (int) speed >> 1;
-        if (level == 1) {
+        if (level != 0) {
             for (int i = 0; i < 1; i++) {
                 x = p.constrain(x, r, p.width - r); //siden
                 x += speed;
@@ -56,6 +58,11 @@ public class Enemy {
             iShootNow = true;
         } else {
             iShootNow = false;
+        }
+    }
+    void imDead(ArrayList<Enemy> list,int i){
+        if(hp<=0){
+            list.remove(i);
         }
     }
 }

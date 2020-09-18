@@ -18,8 +18,8 @@ public class UncleRoger {
 UncleRoger(PApplet p,ImageLoader iL,int posX,int posY,int level,ImageResizer iR){
     this.p = p;
     this.iR = iR;
-    this.position.x = posX*iR.scaleW;
-    this.position.y = posY*iR.scaleH;
+    this.position.x = posX;
+    this.position.y = posY;
     this.unclePic = iL;
     this.level = level;
 
@@ -27,7 +27,7 @@ UncleRoger(PApplet p,ImageLoader iL,int posX,int posY,int level,ImageResizer iR)
 
 void draw(int level){
     this.level=level;
-    if(level == 1){
+    if(level == 2){
     p.image(unclePic.uncleRoger,position.x,position.y);
     p.image(unclePic.msg,1780*iR.scaleW,10*iR.scaleH);
     p.textSize(18);
@@ -60,7 +60,7 @@ void drawshop(Character character, int i) {
     p.rectMode(p.CORNER);
 
 
-    if ((level == 1 && i==0 && character.interact==true && someoneIsClose)||p1shopOpen == true) {
+    if ((level != 0 && i==0 && character.interact==true && someoneIsClose)||p1shopOpen == true) {
 
         p.fill(255,108,0);
         p.rect(100*iR.scaleW, 200*iR.scaleH, (1020)/2*iR.scaleW, 680*iR.scaleH);
@@ -91,7 +91,7 @@ void drawshop(Character character, int i) {
         p1shopOpen = true;
 
     }
-    if ((level == 1  && i==1 && character.interact==true && someoneIsClose)||p2shopOpen == true) {
+    if ((level != 0  && i==1 && character.interact==true && someoneIsClose)||p2shopOpen == true) {
         p.fill(255,108,0);
         p.rect((1920/2+100)*iR.scaleW, 200*iR.scaleH, ((1920- 900)/2)*iR.scaleW, (1080 - 400)*iR.scaleH);
 
