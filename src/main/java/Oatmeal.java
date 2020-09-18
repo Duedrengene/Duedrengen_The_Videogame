@@ -33,6 +33,7 @@ public class Oatmeal {
             enemy.hp -= 1;
             oat.remove(i);
             backgrounds.monetos++;
+
         }
 
     }

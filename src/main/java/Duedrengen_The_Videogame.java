@@ -128,7 +128,7 @@ int var =p[0].levelTransition(pressed,oatList);
                 for (int i = 0; i < dueAmount; i++) {
                     p[i].iHaveShot = false;
                     p[i].move();
-                    if (p[i].shoot == true) {
+                    if (p[i].shoot == true && oatList.size()<=p[i].shotAmount) {
 
                         oatList.add(new Oatmeal(this, p[i].location.x, p[i].location.y,imgLoad,imgResize, backgrounds));
                         if(i==0)
@@ -143,10 +143,13 @@ int var =p[0].levelTransition(pressed,oatList);
                 for (int i = 0; i < oatList.size(); i++) {
                     oatList.get(i).moveOatmeal();
                     oatList.get(i).drawOatmeal();
-                    for(int j = 0;j<enemyList.size();j++){
                     oatList.get(i).outOfBounds(oatList,i);
+                    for(int j = 0;j<enemyList.size();j++){
                         oatList.get(i).hit(oatList,enemyList.get(j),i,uncleroger);
+
+
                     }
+
                 }
                 for (int i = 0; i < enemyList.size(); i++) {
                     enemyList.get(i).shoot();
@@ -166,6 +169,7 @@ int var =p[0].levelTransition(pressed,oatList);
             }
         //text(frameRate,500,500);
         mPressed = false;
+            println(oatList.size());
     }
 
     public void keyPressed() {
