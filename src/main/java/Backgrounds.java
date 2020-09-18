@@ -6,6 +6,7 @@ public class Backgrounds {
     float lifetext =255;
     boolean text=true;
     int monetos;
+
     ImageLoader iL;
     FontLoader fL;
     boolean CharacterCreate = false;
@@ -23,32 +24,29 @@ public class Backgrounds {
 
     boolean simulate() {
         boolean result = false;
-      if(level==3) {
-          p.image(iL.by,0,0);
 
-
-
-      }
        if(level %2 ==0) {
+
            p.image(iL.uncleBaggrund,0,0);
-           lifetext-=0.55;
+           lifetext-=0.48;
            if(text==true) {
                p.fill(255,lifetext);
-               p.text("Shopmaster",iR.width/2,iR.height/2 -400);
+               p.text("Shopmaster",960*iR.scaleW,85*iR.scaleH);
            }
        }
         if(level%2==1) {
             p.image(iL.by, 0, 0);
-        lifetext -=0.55;
+        lifetext -=0.48;
         if(text==true) {
             p.fill(255, lifetext);
-            p.text("City Groove", iR.width / 2, iR.height / 2 - 400);
+            p.text("City Groove",960*iR.scaleW,85*iR.scaleH) ;
         }
         }
         if (level == 0) {
             p.image(iL.startup, 0, 0);
+         p.fill(149,29,3);
             p.text("Velkommen tilbage Agent Duedreng!", 960 * iR.scaleW, 85 * iR.scaleH);
-            p.fill(0);
+
 
         } else if (CharacterCreate == false) {
             result = true;
