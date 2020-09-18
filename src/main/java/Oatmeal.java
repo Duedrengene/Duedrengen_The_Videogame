@@ -27,13 +27,17 @@ public class Oatmeal {
 
         location.add(velocity);
     }
-    void hit(ArrayList<Oatmeal> oat,Enemy enemy,int i,boolean alredyRemoved){
+    void hit(ArrayList<Oatmeal> oat,Enemy enemy,int i,UncleRoger roger){
         if (oat.get(i).location.x <= enemy.x+64*iR.scaleW && oat.get(i).location.x >= enemy.x && oat.get(i).location.y <= enemy.y + 64*iR.scaleH && oat.get(i).location.y >= enemy.y) {
             enemy.hp -= 1;
             oat.remove(i);
-            alredyRemoved = true;
-
+            roger.monetos++;
         }
 
+    }
+    void outOfBounds(ArrayList<Oatmeal> oat,int i){
+    if(location.x>p.width){
+        oat.remove(i);
+    }
     }
 }
