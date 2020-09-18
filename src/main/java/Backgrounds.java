@@ -10,6 +10,7 @@ public class Backgrounds {
     FontLoader fL;
     boolean CharacterCreate = false;
     ImageResizer iR;
+    boolean bossLevel = false;
 
 
     Backgrounds(int Level, PApplet p, ImageLoader iL, FontLoader fL, ImageResizer iR) {

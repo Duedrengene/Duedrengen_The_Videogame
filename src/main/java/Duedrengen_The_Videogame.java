@@ -23,10 +23,11 @@ boolean pressed = false;
     Character[] p;
     ImageLoader imgLoad = new ImageLoader(this);
     ImageResizer imgResize = new ImageResizer(this, width, height, imgLoad);
-    SoundLoader soundLoad = new SoundLoader(this);
+
     FontLoader fontLoad = new FontLoader(this);
     UncleRoger uncleroger;
     Backgrounds backgrounds = new Backgrounds(level, this, imgLoad, fontLoad, imgResize);
+    SoundLoader soundLoad = new SoundLoader(this,backgrounds);
     ArrayList<Enemy> enemyList = new ArrayList<>();
     Button bStart = new Button(this, 210, 225 - 10, 1, backgrounds, imgResize);
     Button bSettings = new Button(this, 210, 390, 2, backgrounds, imgResize);

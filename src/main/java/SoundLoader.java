@@ -14,9 +14,11 @@ public class SoundLoader extends Thread {
     File file;
     PApplet p;
     Player mp3;
+    Backgrounds backgrounds;
 
-    SoundLoader(PApplet p) {
+    SoundLoader(PApplet p,Backgrounds backgrounds) {
         this.p = p;
+        this.backgrounds = backgrounds;
         normalMusic = new java.io.File("src\\main\\resources\\midgamefil.mp3");
         bossMusic = new java.io.File("src\\main\\resources\\bossfil.mp3");
     }
@@ -26,7 +28,7 @@ public class SoundLoader extends Thread {
     }
 
     public void loadtheSounds() {
-        if(false)
+        if(!backgrounds.bossLevel)
             file = normalMusic;
         else
             file = bossMusic;
