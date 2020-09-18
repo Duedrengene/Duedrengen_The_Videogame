@@ -69,10 +69,10 @@ public class Duedrengen_The_Videogame extends PApplet {
         textSize(84 * imgResize.scaleW);
         if (backgrounds.simulate()) {
             for (int i = 0; i < dueAmount; i++) {
-                p[i] = new Character((int) random(0, 1920), (int) random(0, 1080), speed, imgLoad, level, this, imgResize, i);
+                p[i] = new Character((int) random(0, 1920), (int) random(0, 1080), speed, imgLoad, level, this, imgResize, i,backgrounds,enemyList);
             }
             enemyList.add(new Enemy(200 * imgResize.scaleW, 200 * imgResize.scaleH, -2 * imgResize.scaleW, imgLoad, this, 1));
-            uncleroger = new UncleRoger(this, imgLoad, width / 2 - 32, height-325, level, imgResize);
+            uncleroger = new UncleRoger(this, imgLoad, imgResize.width / 2 , imgResize.height/2, level, imgResize);
         }
         if (p[0] != null)
             for (int i = 0; i < dueAmount; i++) {
@@ -110,8 +110,8 @@ public class Duedrengen_The_Videogame extends PApplet {
                 }
 
 
-                    p[0].levelTransition();
-
+                    if(p[0].levelTransition())
+                    p[1].location.x=0;
 
 
                 for (int i = 0; i < dueAmount; i++) {
