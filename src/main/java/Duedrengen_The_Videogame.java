@@ -54,9 +54,12 @@ public class Duedrengen_The_Videogame extends PApplet {
         smooth(8);
     }
 
+
+
+
     public void draw() {
 
-//soundLoad.playSounds();
+        //soundLoad.playSounds();
         //background(0,255,0);
         background(53, 101, 77);
 
@@ -105,12 +108,18 @@ public class Duedrengen_The_Videogame extends PApplet {
                     uncleroger.lukShop(p[i]);
                     uncleroger.drawshop(p[i], i);
                 }
+
+
+                    p[0].levelTransition();
+
+
+
                 for (int i = 0; i < dueAmount; i++) {
                     p[i].iHaveShot = false;
                     p[i].move();
                     if (p[i].shoot == true) {
-                        oatList.add(new Oatmeal(this, p[i].x, p[i].y, imgLoad));
-                        image(imgLoad.duedrenganimation, p[i].x, p[i].y);
+                        oatList.add(new Oatmeal(this, p[i].location.x, p[i].location.y, imgLoad));
+                        image(imgLoad.duedrenganimation, p[i].location.x, p[i].location.y);
                         p[i].iHaveShot = true;
                     }
                     if (!p[i].iHaveShot)
@@ -132,7 +141,7 @@ public class Duedrengen_The_Videogame extends PApplet {
                     for (int j = 0; j < enemyList.size(); j++) {
                         p[i].colission(enemyList.get(j));
                     }
-                    println(p[i].hp);
+                    //println(p[i].hp);
                 }
             }
         //text(frameRate,500,500);
@@ -146,7 +155,7 @@ public class Duedrengen_The_Videogame extends PApplet {
                 p[i].interact(i, true, keyCode);
                 p[i].goBack(i, true, keyCode);
                 p[i].shoot(i, true, keyCode);
-                println(p[i].interact);
+                //println(p[i].interact);
             }
     }
 

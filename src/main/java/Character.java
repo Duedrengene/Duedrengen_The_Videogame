@@ -2,6 +2,7 @@
 
 import processing.core.PApplet;
 import processing.core.PFont;
+import processing.core.PVector;
 
 import java.awt.*;
 
@@ -10,12 +11,12 @@ import static processing.core.PApplet.round;
 import static processing.core.PConstants.*;
 
 public class Character {
+    PVector location = new PVector();
     boolean isLeft, isRight, isUp, isDown;
     boolean interact;
     boolean goBackp1, goBackp2;
     boolean shoot;
     boolean iHaveShot;
-    float x, y;
     float v;
     int Level;
     int hp = 2;
@@ -31,9 +32,20 @@ public class Character {
         this.Level = Level;
         this.p = p;
         this.iR = iR;
-        x = (xx - 40) * iR.scaleW;
-        y = (yy - 40) * iR.scaleH;
+        location.set(((xx - 40) * iR.scaleW),((yy - 40) * iR.scaleH));
+      //  location.x = (xx - 40) * iR.scaleW;
+        //location.y = (yy - 40) * iR.scaleH;
         v = (round((float) vv * iR.scaleW));
+
+    }
+
+    public void levelTransition(){
+        if(playerNumber == 0)
+        if(location.x>iR.width-100){
+            p.textMode(p.CENTER);
+            p.text("Next Level (E) ",location.x,location.y-50);
+
+        }
 
     }
 
@@ -41,9 +53,9 @@ public class Character {
         this.Level = level;
         if (this.Level == 1) {
             if (playerNumber == 0)
-                p.image(iL.duedreng, x, y);
+                p.image(iL.duedreng, location.x, location.y);
             else
-                p.image(iL.bulletdue, x, y);
+                p.image(iL.bulletdue, location.x, location.y);
         }
     }
 
@@ -53,8 +65,8 @@ public class Character {
         int isLeftInt = isLeft ? 1 : 0;
         int isDownInt = isDown ? 1 : 0;
         int isUpInt = isUp ? 1 : 0;
-        x = constrain(x + (v * iR.scaleW) * (isRightInt - isLeftInt), r, p.width - r); //siden
-        y = constrain(y + (v * iR.scaleW) * (isDownInt - isUpInt), r, p.height - r); //op,ned
+        location.x = constrain(location.x + (v * iR.scaleW) * (isRightInt - isLeftInt), r, p.width - r); //siden
+        location.y = constrain(location.y + (v * iR.scaleW) * (isDownInt - isUpInt), r, p.height - r); //op,ned
     }
 
     boolean setMove(int k, boolean b, int player) {
@@ -145,7 +157,7 @@ public class Character {
     }
 
     void colission(Enemy enemy) {
-        if (x <= enemy.x + 64 && x >= enemy.x && y <= enemy.y + 64 && y >= enemy.y) {
+        if (location.x <= enemy.x + 64 && location.x >= enemy.x && location.y <= enemy.y + 64 && location.y >= enemy.y) {
             hp -= 1;
         }
 
