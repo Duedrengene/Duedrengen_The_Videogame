@@ -19,7 +19,7 @@ boolean pressed = false;
     boolean mPressed = false;
     boolean settings = false;
 
-    PVector gravity = new PVector(0,(float)0.20);
+    PVector gravity = new PVector(0,(float)0.10);
     Character[] p;
     ImageLoader imgLoad = new ImageLoader(this);
     ImageResizer imgResize = new ImageResizer(this, width, height, imgLoad);
@@ -77,7 +77,7 @@ boolean pressed = false;
             for (int i = 0; i < dueAmount; i++) {
                 p[i] = new Character((int) random(0, 1920), (int) random(0, 1080), speed, imgLoad, level, this, imgResize, i,backgrounds,enemyList,gravity);
             }
-            enemyList.add(new Enemy(200 * imgResize.scaleW, 200 * imgResize.scaleH, -2 * imgResize.scaleW, imgLoad, this, 1));
+            enemyList.add(new Enemy(200 * imgResize.scaleW, 984 * imgResize.scaleH, -2 * imgResize.scaleW, imgLoad, this, 1));
 
         }
         if (p[0] != null)
@@ -115,7 +115,7 @@ boolean pressed = false;
                 }
 
 int var =p[0].levelTransition(pressed);
-                System.out.println(var);
+            //    System.out.println(var);
                     if(var !=0)
                     p[1].location.x=0;
                     if(var ==2)
