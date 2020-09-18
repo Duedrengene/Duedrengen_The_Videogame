@@ -10,7 +10,7 @@ public class UncleRoger {
     boolean p2shopOpen;
     ImageLoader unclePic;
     int level;
-    int monetos;
+
     boolean someoneIsClose;
     ImageResizer iR;
 
@@ -31,9 +31,9 @@ void draw(int level){
     if(level != 0){
     p.image(unclePic.uncleRoger,position.x,position.y);
 
-    p.image(unclePic.msg,1780*iR.scaleW,10*iR.scaleH);
+
     p.textSize(18);
-    p.text(monetos,1855*iR.scaleW,60*iR.scaleH);
+
     if(someoneIsClose==true){
         p.fill(0);
         p.textSize(18);
@@ -68,11 +68,12 @@ void drawshop(Character character, int i) {
         p.rect(100*iR.scaleW, 200*iR.scaleH, (1020)/2*iR.scaleW, 680*iR.scaleH);
         //Uncommon Item for player 1
         p.fill(108,255,0);
-      p.rect(140*iR.scaleW,340*iR.scaleH,64*iR.scaleW,64*iR.scaleH);
-        p.image(unclePic.havregryn,140*iR.scaleW,350*iR.scaleH);
-       p.rect(490*iR.scaleW,340*iR.scaleH,64*iR.scaleW,64*iR.scaleH);
-        p.image(unclePic.friedrice,490*iR.scaleW,350*iR.scaleH );
-        p.rect(490*iR.scaleW,540*iR.scaleH,64*iR.scaleW,64*iR.scaleH);
+
+      p.rect(140*iR.scaleW,340*iR.scaleH,64*iR.scaleW,64*iR.scaleH);//
+        p.image(unclePic.havregryn,140*iR.scaleW,340*iR.scaleH);
+       p.rect(490*iR.scaleW,340*iR.scaleH,64*iR.scaleW,64*iR.scaleH);//
+        p.image(unclePic.friedrice,490*iR.scaleW,340*iR.scaleH );
+        p.rect(490*iR.scaleW,540*iR.scaleH,64*iR.scaleW,64*iR.scaleH);//
         p.image(unclePic.msgbull,490*iR.scaleW,540*iR.scaleH);
         p.rect(140*iR.scaleW,740*iR.scaleH,64*iR.scaleW,64*iR.scaleH);
         p.image(unclePic.Syringe,140*iR.scaleW,740*iR.scaleH);
@@ -81,7 +82,7 @@ void drawshop(Character character, int i) {
 
         p.fill(0);
         p.textSize(30*iR.scaleW);
-        p.text("Uncel Rogers Shop",345*iR.scaleW,240*iR.scaleH);
+        p.text("Uncle Rogers Shop",345*iR.scaleW,240*iR.scaleH);
         p.textSize(18*iR.scaleW);
         p.text("Uncommon item: ",200*iR.scaleW,300*iR.scaleH);
         //Ability Player 1
@@ -89,7 +90,7 @@ void drawshop(Character character, int i) {
         p.fill(63,72,204);
         p.rect(507*iR.scaleW,285*iR.scaleH,20*iR.scaleW,20*iR.scaleH);
         p.rect(140*iR.scaleW,540*iR.scaleH,64*iR.scaleW,64*iR.scaleH);
-        p.image(unclePic.fjer,134*iR.scaleW,534*iR.scaleH);
+        p.image(unclePic.fjer,140*iR.scaleW,540*iR.scaleH);
         p1shopOpen = true;
 
     }
@@ -111,7 +112,7 @@ void drawshop(Character character, int i) {
         p.rect((1920/2+267)* iR.scaleW,285*iR.scaleH,20* iR.scaleW,20* iR.scaleH);
         p.fill(0);
         p.textSize(30*iR.scaleW);
-        p.text("Uncel Rogers Shop",(1920/2+345)*iR.scaleW,240*iR.scaleH);
+        p.text("Uncle Rogers Shop",(1920/2+345)*iR.scaleW,240*iR.scaleH);
         p.textSize(18* iR.scaleW);
         p.text("Uncommon item: ",(1920/2+200)*iR.scaleW,300*iR.scaleH);
         //Ability Player 1

@@ -5,7 +5,7 @@ public class Backgrounds {
     int level;
     float lifetext =255;
     boolean text=true;
-
+    int monetos;
     ImageLoader iL;
     FontLoader fL;
     boolean CharacterCreate = false;
@@ -51,6 +51,11 @@ public class Backgrounds {
 
 
         }
+        if(level!=0)
+            p.textFont(fL.smallTitelFont);
+            p.fill(255);
+            p.text(monetos,1855*iR.scaleW,60*iR.scaleH);
+        p.image(iL.msg,1780*iR.scaleW,10*iR.scaleH);
         return result;
 
 
