@@ -27,6 +27,7 @@ public class ImageLoader {
     PImage bulletdue;
     PImage duedreng;
     PImage duedrenganimation;
+    PImage dueShitting;
 
     float scaleW = 1;
     float scaleH = 1;
@@ -64,6 +65,7 @@ public class ImageLoader {
         duedreng = p.loadImage("duedrengstandard.png");
         duedrenganimation = p.loadImage("duedrenganimation.png");
         oatmeal = p.loadImage("Oatmeal.png");
+        dueShitting = p.loadImage("due skider.png");
 
 // Resolution resize.
 
@@ -92,6 +94,7 @@ public class ImageLoader {
         bulletdue.resize((int) (64 * scaleW), (int) (64 * scaleH));
         duedrenganimation.resize((int) (64 * scaleW), (int) (64 * scaleH));
         oatmeal.resize((int) (20 * scaleW), (int) (16 * scaleH));
+        dueShitting.resize((int) (64 * scaleW), (int) (64 * scaleH));
     }
 }
 
