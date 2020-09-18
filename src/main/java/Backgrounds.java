@@ -31,13 +31,18 @@ public class Backgrounds {
       }
        if(level %2 ==0) {
            p.image(iL.uncleBaggrund,0,0);
+           lifetext-=0.55;
+           if(text==true) {
+               p.fill(255,lifetext);
+               p.text("Shopmaster",iR.width/2,iR.height/2 -400);
+           }
        }
         if(level%2==1) {
             p.image(iL.by, 0, 0);
         lifetext -=0.55;
         if(text==true) {
             p.fill(255, lifetext);
-            p.text("City Groove", iR.width / 2, iR.height / 2 - 350);
+            p.text("City Groove", iR.width / 2, iR.height / 2 - 400);
         }
         }
         if (level == 0) {

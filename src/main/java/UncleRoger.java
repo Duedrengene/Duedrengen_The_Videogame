@@ -128,37 +128,37 @@ void drawshop(Character character, int i) {
 }
 void buyitem(Character character,int i){
     if (i == 0&&p1shopOpen){
-    if(character.location.x + 64 * iR.scaleW>140*iR.scaleW&&character.location.x <140*iR.scaleW + 64 * iR.scaleW && character.location.y+64*iR.scaleH>340*iR.scaleH  && character.location.y<340*iR.scaleH+64*iR.scaleH){
-p.println("hej");
+    if(character.location.x + 64 * iR.scaleW>140*iR.scaleW&&character.location.x <140*iR.scaleW + 64 * iR.scaleW && character.location.y+64*iR.scaleH>340*iR.scaleH  && character.location.y<340*iR.scaleH+64*iR.scaleH&&character.interact){
+
     }
-        if(character.location.x + 64 * iR.scaleW>490*iR.scaleW&&character.location.x <490*iR.scaleW + 64 * iR.scaleW && character.location.y+64*iR.scaleH>340*iR.scaleH  && character.location.y<340*iR.scaleH+64*iR.scaleH){
+        if(character.location.x + 64 * iR.scaleW>490*iR.scaleW&&character.location.x <490*iR.scaleW + 64 * iR.scaleW && character.location.y+64*iR.scaleH>340*iR.scaleH  && character.location.y<340*iR.scaleH+64*iR.scaleH &&character.interact){
+            character.hp++;
+        }
+        if(character.location.x + 64 * iR.scaleW>490*iR.scaleW&&character.location.x <490*iR.scaleW + 64 * iR.scaleW && character.location.y+64*iR.scaleH>540*iR.scaleH  && character.location.y<540*iR.scaleH+64*iR.scaleH &&character.interact){
+           character.v += 0.3;
+        }
+        if(character.location.x + 64 * iR.scaleW>140*iR.scaleW&&character.location.x <140*iR.scaleW + 64 * iR.scaleW && character.location.y+64*iR.scaleH>740*iR.scaleH  && character.location.y<740*iR.scaleH+64*iR.scaleH &&character.interact){
             p.println("hej");
         }
-        if(character.location.x + 64 * iR.scaleW>490*iR.scaleW&&character.location.x <490*iR.scaleW + 64 * iR.scaleW && character.location.y+64*iR.scaleH>540*iR.scaleH  && character.location.y<540*iR.scaleH+64*iR.scaleH){
-            p.println("hej");
-        }
-        if(character.location.x + 64 * iR.scaleW>140*iR.scaleW&&character.location.x <140*iR.scaleW + 64 * iR.scaleW && character.location.y+64*iR.scaleH>740*iR.scaleH  && character.location.y<740*iR.scaleH+64*iR.scaleH){
-            p.println("hej");
-        }
-        if(character.location.x + 64 * iR.scaleW>140*iR.scaleW&&character.location.x <140*iR.scaleW + 64 * iR.scaleW && character.location.y+64*iR.scaleH>540*iR.scaleH  && character.location.y<540*iR.scaleH+64*iR.scaleH){
+        if(character.location.x + 64 * iR.scaleW>140*iR.scaleW&&character.location.x <140*iR.scaleW + 64 * iR.scaleW && character.location.y+64*iR.scaleH>540*iR.scaleH  && character.location.y<540*iR.scaleH+64*iR.scaleH &&character.interact){
             p.println("hej");
         }
 
     }
     if (i == 1&&p2shopOpen){
-        if(character.location.x + 64 * iR.scaleW>(1920/2+140)*iR.scaleW&&character.location.x <(1920/2+140)*iR.scaleW + 64 * iR.scaleW && character.location.y+64*iR.scaleH>340*iR.scaleH  && character.location.y<340*iR.scaleH+64*iR.scaleH){
+        if(character.location.x + 64 * iR.scaleW>(1920/2+140)*iR.scaleW&&character.location.x <(1920/2+140)*iR.scaleW + 64 * iR.scaleW && character.location.y+64*iR.scaleH>340*iR.scaleH  && character.location.y<340*iR.scaleH+64*iR.scaleH &&character.interact){
             p.println("hej");
         }
-        if(character.location.x + 64 * iR.scaleW>(1920/2+490)*iR.scaleW&&character.location.x <(1920/2+490)*iR.scaleW + 64 * iR.scaleW && character.location.y+64*iR.scaleH>340*iR.scaleH  && character.location.y<340*iR.scaleH+64*iR.scaleH){
+        if(character.location.x + 64 * iR.scaleW>(1920/2+490)*iR.scaleW&&character.location.x <(1920/2+490)*iR.scaleW + 64 * iR.scaleW && character.location.y+64*iR.scaleH>340*iR.scaleH  && character.location.y<340*iR.scaleH+64*iR.scaleH &&character.interact){
             p.println("hej");
         }
-        if(character.location.x + 64 * iR.scaleW>(1920/2+490)*iR.scaleW&&character.location.x <(1920/2+490)*iR.scaleW + 64 * iR.scaleW && character.location.y+64*iR.scaleH>540*iR.scaleH  && character.location.y<540*iR.scaleH+64*iR.scaleH){
+        if(character.location.x + 64 * iR.scaleW>(1920/2+490)*iR.scaleW&&character.location.x <(1920/2+490)*iR.scaleW + 64 * iR.scaleW && character.location.y+64*iR.scaleH>540*iR.scaleH  && character.location.y<540*iR.scaleH+64*iR.scaleH &&character.interact){
             p.println("hej");
         }
-        if(character.location.x + 64 * iR.scaleW>(1920/2+140)*iR.scaleW&&character.location.x <(1920/2+140)*iR.scaleW + 64 * iR.scaleW && character.location.y+64*iR.scaleH>740*iR.scaleH  && character.location.y<740*iR.scaleH+64*iR.scaleH){
+        if(character.location.x + 64 * iR.scaleW>(1920/2+140)*iR.scaleW&&character.location.x <(1920/2+140)*iR.scaleW + 64 * iR.scaleW && character.location.y+64*iR.scaleH>740*iR.scaleH  && character.location.y<740*iR.scaleH+64*iR.scaleH &&character.interact){
             p.println("hej");
         }
-        if(character.location.x + 64 * iR.scaleW>(1920/2+140)*iR.scaleW&&character.location.x <(1920/2+140)*iR.scaleW + 64 * iR.scaleW && character.location.y+64*iR.scaleH>540*iR.scaleH  && character.location.y<540*iR.scaleH+64*iR.scaleH){
+        if(character.location.x + 64 * iR.scaleW>(1920/2+140)*iR.scaleW&&character.location.x <(1920/2+140)*iR.scaleW + 64 * iR.scaleW && character.location.y+64*iR.scaleH>540*iR.scaleH  && character.location.y<540*iR.scaleH+64*iR.scaleH &&character.interact){
             p.println("hej");
         }
 
