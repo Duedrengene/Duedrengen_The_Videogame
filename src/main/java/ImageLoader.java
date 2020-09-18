@@ -51,12 +51,12 @@ public class ImageLoader {
         uncleRoger = p.loadImage("Uncle Roger.png");
         //items.
         msgbull = p.loadImage("msgbull.png");
-        msg = p.loadImage("MSG salt on crack.png");
-        majs = p.loadImage("majs.png");
-        friedrice = p.loadImage("Fried rice (ikke jamie edition).png");
-        Syringe = p.loadImage("Syringe stor.png");
-        havregryn = p.loadImage("havregryn.png");
-        fjer = p.loadImage("fjer.png");
+        msg = p.loadImage("MSG salt on crack1.png");
+        majs = p.loadImage("majs1.png");
+        friedrice = p.loadImage("Fried rice.png");
+        Syringe = p.loadImage("Syringe stor1.png");
+        havregryn = p.loadImage("havregryn1.png");
+        fjer = p.loadImage("fjer1.png");
         //enemies.
         james = p.loadImage("spr_JamesOliver.png");
 
