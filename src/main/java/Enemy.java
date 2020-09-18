@@ -9,6 +9,7 @@ public class Enemy {
     PApplet p;
     boolean iShootNow;
     int type;
+    int hp=1;
 
     // Fungere meget ligesom player, men uden diameter eller random spawn steder.
     Enemy(float xx, float yy, float dd, ImageLoader iL, PApplet p, int type) {

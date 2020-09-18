@@ -121,4 +121,6 @@ void drawshop(Character character, int i) {
         p2shopOpen = true;
     }
 }
+
+
 }
