@@ -25,7 +25,7 @@ UncleRoger(PApplet p,ImageLoader iL,int posX,int posY,int level,ImageResizer iR)
 
 void draw(int level){
     this.level=level;
-    if(level == 2){
+    if(level != 0){
     p.image(unclePic.uncleRoger,position.x,position.y);
     p.image(unclePic.msg,1780*iR.scaleW,10*iR.scaleH);
     p.textSize(18);
