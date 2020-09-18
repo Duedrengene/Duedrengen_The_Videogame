@@ -13,6 +13,7 @@ boolean pressed = false;
     int enemyAmount = 1;
     int width = 1920;
     int height = 1080;
+    boolean alreadyRemoved;
     ArrayList<SpecialMove> specialList = new ArrayList<>();
     ArrayList<Oatmeal> oatListp1 = new ArrayList<>();
     ArrayList<Oatmeal> oatListp2 = new ArrayList<>();
@@ -151,21 +152,29 @@ int var =p[0].levelTransition(pressed,oatListp1);
                         p[i].display(backgrounds.level);
                 }
                 for (int i = 0; i < oatListp1.size(); i++) {
+                    alreadyRemoved=false;
                     oatListp1.get(i).moveOatmeal();
                     oatListp1.get(i).drawOatmeal();
-                    oatListp1.get(i).outOfBounds(oatListp1,i);
+                    if(oatListp1.get(i).outOfBounds(oatListp1,i)){
+                        oatListp1.remove(i);
+                        alreadyRemoved=true;}
                     for(int j = 0;j<enemyList.size();j++){
-                        oatListp1.get(i).hit(oatListp1,enemyList.get(j),i,uncleroger);
+                        if(!alreadyRemoved)
+                            oatListp1.get(i).hit(oatListp1,enemyList.get(j),i,uncleroger);
 
 
                     }
 
                 }
                 for (int i = 0; i < oatListp2.size(); i++) {
+                    alreadyRemoved=false;
                     oatListp2.get(i).moveOatmeal();
                     oatListp2.get(i).drawOatmeal();
-                    oatListp2.get(i).outOfBounds(oatListp2,i);
+                    if(oatListp2.get(i).outOfBounds(oatListp2,i)){
+                        oatListp2.remove(i);
+                        alreadyRemoved=true;}
                     for(int j = 0;j<enemyList.size();j++){
+                        if(!alreadyRemoved)
                         oatListp2.get(i).hit(oatListp2,enemyList.get(j),i,uncleroger);
 
 

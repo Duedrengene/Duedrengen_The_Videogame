@@ -37,9 +37,11 @@ public class Oatmeal {
         }
 
     }
-    void outOfBounds(ArrayList<Oatmeal> oat,int i){
+    boolean outOfBounds(ArrayList<Oatmeal> oat,int i){
     if(location.x>p.width){
-        oat.remove(i);
+        return true;
+
     }
+    return false;
     }
 }
