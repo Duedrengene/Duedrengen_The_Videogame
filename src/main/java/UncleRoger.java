@@ -103,7 +103,7 @@ void drawshop(Character character, int i) {
         p.rect((1920/2+140)*iR.scaleW,340*iR.scaleH,64*iR.scaleW,64*iR.scaleH);
         p.image(unclePic.havregryn,(1920/2+140)*iR.scaleW,340*iR.scaleH);
         p.rect((1920/2+490)*iR.scaleW,340*iR.scaleH,64*iR.scaleW,64*iR.scaleH);
-        p.image(unclePic.friedrice,(1920/2+490)*iR.scaleW,350 *iR.scaleH);
+        p.image(unclePic.friedrice,(1920/2+490)*iR.scaleW,340 *iR.scaleH);
         p.rect((1920/2+490)*iR.scaleW,540*iR.scaleH,64*iR.scaleW,64*iR.scaleH);
         p.image(unclePic.msgbull,(1920/2+490)*iR.scaleW,540*iR.scaleH);
         p.rect((1920/2+140)*iR.scaleW,740*iR.scaleH,64*iR.scaleW,64*iR.scaleH);
