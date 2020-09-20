@@ -38,7 +38,7 @@ if(type==1){
     location.add(velocity2);}
     }
     void hit(ArrayList<Oatmeal> oat,Enemy enemy,int i){
-        if (oat.get(i).location.x <= enemy.x+64*iR.scaleW && oat.get(i).location.x >= enemy.x && oat.get(i).location.y <= enemy.y + 64*iR.scaleH && oat.get(i).location.y >= enemy.y) {
+        if (location.x <= enemy.x+64*iR.scaleW && location.x >= enemy.x && location.y <= enemy.y + 64*iR.scaleH && location.y >= enemy.y) {
             enemy.hp -= 1;
             oat.remove(i);
             backgrounds.monetos++;
