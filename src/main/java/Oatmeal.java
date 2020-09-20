@@ -6,8 +6,10 @@ import java.util.ArrayList;
 public class Oatmeal {
     PApplet p;
     PVector location = new PVector();
-    PVector velocity1 = new PVector(3,0);
-    PVector velocity2 = new PVector(0,2);
+    //Duedreng bullet speed
+    PVector velocity1 = new PVector(6,0);
+    //Pigeon bullet speed
+    PVector velocity2 = new PVector(0,4);
     ImageLoader iL;
     ImageResizer iR;
     Backgrounds backgrounds;
