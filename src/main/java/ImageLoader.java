@@ -7,7 +7,7 @@ public class ImageLoader {
     PImage by;
     PImage startup;
     PImage uncleBaggrund;
-
+    PImage bosslevel;
     //items og player modeller.
 
     PApplet p;
@@ -21,6 +21,7 @@ public class ImageLoader {
     PImage deathscreen;
     PImage fjer;
     PImage james;
+    PImage helen;
     PImage img;
     PImage oatmeal;
     //Animation
@@ -45,6 +46,7 @@ public class ImageLoader {
         img = p.loadImage("duedreng.png");
         uncleBaggrund = p.loadImage("UncleBaggrund.png");
         by = p.loadImage("by1.png");
+        bosslevel = p.loadImage("bosshell.png");
         //Screens
         startup = p.loadImage("pigeon.png");
         deathscreen = p.loadImage("skuffet due.jpg");
@@ -59,7 +61,7 @@ public class ImageLoader {
         fjer = p.loadImage("fjer1.png");
         //enemies.
         james = p.loadImage("spr_JamesOliver.png");
-
+        helen = p.loadImage("spr_AuntyHelen.png");
         //Animation
         bulletdue = p.loadImage("Bullet due.png");
         duedreng = p.loadImage("duedrengstandard.png");
@@ -80,16 +82,19 @@ public class ImageLoader {
         majs.resize((int) (64 * scaleW), (int) (64 * scaleH));
         fjer.resize((int) (64 * scaleW), (int) (64 * scaleH));
         //Screens
-        by.resize(w, h);
-        deathscreen.resize(w, h);
-        startup.resize(w, h);
+
         //Characters
         uncleRoger.resize((int) (64 * scaleW), (int) (64 * scaleH));
         james.resize((int) (64 * scaleW), (int) (64 * scaleH));
         duedreng.resize((int) (64 * scaleW), (int) (64 * scaleH));
+        helen.resize((int) (64 * scaleW), (int) (64 * scaleH));
 
         //Backgrounds
         uncleBaggrund.resize(w, h);
+        bosslevel.resize(w,h);
+        by.resize(w, h);
+        deathscreen.resize(w, h);
+        startup.resize(w, h);
         //Animation
         bulletdue.resize((int) (64 * scaleW), (int) (64 * scaleH));
         duedrenganimation.resize((int) (64 * scaleW), (int) (64 * scaleH));
