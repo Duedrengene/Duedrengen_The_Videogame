@@ -18,6 +18,7 @@ public class SpecialMove {
         location.y=y+20*iR.scaleH;
         this.iR=iR;
         this.iL=iL;
+        velocity.set(velocity.x*iR.scaleW,velocity.y*iR.scaleH);
     }
 
     void drawSpecialMove(){
@@ -39,6 +40,7 @@ public class SpecialMove {
         if (special.get(i).location.x <= character.location.x+64*iR.scaleW && special.get(i).location.x >= character.location.x && special.get(i).location.y <= character.location.y + 64*iR.scaleH && special.get(i).location.y >= character.location.y) {
             character.hp -= 1;
             special.remove(i);
+
 
 
         }

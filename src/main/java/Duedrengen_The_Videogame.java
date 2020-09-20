@@ -96,7 +96,7 @@ backgrounds.monetos = 0;
             for (int i = 0; i < dueAmount; i++) {
                 p[i] = new Character(64, height/2 +1, speed, imgLoad, level, this, imgResize, i, backgrounds, enemyList, gravity);
             }
-            enemyList.add(new Enemy(200 * imgResize.scaleW, 984 * imgResize.scaleH, -2 * imgResize.scaleW, imgLoad, this, 2));
+            enemyList.add(new Enemy(200 * imgResize.scaleW, 984 * imgResize.scaleH, -2 * imgResize.scaleW, imgLoad, this, 1));
 
         }
         //Background deathscreen
@@ -181,8 +181,9 @@ backgrounds.monetos = 0;
                         oatListp1.remove(i);
                         alreadyRemoved=true;}
                     for(int j = 0;j<enemyList.size();j++){
-                        if(!alreadyRemoved)
+                        if(!alreadyRemoved){
                             oatListp1.get(i).hit(oatListp1,enemyList.get(j),i);
+                        alreadyRemoved =true;}
 
                     
 
@@ -199,8 +200,9 @@ backgrounds.monetos = 0;
                         oatListp2.remove(i);
                         alreadyRemoved=true;}
                     for(int j = 0;j<enemyList.size();j++){
-                        if(!alreadyRemoved)
+                        if(!alreadyRemoved){
                         oatListp2.get(i).hit(oatListp2,enemyList.get(j),i);
+                        alreadyRemoved =true;}
 
 
 
@@ -227,9 +229,10 @@ backgrounds.monetos = 0;
                         specialList.remove(i);
                         alreadyRemoved=true;}
                     for(int j = 0;j<2;j++){
-                        if(!alreadyRemoved)
-                            specialList.get(i).hit(specialList,p[j],i);
-
+                        if(!alreadyRemoved) {
+                            specialList.get(i).hit(specialList, p[j], i);
+                            alreadyRemoved =true;
+                        }
                     }
 
                 }
