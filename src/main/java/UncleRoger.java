@@ -71,13 +71,29 @@ void drawshop(Character character, int i) {
 
       p.rect(140*iR.scaleW,340*iR.scaleH,64*iR.scaleW,64*iR.scaleH);//
         p.image(unclePic.havregryn,140*iR.scaleW,340*iR.scaleH);
-       p.rect(490*iR.scaleW,340*iR.scaleH,64*iR.scaleW,64*iR.scaleH);//
-        p.image(unclePic.friedrice,490*iR.scaleW,340*iR.scaleH );
-        p.rect(490*iR.scaleW,540*iR.scaleH,64*iR.scaleW,64*iR.scaleH);//
-        p.image(unclePic.msgbull,490*iR.scaleW,540*iR.scaleH);
+        p.fill(0);
+        p.text("Buy more shots " ,280*iR.scaleW,360*iR.scaleH);
+        p.text("Cost is " + (character.n1+1),280*iR.scaleW,390*iR.scaleH);
+        p.fill(108,255,0);
+       p.rect(360*iR.scaleW,340*iR.scaleH,64*iR.scaleW,64*iR.scaleH);//
+        p.image(unclePic.friedrice,360*iR.scaleW,340*iR.scaleH );
+        p.fill(0);
+        p.text("Buy HP up " ,500*iR.scaleW,360*iR.scaleH);
+        p.text("Cost is " + (character.n2+1),500*iR.scaleW,390*iR.scaleH);
+        p.fill(108,255,0);
+        p.rect(360*iR.scaleW,540*iR.scaleH,64*iR.scaleW,64*iR.scaleH);//
+        p.image(unclePic.msgbull,360*iR.scaleW,540*iR.scaleH);
+        p.fill(0);
+        p.text("Buy speed up " ,500*iR.scaleW,560*iR.scaleH);
+        p.text("Cost is " + (character.n3+1),500*iR.scaleW,590*iR.scaleH);
+        p.fill(108,255,0);
         p.rect(140*iR.scaleW,740*iR.scaleH,64*iR.scaleW,64*iR.scaleH);
         p.image(unclePic.Syringe,140*iR.scaleW,740*iR.scaleH);
-        p.rect(490*iR.scaleW,740*iR.scaleH,64*iR.scaleW,64*iR.scaleH);
+        p.fill(0);
+        p.text("Buy dmg up " ,280*iR.scaleW,760*iR.scaleH);
+        p.text("Cost is " + (character.n4+1),280*iR.scaleW,790*iR.scaleH);
+        p.fill(108,255,0);
+        p.rect(360*iR.scaleW,740*iR.scaleH,64*iR.scaleW,64*iR.scaleH);
         p.rect(267*iR.scaleW,285*iR.scaleH,20*iR.scaleW,20*iR.scaleH);
 
         p.fill(0);
@@ -91,6 +107,10 @@ void drawshop(Character character, int i) {
         p.rect(507*iR.scaleW,285*iR.scaleH,20*iR.scaleW,20*iR.scaleH);
         p.rect(140*iR.scaleW,540*iR.scaleH,64*iR.scaleW,64*iR.scaleH);
         p.image(unclePic.fjer,140*iR.scaleW,540*iR.scaleH);
+        p.fill(0);
+        p.text("Buy IDK " ,280*iR.scaleW,560*iR.scaleH);
+        p.text("Cost is " + (character.n5+1),280*iR.scaleW,590*iR.scaleH);
+        p.fill(108,255,0);
         p1shopOpen = true;
 
     }
@@ -102,13 +122,29 @@ void drawshop(Character character, int i) {
         p.fill(108,255,0);
         p.rect((1920/2+140)*iR.scaleW,340*iR.scaleH,64*iR.scaleW,64*iR.scaleH);
         p.image(unclePic.havregryn,(1920/2+140)*iR.scaleW,340*iR.scaleH);
-        p.rect((1920/2+490)*iR.scaleW,340*iR.scaleH,64*iR.scaleW,64*iR.scaleH);
-        p.image(unclePic.friedrice,(1920/2+490)*iR.scaleW,340 *iR.scaleH);
-        p.rect((1920/2+490)*iR.scaleW,540*iR.scaleH,64*iR.scaleW,64*iR.scaleH);
-        p.image(unclePic.msgbull,(1920/2+490)*iR.scaleW,540*iR.scaleH);
+        p.fill(0);
+        p.text("Buy more shots " ,(1920/2+280)*iR.scaleW,360*iR.scaleH);
+        p.text("Cost is " + (character.n1+1),(1920/2+280)*iR.scaleW,390*iR.scaleH);
+        p.fill(108,255,0);
+        p.rect((1920/2+360)*iR.scaleW,340*iR.scaleH,64*iR.scaleW,64*iR.scaleH);
+        p.image(unclePic.friedrice,(1920/2+360)*iR.scaleW,340 *iR.scaleH);
+        p.fill(0);
+        p.text("Buy HP up " ,(1920/2+500)*iR.scaleW,360*iR.scaleH);
+        p.text("Cost is " + (character.n2+1),(1920/2+500)*iR.scaleW,390*iR.scaleH);
+        p.fill(108,255,0);
+        p.rect((1920/2+360)*iR.scaleW,540*iR.scaleH,64*iR.scaleW,64*iR.scaleH);
+        p.image(unclePic.msgbull,(1920/2+360)*iR.scaleW,540*iR.scaleH);
+        p.fill(0);
+        p.text("Buy speed up " ,(1920/2+500)*iR.scaleW,560*iR.scaleH);
+        p.text("Cost is " + (character.n3+1),(1920/2+500)*iR.scaleW,590*iR.scaleH);
+        p.fill(108,255,0);
         p.rect((1920/2+140)*iR.scaleW,740*iR.scaleH,64*iR.scaleW,64*iR.scaleH);
         p.image(unclePic.Syringe,(1920/2+140)* iR.scaleW,740* iR.scaleH);
-        p.rect((1920/2+490)*iR.scaleW,740*iR.scaleH,64*iR.scaleW,64*iR.scaleH);
+        p.fill(0);
+        p.text("Buy dmg up " ,(1920/2+280)*iR.scaleW,760*iR.scaleH);
+        p.text("Cost is " + (character.n4+1),(1920/2+280)*iR.scaleW,790*iR.scaleH);
+        p.fill(108,255,0);
+        p.rect((1920/2+360)*iR.scaleW,740*iR.scaleH,64*iR.scaleW,64*iR.scaleH);
         p.rect((1920/2+267)* iR.scaleW,285*iR.scaleH,20* iR.scaleW,20* iR.scaleH);
         p.fill(0);
         p.textSize(30*iR.scaleW);
@@ -123,6 +159,10 @@ void drawshop(Character character, int i) {
         p.rect((1920/2+507)*iR.scaleW,285*iR.scaleH,20*iR.scaleW,20* iR.scaleH);
         p.rect((1920/2+140)*iR.scaleW,540*iR.scaleH,64*iR.scaleW,64*iR.scaleH);
         p.image(unclePic.majs,(1920/2+140)*iR.scaleW,(540*iR.scaleH));
+        p.fill(0);
+        p.text("Buy IDK " ,(1920/2+280)*iR.scaleW,560*iR.scaleH);
+        p.text("Cost is " + (character.n5+1),(1920/2+280)*iR.scaleW,590*iR.scaleH);
+        p.fill(108,255,0);
         p2shopOpen = true;
     }
 }
@@ -133,11 +173,11 @@ void buyitem(Character character,int i,Backgrounds backgrounds){
     backgrounds.monetos--;
         character.n1++;
     }
-        if(character.location.x + 64 * iR.scaleW>490*iR.scaleW&&character.location.x <490*iR.scaleW + 64 * iR.scaleW && character.location.y+64*iR.scaleH>340*iR.scaleH  && character.location.y<340*iR.scaleH+64*iR.scaleH &&character.interact && backgrounds.monetos>=1+character.n2 && !i2b){
+        if(character.location.x + 64 * iR.scaleW>360*iR.scaleW&&character.location.x <360*iR.scaleW + 64 * iR.scaleW && character.location.y+64*iR.scaleH>340*iR.scaleH  && character.location.y<340*iR.scaleH+64*iR.scaleH &&character.interact && backgrounds.monetos>=1+character.n2 && !i2b){
             character.hp++;
             character.n2++;
         }
-        if(character.location.x + 64 * iR.scaleW>490*iR.scaleW&&character.location.x <490*iR.scaleW + 64 * iR.scaleW && character.location.y+64*iR.scaleH>540*iR.scaleH  && character.location.y<540*iR.scaleH+64*iR.scaleH &&character.interact && backgrounds.monetos>=1+character.n3 && !i3b){
+        if(character.location.x + 64 * iR.scaleW>360*iR.scaleW&&character.location.x <360*iR.scaleW + 64 * iR.scaleW && character.location.y+64*iR.scaleH>540*iR.scaleH  && character.location.y<540*iR.scaleH+64*iR.scaleH &&character.interact && backgrounds.monetos>=1+character.n3 && !i3b){
            character.h += 0.3;
             backgrounds.monetos--;
             character.n3++;
@@ -160,12 +200,12 @@ void buyitem(Character character,int i,Backgrounds backgrounds){
             backgrounds.monetos--;
             character.n1++;
         }
-        if(character.location.x + 64 * iR.scaleW>(1920/2+490)*iR.scaleW&&character.location.x <(1920/2+490)*iR.scaleW + 64 * iR.scaleW && character.location.y+64*iR.scaleH>340*iR.scaleH  && character.location.y < 340 * iR.scaleH + 64 * iR.scaleH && character.interact && backgrounds.monetos >= 1 + character.n2 && !i7b){
+        if(character.location.x + 64 * iR.scaleW>(1920/2+360)*iR.scaleW&&character.location.x <(1920/2+360)*iR.scaleW + 64 * iR.scaleW && character.location.y+64*iR.scaleH>340*iR.scaleH  && character.location.y < 340 * iR.scaleH + 64 * iR.scaleH && character.interact && backgrounds.monetos >= 1 + character.n2 && !i7b){
             character.hp++;
             backgrounds.monetos--;
             character.n2++;
         }
-        if(character.location.x + 64 * iR.scaleW>(1920/2+490)*iR.scaleW&&character.location.x <(1920/2+490)*iR.scaleW + 64 * iR.scaleW && character.location.y+64*iR.scaleH>540*iR.scaleH  && character.location.y < 540 * iR.scaleH + 64 * iR.scaleH && character.interact && backgrounds.monetos >= 1 + character.n3 && !i8b){
+        if(character.location.x + 64 * iR.scaleW>(1920/2+360)*iR.scaleW&&character.location.x <(1920/2+360)*iR.scaleW + 64 * iR.scaleW && character.location.y+64*iR.scaleH>540*iR.scaleH  && character.location.y < 540 * iR.scaleH + 64 * iR.scaleH && character.interact && backgrounds.monetos >= 1 + character.n3 && !i8b){
             character.h += 0.3;
             backgrounds.monetos--;
             character.n3++;
