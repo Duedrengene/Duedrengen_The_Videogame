@@ -17,8 +17,8 @@ public class Oatmeal {
 
     Oatmeal(PApplet p,float x, float y,ImageLoader iL,ImageResizer iR,Backgrounds backgrounds,int type){
         this.p=p;
-        location.x=x+31;
-        location.y=y+20;
+        location.x=x+31*iR.scaleW;
+        location.y=y+20*iR.scaleH;
         this.iL =iL;
         this.iR=iR;
         this.backgrounds = backgrounds;
