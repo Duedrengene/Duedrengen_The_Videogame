@@ -24,6 +24,7 @@ public class Character {
     int shotAmount;
     float v, h;
     int Level;
+    int dmg = 1;
     int hp = 2;
     int playerNumber;
     boolean iShootNow;
@@ -207,7 +208,7 @@ public class Character {
 
     void colission(Enemy enemy) {
         if (location.x <= enemy.x + 64 && location.x >= enemy.x && location.y <= enemy.y + 64 && location.y >= enemy.y) {
-            hp -= 1;
+            hp -= dmg;
         }
 
 
