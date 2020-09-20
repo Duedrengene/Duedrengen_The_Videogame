@@ -27,16 +27,11 @@ public class Backgrounds {
 
     boolean simulate() {
         boolean result = false;
-      if(level==5) {
-          p.image(iL.helen, 0,0);
-          if(text==true) {
-              p.fill(255,lifetext);
-              p.text("Hells Kitchen", 960*iR.scaleW, 85*iR.scaleH);
-          }
 
 
 
-      }
+
+
        if(level %2 ==0) {
            p.image(iL.uncleBaggrund,0,0);
            lifetext-=0.55;
@@ -44,13 +39,14 @@ public class Backgrounds {
                p.fill(255,lifetext);
                p.text("Shopmaster",960*iR.scaleW,85*iR.scaleH);
            }
-       }else if(level%3 ==0){
+       }else if(level%3 ==1) {
+           p.image(iL.helen, 0, 0);
+           if (text == true) {
+               p.fill(255, lifetext);
+               p.text("Hells Kitchen", 960 * iR.scaleW, 85 * iR.scaleH);
 
-           
-
-
+           }
        }
-
         if(level%2==1) {
             p.image(iL.by, 0, 0);
         lifetext -=0.55;

@@ -33,7 +33,7 @@ public class Enemy {
                 p.image(iL.james, x, y);
             }
             if (type == 2) {
-
+    
                 p.image(iL.helen,x,y);
             }
         }
