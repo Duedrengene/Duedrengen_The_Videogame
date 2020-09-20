@@ -11,6 +11,7 @@ public class Button {
     Backgrounds backgrounds;
     int currentSize = 1;
 
+
     Button(PApplet p, float x, float y, int buttonType, Backgrounds backgrounds, ImageResizer iR) {
         this.xPosition = x;
         this.yPosition = y;
@@ -64,6 +65,11 @@ public class Button {
                     } else if (backgrounds.level == 0) {
                         backgrounds.level = 1;
                     } else if (gameOver) {
+                        backgrounds.level = 1;
+                        backgrounds.gameover = false;
+                        backgrounds.gameoverscreen(false);
+                        backgrounds.characterCreate = false;
+                        backgrounds.reset = true;
 
                     }
                     break;
@@ -79,7 +85,10 @@ public class Button {
                         iR.resize(currentSize);
                     } else if (gameOver) {
                         backgrounds.level = 0;
-                        gameOver = false;
+                        backgrounds.gameover = false;
+                        backgrounds.gameoverscreen(false);
+                        backgrounds.characterCreate = false;
+                        backgrounds.reset = true;
                     }
                     break;
                 }

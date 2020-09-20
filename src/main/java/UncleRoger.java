@@ -143,12 +143,12 @@ void buyitem(Character character,int i,Backgrounds backgrounds){
             character.n3++;
         }
         if(character.location.x + 64 * iR.scaleW>140*iR.scaleW&&character.location.x <140*iR.scaleW + 64 * iR.scaleW && character.location.y+64*iR.scaleH>740*iR.scaleH  && character.location.y<740*iR.scaleH+64*iR.scaleH &&character.interact && backgrounds.monetos>=1+character.n4 && !i4b){
-            p.println("hej");
+          //  p.println("hej");
             backgrounds.monetos--;
             character.n4++;
         }
         if(character.location.x + 64 * iR.scaleW>140*iR.scaleW&&character.location.x <140*iR.scaleW + 64 * iR.scaleW && character.location.y+64*iR.scaleH>540*iR.scaleH  && character.location.y<540*iR.scaleH+64*iR.scaleH &&character.interact && backgrounds.monetos>=1+character.n5 && !i5b){
-            p.println("hej");
+           // p.println("hej");
             backgrounds.monetos--;
             character.n5++;
         }
@@ -171,12 +171,12 @@ void buyitem(Character character,int i,Backgrounds backgrounds){
             character.n3++;
         }
         if(character.location.x + 64 * iR.scaleW>(1920/2+140)*iR.scaleW&&character.location.x <(1920/2+140)*iR.scaleW + 64 * iR.scaleW && character.location.y+64*iR.scaleH>740*iR.scaleH  && character.location.y<740*iR.scaleH+64*iR.scaleH &&character.interact && backgrounds.monetos>=1+character.n4 && !i9b){
-            p.println("hej");
+          //  p.println("hej");
             backgrounds.monetos--;
             character.n4++;
         }
         if(character.location.x + 64 * iR.scaleW>(1920/2+140)*iR.scaleW&&character.location.x <(1920/2+140)*iR.scaleW + 64 * iR.scaleW && character.location.y+64*iR.scaleH>540*iR.scaleH  && character.location.y<540*iR.scaleH+64*iR.scaleH &&character.interact && backgrounds.monetos>=1+character.n5 && !i10b){
-            p.println("hej");
+         //   p.println("hej");
             backgrounds.monetos--;
             character.n5++;
         }

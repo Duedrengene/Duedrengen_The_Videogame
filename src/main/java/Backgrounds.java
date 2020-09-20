@@ -2,16 +2,18 @@ import processing.core.PApplet;
 
 public class Backgrounds {
     PApplet p;
+    int hp;
     int level;
     float lifetext =255;
     boolean text=true;
     int monetos;
     ImageLoader iL;
     FontLoader fL;
-    boolean CharacterCreate = false;
+    boolean characterCreate = false;
     ImageResizer iR;
     boolean bossLevel = false;
-
+    boolean gameover;
+    boolean reset = false;
 
     Backgrounds(int Level, PApplet p, ImageLoader iL, FontLoader fL, ImageResizer iR) {
         this.iL = iL;
@@ -49,13 +51,14 @@ public class Backgrounds {
         if (level == 0) {
             p.image(iL.startup, 0, 0);
             p.textFont(fL.titelFont);
+            p.textSize(84*iR.scaleW);
             p.fill(253,106,2);
             p.text("Velkommen tilbage Agent Duedreng!", 960 * iR.scaleW, 85 * iR.scaleH);
             p.fill(0);
 
-        } else if (CharacterCreate == false) {
+        } else if (characterCreate == false) {
             result = true;
-            CharacterCreate = true;
+            characterCreate = true;
 
 
         }
@@ -72,10 +75,11 @@ public class Backgrounds {
 
 
     boolean gameover(Character character) {
+
         if (character.hp <= 0) {
-            return true;
+            gameover = true;
         }
-        return false;
+        return gameover;
     }
 
     void gameoverscreen(boolean gameoverscreen) {

@@ -21,6 +21,8 @@ public class Oatmeal {
         this.iR=iR;
         this.backgrounds = backgrounds;
         this.type=type;
+        velocity1.set(velocity1.x*iR.scaleW,velocity1.y*iR.scaleH);
+        velocity2.set(velocity2.x*iR.scaleW,velocity2.y*iR.scaleH);
     }
 
     void drawOatmeal(){

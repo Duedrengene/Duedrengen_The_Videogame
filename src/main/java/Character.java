@@ -76,6 +76,7 @@ public class Character {
     }
 
     void display(int level) {
+
         this.Level = level;
         if (this.Level != 0) {
             if (playerNumber == 0)

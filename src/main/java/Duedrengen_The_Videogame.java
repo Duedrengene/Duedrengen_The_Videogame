@@ -14,6 +14,7 @@ public class Duedrengen_The_Videogame extends PApplet {
     int width = 1920;
     int height = 1080;
     boolean alreadyRemoved;
+
     ArrayList<SpecialMove> specialList = new ArrayList<>();
     ArrayList<Oatmeal> oatListp1 = new ArrayList<>();
     ArrayList<Oatmeal> oatListp2 = new ArrayList<>();
@@ -63,6 +64,7 @@ public class Duedrengen_The_Videogame extends PApplet {
 
     public void draw() {
 
+System.out.println(backgrounds.characterCreate);
         //soundLoad.playSounds();
         //background(0,255,0);
         background(53, 101, 77);
@@ -72,9 +74,25 @@ public class Duedrengen_The_Videogame extends PApplet {
         textAlign(CENTER);
         textFont(fontLoad.titelFont);
         textSize(84 * imgResize.scaleW);
+
+        if(backgrounds.reset == true){
+            if(p[0]!=null){
+                for(int i =oatListp1.size();0<i;i--)
+                    oatListp1.remove(i-1);
+                for(int i =oatListp2.size();0<i;i--)
+                    oatListp2.remove(i-1);
+                for(int i =enemyList.size();0<i;i--)
+                    enemyList.remove(i-1);
+                p[0] = null;
+                p[1] = null;
+backgrounds.reset=false;
+backgrounds.monetos = 0;
+            }
+        }
         if (uncleroger == null && backgrounds.level % 2 == 0 && backgrounds.level != 0)
             uncleroger = new UncleRoger(this, imgLoad, imgResize.width / 2, imgResize.height / 2, level, imgResize);
         if (backgrounds.simulate()) {
+
             for (int i = 0; i < dueAmount; i++) {
                 p[i] = new Character(64, height/2 +1, speed, imgLoad, level, this, imgResize, i, backgrounds, enemyList, gravity);
             }
@@ -84,12 +102,13 @@ public class Duedrengen_The_Videogame extends PApplet {
         //Background deathscreen
         if (p[0] != null)
             for (int i = 0; i < dueAmount; i++) {
-                if (!gameOver) {
+                if (!backgrounds.gameover) {
                     gameOver = backgrounds.gameover(p[i]);
                 }
-                if (gameOver) {
+                if (backgrounds.gameover) {
                     backgrounds.gameoverscreen(true);
                 }
+                else{backgrounds.gameoverscreen(false);}
             }
 
         //Buttons
@@ -97,18 +116,18 @@ public class Duedrengen_The_Videogame extends PApplet {
         textSize(56 * imgResize.scaleW);
         fill(253, 106, 2);
         //Play
-        settings = bStart.registerClick(mPressed, settings, gameOver);
+        settings = bStart.registerClick(mPressed, settings, backgrounds.gameover);
         bStart.draw(level, settings, gameOver);
         //Settings
-        settings = bSettings.registerClick(mPressed, settings, gameOver);
+        settings = bSettings.registerClick(mPressed, settings, backgrounds.gameover);
         bSettings.draw(level, settings, gameOver);
         //Quit
-        settings = bQuit.registerClick(mPressed, settings, gameOver);
-        bQuit.draw(level, settings, gameOver);
+        settings = bQuit.registerClick(mPressed, settings, backgrounds.gameover);
+        bQuit.draw(level, settings, backgrounds.gameover);
         fill(0, 0, 0);
 
         //Unclerogers shop
-        if (!gameOver)
+        if (!backgrounds.gameover)
             if (p[0] != null) {
                 if (uncleroger != null)
                     for (int i = 0; i < dueAmount; i++) {
@@ -208,7 +227,7 @@ public class Duedrengen_The_Videogame extends PApplet {
             }
         //text(frameRate,500,500);
         mPressed = false;
-        println(oatListp1.size(), "", oatListp2.size());
+        //println(oatListp1.size(), "", oatListp2.size());
     }
 
     //Key to initiate actions
