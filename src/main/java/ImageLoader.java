@@ -44,7 +44,7 @@ public class ImageLoader {
         //Characters
         img = p.loadImage("duedreng.png");
         uncleBaggrund = p.loadImage("UncleBaggrund.png");
-        by = p.loadImage("by.png");
+        by = p.loadImage("by1.png");
         //Screens
         startup = p.loadImage("pigeon.png");
         deathscreen = p.loadImage("skuffet due.jpg");
