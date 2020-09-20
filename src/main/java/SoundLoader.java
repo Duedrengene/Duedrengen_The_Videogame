@@ -24,8 +24,14 @@ public class SoundLoader extends Thread {
     }
 
     public void run() {
-        loadtheSounds();
-    }
+        while(0<1){
+        if(backgrounds.check){
+            backgrounds.check = false;
+            loadtheSounds();
+        }
+
+        playSounds();
+    }}
 
     public void loadtheSounds() {
         if(!backgrounds.bossLevel)
@@ -35,7 +41,7 @@ public class SoundLoader extends Thread {
         try {
             BufferedInputStream buffer = new BufferedInputStream(new FileInputStream(file));
             mp3 = new Player(buffer);
-            mp3.play();
+
         } catch (Exception e) {
             //System.out.println(e);
         }
@@ -43,7 +49,7 @@ public class SoundLoader extends Thread {
 
     public void playSounds() {
         try {
-            mp3.play(0);
+            mp3.play(1);
         } catch (JavaLayerException e) {
             //System.out.println(e);
         }

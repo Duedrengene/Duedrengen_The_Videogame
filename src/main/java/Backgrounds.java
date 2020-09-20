@@ -15,6 +15,7 @@ public class Backgrounds {
     boolean bossLevel = false;
     boolean gameover;
     boolean reset = false;
+    boolean check = true;
 
     Backgrounds(int Level, PApplet p, ImageLoader iL, FontLoader fL, ImageResizer iR) {
         this.iL = iL;
@@ -35,19 +36,29 @@ public class Backgrounds {
        if(level %2 ==0) {
            p.image(iL.uncleBaggrund,0,0);
            lifetext-=0.55;
+           if(bossLevel!=false) {
+               bossLevel = false;
+           check = true;
+           }
            if(text==true) {
                p.fill(255,lifetext);
                p.text("Shopmaster",960*iR.scaleW,85*iR.scaleH);
-           }
-       }else if(level%3 ==1) {
-           p.image(iL.helen, 0, 0);
+
+           }}
+       else if(level%3 ==0) {
+           p.image(iL.bosslevel, 0, 0);
            if (text == true) {
                p.fill(255, lifetext);
-               p.text("Hells Kitchen", 960 * iR.scaleW, 85 * iR.scaleH);
-
+               p.text("Hells Kitchen", 960 * iR.scaleW, 85 * iR.scaleH);}
+               if(bossLevel==false) {
+                   bossLevel = true;
+                   check = true;
            }
-       }
-        if(level%2==1) {
+       }else if(level%2==1) {
+           if(bossLevel!=false) {
+               bossLevel = false;
+               check = true;
+           }
             p.image(iL.by, 0, 0);
         lifetext -=0.55;
         if(text==true) {
