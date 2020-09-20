@@ -53,7 +53,7 @@ public class Enemy {
     }
 
     void shoot() {
-        specialMoveRNG = (int) p.random(0, 69);
+        specialMoveRNG = (int) p.random(0, 200);
         if (specialMoveRNG == 0 && !iShootNow) {
             iShootNow = true;
         } else {

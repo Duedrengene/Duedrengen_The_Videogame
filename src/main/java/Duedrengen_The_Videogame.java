@@ -78,7 +78,7 @@ public class Duedrengen_The_Videogame extends PApplet {
             for (int i = 0; i < dueAmount; i++) {
                 p[i] = new Character(64, height/2 +1, speed, imgLoad, level, this, imgResize, i, backgrounds, enemyList, gravity);
             }
-            enemyList.add(new Enemy(200 * imgResize.scaleW, 984 * imgResize.scaleH, -2 * imgResize.scaleW, imgLoad, this, 1));
+            enemyList.add(new Enemy(200 * imgResize.scaleW, 984 * imgResize.scaleH, -2 * imgResize.scaleW, imgLoad, this, 2));
 
         }
         //Background deathscreen
@@ -192,11 +192,27 @@ public class Duedrengen_The_Videogame extends PApplet {
                 //Enemy functions
                 for (int i = 0; i < enemyList.size(); i++) {
                     enemyList.get(i).shoot();
-                    if (enemyList.get(i).iShootNow == true) {
+                    if (enemyList.get(i).iShootNow == true&&enemyList.get(i).type==2) {
+                        specialList.add(new SpecialMove(this,enemyList.get(i).x,enemyList.get(i).y,imgResize,imgLoad));
                     }
                     enemyList.get(i).display(backgrounds.level);
                     enemyList.get(i).move();
                     enemyList.get(i).imDead(enemyList, i);
+                }
+                for (int i = 0; i < specialList.size(); i++) {
+                    alreadyRemoved=false;
+                    specialList.get(i).moveSpecialMove();
+                    specialList.get(i).drawSpecialMove();
+
+                    if(specialList.get(i).outOfBounds()){
+                        specialList.remove(i);
+                        alreadyRemoved=true;}
+                    for(int j = 0;j<2;j++){
+                        if(!alreadyRemoved)
+                            specialList.get(i).hit(specialList,p[j],i);
+
+                    }
+
                 }
 
                 for (int i = 0; i < dueAmount; i++) {
