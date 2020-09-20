@@ -46,7 +46,7 @@ public class Enemy {
             for (int i = 0; i < 1; i++) {
                 x = p.constrain(x, r, p.width - r); //siden
                 x += speed;
-                //y += d;
+
                 i = 0;
             }
         }
