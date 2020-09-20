@@ -14,19 +14,16 @@ public class Duedrengen_The_Videogame extends PApplet {
     int width = 1920;
     int height = 1080;
     boolean alreadyRemoved;
-
     ArrayList<SpecialMove> specialList = new ArrayList<>();
     ArrayList<Oatmeal> oatListp1 = new ArrayList<>();
     ArrayList<Oatmeal> oatListp2 = new ArrayList<>();
     boolean gameOver = false;
     boolean mPressed = false;
     boolean settings = false;
-
     PVector gravity = new PVector(0, (float) 0.10);
     Character[] p;
     ImageLoader imgLoad = new ImageLoader(this);
     ImageResizer imgResize = new ImageResizer(this, width, height, imgLoad);
-
     FontLoader fontLoad = new FontLoader(this);
     UncleRoger uncleroger;
     Backgrounds backgrounds = new Backgrounds(level, this, imgLoad, fontLoad, imgResize);
@@ -48,10 +45,8 @@ public class Duedrengen_The_Videogame extends PApplet {
         soundLoad.start();
         imgLoad.loadTheImages(1, width, height);
         fontLoad.loadFonts();
-
         p = new Character[dueAmount];
         frameRate(144);
-
         ellipseMode(CENTER);
         //imgLoad.loadPImage();
     }
@@ -60,10 +55,7 @@ public class Duedrengen_The_Videogame extends PApplet {
         size(1920, 1080);
         smooth(8);
     }
-
-
     public void draw() {
-
 System.out.println(backgrounds.characterCreate);
         //soundLoad.playSounds();
         //background(0,255,0);
@@ -92,12 +84,10 @@ backgrounds.monetos = 0;
         if (uncleroger == null && backgrounds.level % 2 == 0 && backgrounds.level != 0)
             uncleroger = new UncleRoger(this, imgLoad, imgResize.width / 2, imgResize.height / 2, level, imgResize);
         if (backgrounds.simulate()) {
-
             for (int i = 0; i < dueAmount; i++) {
                 p[i] = new Character(64, height/2 +1, speed, imgLoad, level, this, imgResize, i, backgrounds, enemyList, gravity);
             }
             enemyList.add(new Enemy(200 * imgResize.scaleW, 984 * imgResize.scaleH, -2 * imgResize.scaleW, imgLoad, this, 1));
-
         }
         //Background deathscreen
         if (p[0] != null)
@@ -137,7 +127,6 @@ backgrounds.monetos = 0;
                         uncleroger.drawshop(p[i], i);
                         uncleroger.buyitem(p[i], i, backgrounds);
                     }
-
                 //level transition
                 int var = p[0].levelTransition(pressed, oatListp1);
 
@@ -180,14 +169,9 @@ backgrounds.monetos = 0;
                         if(!alreadyRemoved){
                             oatListp1.get(i).hit(oatListp1,enemyList.get(j),i);
                         alreadyRemoved =true;}
-
-                    
-
-
-
                     }
-
                 }
+
                 for (int i = 0; i < oatListp2.size(); i++) {
                     alreadyRemoved=false;
                     oatListp2.get(i).moveOatmeal();
@@ -199,10 +183,6 @@ backgrounds.monetos = 0;
                         if(!alreadyRemoved){
                         oatListp2.get(i).hit(oatListp2,enemyList.get(j),i);
                         alreadyRemoved =true;}
-
-
-
-
                     }
                 }
 
@@ -220,7 +200,6 @@ backgrounds.monetos = 0;
                     alreadyRemoved=false;
                     specialList.get(i).moveSpecialMove();
                     specialList.get(i).drawSpecialMove();
-
                     if(specialList.get(i).outOfBounds()){
                         specialList.remove(i);
                         alreadyRemoved=true;}
@@ -230,19 +209,16 @@ backgrounds.monetos = 0;
                             alreadyRemoved =true;
                         }
                     }
-
                 }
 
                 for (int i = 0; i < dueAmount; i++) {
                     for (int j = 0; j < enemyList.size(); j++) {
                         p[i].colission(enemyList.get(j));
                     }
-
                 }
             }
         //text(frameRate,500,500);
         mPressed = false;
-
     }
 
     //Key to initiate actions
