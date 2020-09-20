@@ -173,30 +173,31 @@ public class UncleRoger {
         if (i == 0 && p1shopOpen) {
             if (character.location.x + 64 * iR.scaleW > 140 * iR.scaleW && character.location.x < 140 * iR.scaleW + 64 * iR.scaleW && character.location.y + 64 * iR.scaleH > 340 * iR.scaleH && character.location.y < 340 * iR.scaleH + 64 * iR.scaleH && character.interact && backgrounds.monetos >= 1 + character.n1 && !i1b) {
                 character.shotAmount++;
-                backgrounds.monetos--;
+                backgrounds.monetos-=1+character.n1;
                 character.n1++;
                 i1b=true;
             }
             if (character.location.x + 64 * iR.scaleW > 360 * iR.scaleW && character.location.x < 360 * iR.scaleW + 64 * iR.scaleW && character.location.y + 64 * iR.scaleH > 340 * iR.scaleH && character.location.y < 340 * iR.scaleH + 64 * iR.scaleH && character.interact && backgrounds.monetos >= 1 + character.n2 && !i2b) {
                 character.hp++;
                 character.n2++;
+                backgrounds.monetos-=1+character.n2;
                 i2b=true;
             }
             if (character.location.x + 64 * iR.scaleW > 360 * iR.scaleW && character.location.x < 360 * iR.scaleW + 64 * iR.scaleW && character.location.y + 64 * iR.scaleH > 540 * iR.scaleH && character.location.y < 540 * iR.scaleH + 64 * iR.scaleH && character.interact && backgrounds.monetos >= 1 + character.n3 && !i3b) {
                 character.h += 0.3;
-                backgrounds.monetos--;
+                backgrounds.monetos-=1+character.n3;
                 character.n3++;
                 i3b=true;
             }
             if (character.location.x + 64 * iR.scaleW > 140 * iR.scaleW && character.location.x < 140 * iR.scaleW + 64 * iR.scaleW && character.location.y + 64 * iR.scaleH > 740 * iR.scaleH && character.location.y < 740 * iR.scaleH + 64 * iR.scaleH && character.interact && backgrounds.monetos >= 1 + character.n4 && !i4b) {
                 character.dmg++;
-                backgrounds.monetos--;
+                backgrounds.monetos-=1+character.n4;
                 character.n4++;
                 i4b=true;
             }
             if (character.location.x + 64 * iR.scaleW > 140 * iR.scaleW && character.location.x < 140 * iR.scaleW + 64 * iR.scaleW && character.location.y + 64 * iR.scaleH > 540 * iR.scaleH && character.location.y < 540 * iR.scaleH + 64 * iR.scaleH && character.interact && backgrounds.monetos >= 1 + character.n5 && !i5b) {
                 // p.println("hej");
-                backgrounds.monetos--;
+                backgrounds.monetos-=1+character.n5;
                 character.n5++;
                 i5b=true;
             }
@@ -205,31 +206,31 @@ public class UncleRoger {
         if (i == 1 && p2shopOpen) {
             if (character.location.x + 64 * iR.scaleW > (1920 / 2 + 140) * iR.scaleW && character.location.x < (1920 / 2 + 140) * iR.scaleW + 64 * iR.scaleW && character.location.y + 64 * iR.scaleH > 340 * iR.scaleH && character.location.y < 340 * iR.scaleH + 64 * iR.scaleH && character.interact && backgrounds.monetos >= 1 + character.n1 && !i6b) {
                 character.shotAmount++;
-                backgrounds.monetos--;
+                backgrounds.monetos-=1+character.n1;
                 character.n1++;
                 i6b=true;
             }
             if (character.location.x + 64 * iR.scaleW > (1920 / 2 + 360) * iR.scaleW && character.location.x < (1920 / 2 + 360) * iR.scaleW + 64 * iR.scaleW && character.location.y + 64 * iR.scaleH > 340 * iR.scaleH && character.location.y < 340 * iR.scaleH + 64 * iR.scaleH && character.interact && backgrounds.monetos >= 1 + character.n2 && !i7b) {
                 character.hp++;
-                backgrounds.monetos--;
+                backgrounds.monetos-=1+character.n2;
                 character.n2++;
                 i7b=true;
             }
             if (character.location.x + 64 * iR.scaleW > (1920 / 2 + 360) * iR.scaleW && character.location.x < (1920 / 2 + 360) * iR.scaleW + 64 * iR.scaleW && character.location.y + 64 * iR.scaleH > 540 * iR.scaleH && character.location.y < 540 * iR.scaleH + 64 * iR.scaleH && character.interact && backgrounds.monetos >= 1 + character.n3 && !i8b) {
                 character.h += 0.3;
-                backgrounds.monetos--;
+                backgrounds.monetos-=1+character.n3;
                 character.n3++;
                 i8b=true;
             }
             if (character.location.x + 64 * iR.scaleW > (1920 / 2 + 140) * iR.scaleW && character.location.x < (1920 / 2 + 140) * iR.scaleW + 64 * iR.scaleW && character.location.y + 64 * iR.scaleH > 740 * iR.scaleH && character.location.y < 740 * iR.scaleH + 64 * iR.scaleH && character.interact && backgrounds.monetos >= 1 + character.n4 && !i9b) {
                 character.dmg++;
-                backgrounds.monetos--;
+                backgrounds.monetos-=1+character.n4;
                 character.n4++;
                 i9b=true;
             }
             if (character.location.x + 64 * iR.scaleW > (1920 / 2 + 140) * iR.scaleW && character.location.x < (1920 / 2 + 140) * iR.scaleW + 64 * iR.scaleW && character.location.y + 64 * iR.scaleH > 540 * iR.scaleH && character.location.y < 540 * iR.scaleH + 64 * iR.scaleH && character.interact && backgrounds.monetos >= 1 + character.n5 && !i10b) {
                 //   p.println("hej");
-                backgrounds.monetos--;
+                backgrounds.monetos-=1+character.n5;
                 character.n5++;
                 i10b=true;
             }
