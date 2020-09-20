@@ -96,7 +96,7 @@ backgrounds.monetos = 0;
             for (int i = 0; i < dueAmount; i++) {
                 p[i] = new Character(64, height/2 +1, speed, imgLoad, level, this, imgResize, i, backgrounds, enemyList, gravity);
             }
-            enemyList.add(new Enemy(200 * imgResize.scaleW, 984 * imgResize.scaleH, -2 * imgResize.scaleW, imgLoad, this, 1));
+            enemyList.add(new Enemy(200 * imgResize.scaleW, 984 * imgResize.scaleH, -2 * imgResize.scaleW, imgLoad, this, 2));
 
         }
         //Background deathscreen
@@ -177,7 +177,7 @@ backgrounds.monetos = 0;
                     oatListp1.get(i).moveOatmeal();
                     oatListp1.get(i).drawOatmeal();
 
-                    if(oatListp1.get(i).outOfBounds(oatListp1,i)){
+                    if(oatListp1.get(i).outOfBounds()){
                         oatListp1.remove(i);
                         alreadyRemoved=true;}
                     for(int j = 0;j<enemyList.size();j++){
@@ -195,7 +195,7 @@ backgrounds.monetos = 0;
                     alreadyRemoved=false;
                     oatListp2.get(i).moveOatmeal();
                     oatListp2.get(i).drawOatmeal();
-                    if(oatListp2.get(i).outOfBounds(oatListp2,i)){
+                    if(oatListp2.get(i).outOfBounds()){
                         oatListp2.remove(i);
                         alreadyRemoved=true;}
                     for(int j = 0;j<enemyList.size();j++){
@@ -211,11 +211,27 @@ backgrounds.monetos = 0;
                 //Enemy functions
                 for (int i = 0; i < enemyList.size(); i++) {
                     enemyList.get(i).shoot();
-                    if (enemyList.get(i).iShootNow == true) {
+                    if (enemyList.get(i).iShootNow == true&&enemyList.get(i).type==2) {
+                        specialList.add(new SpecialMove(this,enemyList.get(i).x,enemyList.get(i).y,imgResize,imgLoad));
                     }
                     enemyList.get(i).display(backgrounds.level);
                     enemyList.get(i).move();
                     enemyList.get(i).imDead(enemyList, i);
+                }
+                for (int i = 0; i < specialList.size(); i++) {
+                    alreadyRemoved=false;
+                    specialList.get(i).moveSpecialMove();
+                    specialList.get(i).drawSpecialMove();
+
+                    if(specialList.get(i).outOfBounds()){
+                        specialList.remove(i);
+                        alreadyRemoved=true;}
+                    for(int j = 0;j<2;j++){
+                        if(!alreadyRemoved)
+                            specialList.get(i).hit(specialList,p[j],i);
+
+                    }
+
                 }
 
                 for (int i = 0; i < dueAmount; i++) {
@@ -227,7 +243,7 @@ backgrounds.monetos = 0;
             }
         //text(frameRate,500,500);
         mPressed = false;
-        //println(oatListp1.size(), "", oatListp2.size());
+
     }
 
     //Key to initiate actions
