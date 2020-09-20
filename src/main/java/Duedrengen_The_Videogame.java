@@ -156,15 +156,11 @@ backgrounds.monetos = 0;
                         oatListp1.add(new Oatmeal(this, p[i].location.x, p[i].location.y, imgLoad, imgResize, backgrounds,0));
                         if (i == 0)
                             image(imgLoad.duedrenganimation, p[i].location.x, p[i].location.y);
-                        if (i == 1)
-                            image(imgLoad.dueShitting, p[i].location.x, p[i].location.y);
                         p[i].iHaveShot = true;
                     }
                     if (p[i].shoot == true && oatListp2.size() <= p[i].shotAmount && i == 1) {
 
                         oatListp2.add(new Oatmeal(this, p[i].location.x, p[i].location.y, imgLoad, imgResize, backgrounds,1));
-                        if (i == 0)
-                            image(imgLoad.duedrenganimation, p[i].location.x, p[i].location.y);
                         if (i == 1)
                             image(imgLoad.dueShitting, p[i].location.x, p[i].location.y);
                         p[i].iHaveShot = true;
