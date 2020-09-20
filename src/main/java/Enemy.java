@@ -35,7 +35,7 @@ public class Enemy {
             }
             if (type == 2) {
 
-                
+                p.image(iL.helen,x,y);
             }
         }
     }
