@@ -27,8 +27,12 @@ public class Backgrounds {
 
     boolean simulate() {
         boolean result = false;
-      if(level==3) {
-          p.image(iL.by,0,0);
+      if(level==5) {
+          p.image(iL.helen, 0,0);
+          if(text==true) {
+              p.fill(255,lifetext);
+              p.text("Hells Kitchen", 960*iR.scaleW, 85*iR.scaleH);
+          }
 
 
 
