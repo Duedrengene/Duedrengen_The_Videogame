@@ -51,7 +51,7 @@ public class Character {
 
     }
 
-    public int levelTransition(boolean pressed, ArrayList<Oatmeal> oat) {
+    public int levelTransition(boolean pressed, ArrayList<Oatmeal> oat,ArrayList<SpecialMove> specialList) {
 
         int result = 0;
         if (playerNumber == 0)
@@ -69,8 +69,8 @@ public class Character {
                     background.lifetext = 250;
                     location.x = 0;
                     oat.clear();
-                    for (int i = eList.size(); i > 0; i--)
-                        eList.remove(i - 1);
+                    eList.clear();
+                    specialList.clear();
 
                 }
             }

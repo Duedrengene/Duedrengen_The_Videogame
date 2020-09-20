@@ -66,7 +66,7 @@ public class UncleRoger {
         p.rectMode(p.CORNER);
 
 
-        if ((level != 0 && i == 0 && character.interact == true && someoneIsClose) || p1shopOpen == true&&i==1) {
+        if ((level != 0 && i == 0 && character.interact == true && someoneIsClose) || p1shopOpen == true&&i==0) {
 
             p.fill(255, 108, 0);
             p.rect(100 * iR.scaleW, 200 * iR.scaleH, (1020) / 2 * iR.scaleW, 680 * iR.scaleH);
@@ -181,8 +181,8 @@ public class UncleRoger {
             }
             if (character.location.x + 64 * iR.scaleW > 360 * iR.scaleW && character.location.x < 360 * iR.scaleW + 64 * iR.scaleW && character.location.y + 64 * iR.scaleH > 340 * iR.scaleH && character.location.y < 340 * iR.scaleH + 64 * iR.scaleH && character.interact && backgrounds.monetos >= 1 + character.n2 && !i2b) {
                 character.hp++;
-                character.n2++;
                 backgrounds.monetos-=1+character.n2;
+                character.n2++;
                 i2b=true;
             }
             if (character.location.x + 64 * iR.scaleW > 360 * iR.scaleW && character.location.x < 360 * iR.scaleW + 64 * iR.scaleW && character.location.y + 64 * iR.scaleH > 540 * iR.scaleH && character.location.y < 540 * iR.scaleH + 64 * iR.scaleH && character.interact && backgrounds.monetos >= 1 + character.n3 && !i3b) {

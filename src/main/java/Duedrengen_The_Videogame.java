@@ -69,12 +69,12 @@ public class Duedrengen_The_Videogame extends PApplet {
 
         if(backgrounds.reset == true){
             if(p[0]!=null){
-                for(int i =oatListp1.size();0<i;i--)
-                    oatListp1.remove(i-1);
-                for(int i =oatListp2.size();0<i;i--)
-                    oatListp2.remove(i-1);
-                for(int i =enemyList.size();0<i;i--)
-                    enemyList.remove(i-1);
+
+                    oatListp1.clear();
+                    oatListp2.clear();
+                    enemyList.clear();
+                    specialList.clear();
+
                 p[0] = null;
                 p[1] = null;
 backgrounds.reset=false;
@@ -140,7 +140,7 @@ System.out.println(backgrounds.level);
                         uncleroger.buyitem(p[i], i, backgrounds);
                     }
                 //level transition
-                int var = p[0].levelTransition(pressed, oatListp1);
+                int var = p[0].levelTransition(pressed, oatListp1,specialList);
 
                 if (var != 0)
                     p[1].location.x = 0;
@@ -177,9 +177,9 @@ System.out.println(backgrounds.level);
                     if(oatListp1.get(i).outOfBounds()){
                         oatListp1.remove(i);
                         alreadyRemoved=true;}
-                    for(int j = 0;j<enemyList.size();j++){
+                    for(int j = enemyList.size();j>0;j--){
                         if(!alreadyRemoved){
-                            oatListp1.get(i).hit(oatListp1,enemyList.get(j),i);
+                            oatListp1.get(i).hit(oatListp1,enemyList.get(j-1),i);
                         alreadyRemoved =true;}
                     }
                 }
