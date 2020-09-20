@@ -16,7 +16,6 @@ public class Enemy {
     // Fungere meget ligesom player, men uden diameter eller random spawn steder.
     Enemy(float xx, float yy, float dd, ImageLoader iL, PApplet p, int type) {
         x = xx;
-        x = p.width - 50;
         y = yy;
         speed = dd;
         this.iL = iL;

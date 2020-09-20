@@ -8,7 +8,7 @@ public class Duedrengen_The_Videogame extends PApplet {
 
     boolean pressed = false;
     int speed = 4;
-    int level = 0;
+  //  int level = 0;
     int dueAmount = 2;
     int enemyAmount = 1;
     int width = 1920;
@@ -26,7 +26,7 @@ public class Duedrengen_The_Videogame extends PApplet {
     ImageResizer imgResize = new ImageResizer(this, width, height, imgLoad);
     FontLoader fontLoad = new FontLoader(this);
     UncleRoger uncleroger;
-    Backgrounds backgrounds = new Backgrounds(level, this, imgLoad, fontLoad, imgResize);
+    Backgrounds backgrounds = new Backgrounds(0, this, imgLoad, fontLoad, imgResize);
     SoundLoader soundLoad = new SoundLoader(this, backgrounds);
     ArrayList<Enemy> enemyList = new ArrayList<>();
     Button bStart = new Button(this, 210, 225 - 10, 1, backgrounds, imgResize);
@@ -56,7 +56,7 @@ public class Duedrengen_The_Videogame extends PApplet {
         smooth(8);
     }
     public void draw() {
-System.out.println(backgrounds.characterCreate);
+//System.out.println(backgrounds.characterCreate);
         //soundLoad.playSounds();
         //background(0,255,0);
         background(53, 101, 77);
@@ -81,14 +81,26 @@ backgrounds.reset=false;
 backgrounds.monetos = 0;
             }
         }
-        if (uncleroger == null && backgrounds.level % 2 == 0 && backgrounds.level != 0)
-            uncleroger = new UncleRoger(this, imgLoad, imgResize.width / 2, imgResize.height / 2, level, imgResize);
+
+
         if (backgrounds.simulate()) {
             for (int i = 0; i < dueAmount; i++) {
-                p[i] = new Character(64, height/2 +1, speed, imgLoad, level, this, imgResize, i, backgrounds, enemyList, gravity);
+                p[i] = new Character(64, height/2 +1, speed, imgLoad, backgrounds.level, this, imgResize, i, backgrounds, enemyList, gravity);
             }
-            enemyList.add(new Enemy(200 * imgResize.scaleW, 984 * imgResize.scaleH, -2 * imgResize.scaleW, imgLoad, this, 1));
+
         }
+System.out.println(backgrounds.level);
+        if((backgrounds.level %2 ==1||backgrounds.level ==1)&&backgrounds.levelStart ==true){
+            if(backgrounds.level%3 ==0)
+                for(int i=0; backgrounds.level/3>i;i++)
+                enemyList.add(new Enemy((imgResize.width-i*30 ) , 984 * imgResize.scaleH, -2 * imgResize.scaleW, imgLoad, this, 2));
+                else
+          for(int i=0; backgrounds.level/2>=i;i++)
+        enemyList.add(new Enemy((imgResize.width-i*30 ) , 984 * imgResize.scaleH, -2 * imgResize.scaleW, imgLoad, this, 1));
+          backgrounds.levelStart= false;
+        }
+        if (uncleroger == null && backgrounds.level % 2 == 0 && backgrounds.level != 0)
+            uncleroger = new UncleRoger(this, imgLoad, imgResize.width / 2, imgResize.height / 2, backgrounds.level, imgResize);
         //Background deathscreen
         if (p[0] != null)
             for (int i = 0; i < dueAmount; i++) {
@@ -107,13 +119,13 @@ backgrounds.monetos = 0;
         fill(253, 106, 2);
         //Play
         settings = bStart.registerClick(mPressed, settings, backgrounds.gameover);
-        bStart.draw(level, settings, gameOver);
+        bStart.draw(backgrounds.level, settings, gameOver);
         //Settings
         settings = bSettings.registerClick(mPressed, settings, backgrounds.gameover);
-        bSettings.draw(level, settings, gameOver);
+        bSettings.draw(backgrounds.level, settings, gameOver);
         //Quit
         settings = bQuit.registerClick(mPressed, settings, backgrounds.gameover);
-        bQuit.draw(level, settings, backgrounds.gameover);
+        bQuit.draw(backgrounds.level, settings, backgrounds.gameover);
         fill(0, 0, 0);
 
         //Unclerogers shop
@@ -213,7 +225,7 @@ backgrounds.monetos = 0;
 
                 for (int i = 0; i < dueAmount; i++) {
                     for (int j = 0; j < enemyList.size(); j++) {
-                        p[i].colission(enemyList.get(j));
+                        p[i].collision(enemyList.get(j));
                     }
                 }
             }

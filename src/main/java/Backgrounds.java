@@ -2,6 +2,7 @@ import processing.core.PApplet;
 
 public class Backgrounds {
     PApplet p;
+    boolean levelStart=true;
     int hp;
     int level;
     float lifetext =255;
@@ -39,7 +40,13 @@ public class Backgrounds {
                p.fill(255,lifetext);
                p.text("Shopmaster",960*iR.scaleW,85*iR.scaleH);
            }
+       }else if(level%3 ==0){
+
+           
+
+
        }
+
         if(level%2==1) {
             p.image(iL.by, 0, 0);
         lifetext -=0.55;

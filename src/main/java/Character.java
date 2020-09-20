@@ -65,6 +65,7 @@ public class Character {
                     if (background.level % 2 == 0)
                         result = 2;
                     background.level++;
+                    background.levelStart=true;
                     background.lifetext = 250;
                     location.x = 0;
                     oat.clear();
@@ -207,7 +208,7 @@ public class Character {
 
     }
 
-    void colission(Enemy enemy) {
+    void collision(Enemy enemy) {
         if (location.x <= enemy.x + 64 && location.x >= enemy.x && location.y <= enemy.y + 64 && location.y >= enemy.y) {
             hp -= dmg;
         }

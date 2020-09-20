@@ -62,7 +62,7 @@ void drawshop(Character character, int i) {
     p.rectMode(p.CORNER);
 
 
-    if ((level != 0 && i==0 && character.interact==true && someoneIsClose)||p1shopOpen == true) {
+    if ((level != 0 && i==0 && character.interact==true && someoneIsClose)||p1shopOpen == true&&i==0) {
 
         p.fill(255,108,0);
         p.rect(100*iR.scaleW, 200*iR.scaleH, (1020)/2*iR.scaleW, 680*iR.scaleH);
@@ -114,7 +114,7 @@ void drawshop(Character character, int i) {
         p1shopOpen = true;
 
     }
-    if ((level != 0  && i==1 && character.interact==true && someoneIsClose)||p2shopOpen == true) {
+    if ((level != 0  && i==1 && character.interact==true && someoneIsClose)||p2shopOpen == true&&i==1) {
         p.fill(255,108,0);
         p.rect((1920/2+100)*iR.scaleW, 200*iR.scaleH, ((1920- 900)/2)*iR.scaleW, (1080 - 400)*iR.scaleH);
 

@@ -70,6 +70,7 @@ public class Button {
                         backgrounds.gameoverscreen(false);
                         backgrounds.characterCreate = false;
                         backgrounds.reset = true;
+                        backgrounds.levelStart=true;
 
                     }
                     break;
@@ -89,6 +90,7 @@ public class Button {
                         backgrounds.gameoverscreen(false);
                         backgrounds.characterCreate = false;
                         backgrounds.reset = true;
+                        backgrounds.levelStart=true;
                     }
                     break;
                 }
