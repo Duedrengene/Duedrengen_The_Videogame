@@ -35,6 +35,7 @@ public class Enemy {
             }
             if (type == 2) {
 
+                
             }
         }
     }

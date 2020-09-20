@@ -44,7 +44,7 @@ if(type==1){
         }
 
     }
-    boolean outOfBounds(ArrayList<Oatmeal> oat,int i){
+    boolean outOfBounds(){
     if(location.x>p.width||location.y>p.height){
         return true;
 

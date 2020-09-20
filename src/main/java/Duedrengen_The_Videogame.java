@@ -158,7 +158,7 @@ public class Duedrengen_The_Videogame extends PApplet {
                     oatListp1.get(i).moveOatmeal();
                     oatListp1.get(i).drawOatmeal();
 
-                    if(oatListp1.get(i).outOfBounds(oatListp1,i)){
+                    if(oatListp1.get(i).outOfBounds()){
                         oatListp1.remove(i);
                         alreadyRemoved=true;}
                     for(int j = 0;j<enemyList.size();j++){
@@ -176,7 +176,7 @@ public class Duedrengen_The_Videogame extends PApplet {
                     alreadyRemoved=false;
                     oatListp2.get(i).moveOatmeal();
                     oatListp2.get(i).drawOatmeal();
-                    if(oatListp2.get(i).outOfBounds(oatListp2,i)){
+                    if(oatListp2.get(i).outOfBounds()){
                         oatListp2.remove(i);
                         alreadyRemoved=true;}
                     for(int j = 0;j<enemyList.size();j++){
@@ -208,7 +208,7 @@ public class Duedrengen_The_Videogame extends PApplet {
             }
         //text(frameRate,500,500);
         mPressed = false;
-        println(oatListp1.size(), "", oatListp2.size());
+      //  println(oatListp1.size(), "", oatListp2.size());
     }
 
     //Key to initiate actions
