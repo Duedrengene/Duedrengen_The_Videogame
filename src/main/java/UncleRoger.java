@@ -66,7 +66,7 @@ public class UncleRoger {
         p.rectMode(p.CORNER);
 
 
-        if ((level != 0 && i == 0 && character.interact == true && someoneIsClose) || p1shopOpen == true&&i==1) {
+        if ((level != 0 && i == 0 && character.interact == true && someoneIsClose) || p1shopOpen == true&&i==0) {
 
             p.fill(255, 108, 0);
             p.rect(100 * iR.scaleW, 200 * iR.scaleH, (1020) / 2 * iR.scaleW, 680 * iR.scaleH);
