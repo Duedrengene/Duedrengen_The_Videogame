@@ -167,7 +167,7 @@ backgrounds.monetos = 0;
                         alreadyRemoved=true;}
                     for(int j = 0;j<enemyList.size();j++){
                         if(!alreadyRemoved){
-                            oatListp1.get(i).hit(enemyList.get(j),i);
+                            oatListp1.get(i).hit(oatListp1,enemyList.get(j),i);
                         alreadyRemoved =true;}
                     }
                 }
